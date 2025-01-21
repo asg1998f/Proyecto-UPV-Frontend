@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-const Registro = () => {
-  const [formData, setFormData] = useState({ nombre: "", email: "", age: 0, password: "" });
-  const { name, email, age, password } = formData;
+const InformeRegistro = () => {
+  const [formData, setFormData] = useState({ fechaentrada: "", email: "", age: 0, password: "" });
+  const { fechaentrada, ID, DNItrabajador, anonimo, conpropietario, propietario, DNIpropietario, telefono, email, objetosrecogida, bueno, malo, aceptable, barro, humedad, hongos  } = formData;
   const onChange = (e) => {
     setFormData({
       ...formData,
@@ -14,15 +14,15 @@ const Registro = () => {
   };
   return (
     <form onSubmit={onSubmit}>
-      <input type="date" name="fecha de entrada" value={fechaentrada} onChange={onChange} />
-      <input type="text" name="numero de registro" value={numeroregistro} onChange={onChange} />
       <h2>INFORME DE REGISTRO</h2>
-      <input type="text" name="DNI" value={DNI} onChange={onChange} />
+      <input type="date" name="fecha de entrada" value={fechaentrada} onChange={onChange} />
+      <input type="text" name="ID" value={ID} onChange={onChange} />
+      <input type="text" name="DNItrabajador" value={DNItrabajador} onChange={onChange} />
       <input type="checkbox" name="anonimo" value={anonimo} onChange={onChange} />
-      <input type="chackbox" name="con propietario" value={propietario} onChange={onChange} />
+      <input type="chackbox" name="con propietario" value={conpropietario} onChange={onChange} />
       <h2>INFORMACIÓN GENERAL</h2>
-      <input type="text" name="propietario/a" value={propietario/a} onChange={onChange} />
-      <input type="text" name="DNI" value={DNI} onChange={onChange} />
+      <input type="text" name="propietario/a" value={propietario} onChange={onChange} />
+      <input type="text" name="DNIpropietario" value={DNIpropietario} onChange={onChange} />
       <input type="number" name="telefono" value={telefono} onChange={onChange} />
       <input type="email" name="email" value={email} onChange={onChange} />
       <input type="textarea" name="objetosrecogida" value={objetosrecogida} onChange={onChange} />
@@ -38,4 +38,4 @@ const Registro = () => {
     </form>
   );
 };
-export default Registro;
+export default InformeRegistro;
