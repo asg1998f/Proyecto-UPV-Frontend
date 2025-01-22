@@ -1,0 +1,35 @@
+.bot-n {
+    background: #312d2d;
+    border-radius: 24px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    padding: 12px 72px 12px 72px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    top: 2134.89px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .registrar {
+    color: #ffffff;
+    text-align: left;
+    font-family: var(
+      --body-semibold-body-semi-bold-l-font-family,
+      "Inter-SemiBold",
+      sans-serif
+    );
+    font-size: var(--body-semibold-body-semi-bold-l-font-size, 18px);
+    line-height: var(--body-semibold-body-semi-bold-l-line-height, 140%);
+    font-weight: var(--body-semibold-body-semi-bold-l-font-weight, 600);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }

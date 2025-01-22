@@ -1,325 +1,190 @@
-import React from 'react'
-import './InformeRegistro.scss'
+import "./InformeRegistro.scss";
+import { BotonRegistrar } from "../BotonRegistrar/BotonRegistrar.jsx";
+import { Wrapper } from "../Wrapper/Wrapper.jsx";
+import { RadioInputVariasOpciones } from "../RadioInputVariasOpciones/RadioInputVariasOpciones.jsx";
+import { PropiedadesInputVO } from "../PropiedadesInputVO/PropiedadesInputVO.jsx";
+import { CheckboxMarcado } from "../CheckboxMarcado/CheckboxMarcado.jsx";
+import { CheckboxPredeterminado } from "../CheckboxPredeterminado/CheckboxPredeterminado.jsx";
+import { Camara } from "../Camara/Camara.jsx";
+import { Cerrar } from "../Cerrar/Cerrar.jsx";
+import { Radio } from "../Radio/Radio.jsx";
+import { InputVertical } from "../InputVertical/InputVertical.jsx";
 
-const InformeRegistro = () => {
+export const InformeRegistro = ({ className, ...props }) => {
   return (
-   <div>
-    <div class="formulario-i-phone-13-14">
-  <form onSubmit="handleFormSubmit(event)">
-    <div class="bot-n">
-      <div class="registrar" onClick="handleRegisterClick()">Registrar</div>
-    </div>
-    <div class="frame-427319507">
-      <div class="cabecera">
-        <div class="informe-de-registro">INFORME DE REGISTRO</div>
-        <div class="fecha-entrada-n-registro">
-          <div class="vertical-form-item-input">
-            <div class="label">
-              <div class="title">Fecha de entrada</div>
+    <div className={"formulario-i-phone-13-14 " + className}>
+      <BotonRegistrar className="bot-n-instance"></BotonRegistrar>
+      <div className="frame-427319507">
+        <div className="cabecera">
+          <div className="informe-de-registro">INFORME DE REGISTRO </div>
+          <div className="fecha-entrada-n-registro">
+            <InputVertical
+              text="Fecha de entrada"
+              className="vertical-form-item-input-instance"
+            ></InputVertical>
+            <InputVertical
+              text="0456"
+              text2="N. de registro "
+              className="vertical-form-item-input-instance"
+            ></InputVertical>
+          </div>
+        </div>
+        <div className="datos-propietario">
+          <div className="prop-anonimo">
+            <div className="label">
+              <div className="title">Datos propietario </div>
             </div>
-            <div class="field">
-              <input
-                class="input"
-                type="text"
-                placeholder="MM/DD/AA"
-                onChange="handleInputChange(event)"
-              />
+            <div className="frame-47">
+              <Radio
+                text="Con propietario"
+                className="radio-group-instance"
+              ></Radio>
             </div>
           </div>
-          <div class="vertical-form-item-input">
-            <div class="label">
-              <div class="title">N. de registro</div>
+          <div className="datos">
+            <InputVertical
+              text="Nombre"
+              text2="|"
+              className="vertical-form-item-input-instance2"
+            ></InputVertical>
+            <InputVertical
+              text="Apellido(s)"
+              text2="|"
+              className="vertical-form-item-input-instance2"
+            ></InputVertical>
+            <div className="dni-tel-fono">
+              <InputVertical
+                text="DNI"
+                text2="00000000M"
+                className="vertical-form-item-input-instance"
+              ></InputVertical>
+              <InputVertical
+                text="Teléfono"
+                text2="Ex: 000 000 000"
+                className="vertical-form-item-input-instance3"
+              ></InputVertical>
             </div>
-            <div class="field2">
-              <input
-                class="input2"
-                type="text"
-                placeholder="0456"
-                onChange="handleInputChange(event)"
-              />
+            <InputVertical
+              text="Correo"
+              text2="|"
+              className="vertical-form-item-input-instance2"
+            ></InputVertical>
+            <InputVertical
+              text="Lugar"
+              text2="|"
+              className="vertical-form-item-input-instance2"
+            ></InputVertical>
+          </div>
+        </div>
+        <div className="que-es-lo-que-se-recoge">
+          <div className="title2">¿Qué es lo que se recoge? </div>
+          <div className="datos2">
+            <div className="_01">
+              <Wrapper className="wrapper-instance"></Wrapper>
+              <div className="text">Album(es) </div>
+            </div>
+            <div className="_2">
+              <Wrapper className="wrapper-instance"></Wrapper>
+              <div className="text">Conjunto fotográfico </div>
+            </div>
+            <div className="_3">
+              <Wrapper className="wrapper-instance"></Wrapper>
+              <div className="text">Sobres con fotos </div>
+            </div>
+            <div className="vertical-form-item-input">
+              <div className="label2">
+                <div className="title3">Otros </div>
+              </div>
+              <div className="field">
+                <div className="cursor"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="datos-propietario">
-        <div class="prop-anonimo">
-          <div class="label2">
-            <div class="title2">Datos propietario</div>
-          </div>
-          <div class="frame-47">
-            <div class="radio-group">
-              <div class="_02">
-                <div class="frame-48">
-                  <input
-                    class="multiple-choice-input"
-                    type="radio"
-                    name="propietario"
-                    value="con-propietario"
-                    onChange="handleRadioChange(event)"
-                  />
-                  <div class="text">Con propietario</div>
+        <div className="estado">
+          <div className="estado-general">
+            <div className="title2">Estado general </div>
+            <div className="checkbox">
+              <div className="checkbox-group">
+                <div className="checkbox2">
+                  <RadioInputVariasOpciones
+                    property1="radio"
+                    className="multiple-choice-input-instance"
+                  ></RadioInputVariasOpciones>
+                  <div className="item-01">Bueno </div>
                 </div>
               </div>
-              <div class="_01">
-                <input
-                  class="multiple-choice-input2"
-                  type="radio"
-                  name="propietario"
-                  value="anonimo"
-                  onChange="handleRadioChange(event)"
-                />
-                <div class="text">Anónimo</div>
+              <div className="checkbox-group2">
+                <div className="checkbox2">
+                  <PropiedadesInputVO className="multiple-choice-input-instance"></PropiedadesInputVO>
+                  <div className="item-01">Aceptable </div>
+                </div>
+              </div>
+              <div className="checkbox-group">
+                <div className="checkbox2">
+                  <PropiedadesInputVO className="multiple-choice-input-instance"></PropiedadesInputVO>
+                  <div className="item-01">Malo </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="tipo-de-da-o">
+            <div className="title2">Tipo de daño </div>
+            <div className="checkbox">
+              <div className="checkbox-group3">
+                <div className="checkbox2">
+                  <CheckboxMarcado className="checkbox-input-instance"></CheckboxMarcado>
+                  <div className="item-01">Barro </div>
+                </div>
+              </div>
+              <div className="checkbox-group4">
+                <div className="checkbox2">
+                  <CheckboxMarcado className="checkbox-input-instance2"></CheckboxMarcado>
+                  <div className="item-01">Humedad </div>
+                </div>
+              </div>
+              <div className="checkbox-group3">
+                <div className="checkbox2">
+                  <CheckboxPredeterminado
+                    property1="default"
+                    className="checkbox-input-instance3"
+                  ></CheckboxPredeterminado>
+                  <div className="item-01">Hongos </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="datos">
-          <div class="vertical-form-item-input2">
-            <div class="label">
-              <div class="title3">Nombre</div>
-            </div>
-            <div class="field">
-              <input
-                class="input3"
-                type="text"
-                placeholder="|"
-                onChange="handleInputChange(event)"
-              />
-            </div>
-          </div>
-          <div class="vertical-form-item-input2">
-            <div class="label">
-              <div class="title3">Apellido(s)</div>
-            </div>
-            <div class="field">
-              <input
-                class="input3"
-                type="text"
-                placeholder="|"
-                onChange="handleInputChange(event)"
-              />
-            </div>
-          </div>
-          <div class="dni-tel-fono">
-            <div class="vertical-form-item-input">
-              <div class="label">
-                <div class="title3">DNI</div>
-              </div>
-              <div class="field">
-                <input
-                  class="input3"
-                  type="text"
-                  placeholder="00000000M"
-                  onChange="handleInputChange(event)"
-                />
-              </div>
-            </div>
-            <div class="vertical-form-item-input3">
-              <div class="label">
-                <div class="title3">Teléfono</div>
-              </div>
-              <div class="field">
-                <input
-                  class="input3"
-                  type="text"
-                  placeholder="Ex: 000 000 000"
-                  onChange="handleInputChange(event)"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="vertical-form-item-input2">
-            <div class="label">
-              <div class="title3">Correo</div>
-            </div>
-            <div class="field">
-              <input
-                class="input3"
-                type="email"
-                placeholder="|"
-                onChange="handleInputChange(event)"
-              />
-            </div>
-          </div>
-          <div class="vertical-form-item-input2">
-            <div class="label">
-              <div class="title3">Lugar</div>
-            </div>
-            <div class="field">
-              <input
-                class="input3"
-                type="text"
-                placeholder="|"
-                onChange="handleInputChange(event)"
-              />
-            </div>
+        <div className="observaciones">
+          <div className="title4">Observaciones </div>
+          <div className="campo">
+            <div className="cursor2"></div>
           </div>
         </div>
-      </div>
-      <div class="que-es-lo-que-se-recoge">
-        <div class="title4">¿Qué es lo que se recoge?</div>
-        <div class="datos2">
-          <div class="_012">
-            <input
-              class="input4"
-              type="checkbox"
-              value="albumes"
-              onChange="handleCheckboxChange(event)"
-            />
-            <div class="text2">Album(es)</div>
+        <div className="escanear-formulario">
+          <div className="continue-with-google-left-aligned-fixed">
+            <Camara className="camera-instance"></Camara>
+            <div className="escanear-formulario2">Escanear formulario </div>
           </div>
-          <div class="_2">
-            <input
-              class="input4"
-              type="checkbox"
-              value="conjunto-fotografico"
-              onChange="handleCheckboxChange(event)"
-            />
-            <div class="text2">Conjunto fotográfico</div>
+          <div className="pdf">
+            <img className="rectangle-118" src="rectangle-1180.png" />
+            <div className="pdf2">Pdf </div>
+            <img className="vector" src="vector0.svg" />
           </div>
-          <div class="_3">
-            <input
-              class="input4"
-              type="checkbox"
-              value="sobres-con-fotos"
-              onChange="handleCheckboxChange(event)"
-            />
-            <div class="text2">Sobres con fotos</div>
-          </div>
-          <div class="vertical-form-item-input2">
-            <div class="label3">
-              <div class="title3">Otros</div>
-            </div>
-            <div class="field3">
-              <input
-                class="cursor2"
-                type="text"
-                placeholder="Otros..."
-                onChange="handleInputChange(event)"
-              />
-            </div>
+          <div className="button">
+            <Cerrar className="close-instance"></Cerrar>
           </div>
         </div>
-      </div>
-      <div class="estado">
-        <div class="estado-general">
-          <div class="title4">Estado general</div>
-          <div class="checkbox">
-            <div class="checkbox-group">
-              <input
-                class="multiple-choice-input"
-                type="radio"
-                name="estado-general"
-                value="bueno"
-                onChange="handleRadioChange(event)"
-              />
-              <div class="item-01">Bueno</div>
-            </div>
-            <div class="checkbox-group2">
-              <input
-                class="multiple-choice-input2"
-                type="radio"
-                name="estado-general"
-                value="aceptable"
-                onChange="handleRadioChange(event)"
-              />
-              <div class="item-01">Aceptable</div>
-            </div>
-            <div class="checkbox-group">
-              <input
-                class="multiple-choice-input2"
-                type="radio"
-                name="estado-general"
-                value="malo"
-                onChange="handleRadioChange(event)"
-              />
-              <div class="item-01">Malo</div>
-            </div>
-          </div>
-        </div>
-        <div class="tipo-de-da-o">
-          <div class="title4">Tipo de daño</div>
-          <div class="checkbox">
-            <div class="checkbox-group3">
-              <input
-                class="checkbox-input"
-                type="checkbox"
-                value="barro"
-                onChange="handleCheckboxChange(event)"
-              />
-              <div class="item-01">Barro</div>
-            </div>
-            <div class="checkbox-group4">
-              <input
-                class="checkbox-input2"
-                type="checkbox"
-                value="humedad"
-                onChange="handleCheckboxChange(event)"
-              />
-              <div class="item-01">Humedad</div>
-            </div>
-            <div class="checkbox-group3">
-              <input
-                class="checkbox-input3"
-                type="checkbox"
-                value="hongos"
-                onChange="handleCheckboxChange(event)"
-              />
-              <div class="item-01">Hongos</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="observaciones">
-        <div class="title5">Observaciones</div>
-        <div class="campo">
-          <textarea
-            class="cursor3"
-            placeholder="Escribe aquí tus observaciones"
-            onChange="handleInputChange(event)"
-          ></textarea>
-        </div>
-      </div>
-      <div class="escanear-formulario">
-        <div
-          class="continue-with-google-left-aligned-fixed"
-          onClick="handleScanForm()"
-        >
-          <img class="camera" src="camera0.svg" />
-          <div class="escanear-formulario2">Escanear formulario</div>
-        </div>
-        <div class="pdf" onClick="handleDownloadPDF()">
-          <img class="rectangle-118" src="rectangle-1180.png" />
-          <div class="pdf2">Pdf</div>
-          <img class="vector" src="vector0.svg" />
-        </div>
-        <div class="button" onClick="handleCloseForm()">
-          <img class="close" src="close0.svg" />
-        </div>
-      </div>
-      <div class="responsable">
-        <div class="title5">Responsable</div>
-        <div class="vertical-form-item-input2">
-          <div class="label">
-            <div class="title3">DNI</div>
-          </div>
-          <div class="field">
-            <input
-              class="input3"
-              type="text"
-              placeholder="00000000M"
-              onChange="handleInputChange(event)"
-            />
-          </div>
+        <div className="responsable">
+          <div className="title4">Responsable </div>
+          <InputVertical
+            text="DNI"
+            text2="00000000M"
+            className="vertical-form-item-input-instance2"
+          ></InputVertical>
         </div>
       </div>
     </div>
-  </form>
-</div>
+  );
+};
 
-   </div>
-
-  )
-}
-
-export default InformeRegistro
