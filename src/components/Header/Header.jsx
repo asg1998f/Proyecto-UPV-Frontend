@@ -1,84 +1,46 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../features/auth/authSlice";
+import {  useNavigate } from "react-router-dom";
+import "./Header.scss"
 
-const Header = () => {
-  const { user } = useSelector((state) => state.auth);
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const [text, setText] = useState("");
-  const handleChange = (e) => {
-    if (e.key === "Enter") {
-      navigate(`/search/${text}`);
-    } else {
-      setText(e.target.value);
-    }
-  };
-
-  const onLogout = () => {
-    dispatch(logout());
-    navigate("/login");
-  };
+const Header = () => { 
+const navigate = useNavigate();
 
   return (
-    <div className="header">
-      <img className="image-1" src="image-10.png" alt="Logo" />
-
-      <div className="menu-item-horizontal">
-        <div className="content">
-          <div className="navigation-item">Home</div>
-        </div>
-      </div>
-
-      <div className="menu-item-horizontal2">
-        <div className="content2">
-          <div className="navigation-item2">Nuestra historia</div>
-        </div>
-      </div>
-
-      <div className="menu-item-horizontal2">
-        <div className="content2">
-          <div className="navigation-item2">Nuestro proceso</div>
-        </div>
-      </div>
-
-      <div className="menu-item-horizontal2">
-        <div className="content2">
-          <div className="navigation-item2">FAQ</div>
-        </div>
-      </div>
-
-      <div className="menu-item-horizontal2">
-        <div className="content2">
-          <div className="navigation-item2">Ubicación y horarios</div>
-        </div>
-      </div>
-
-      <div className="menu-item-horizontal2">
-        <div className="content2">
-          <img className="icon-mail-outlined" src="icon-mail-outlined0.svg" alt="Mail Icon" />
-          <div className="navigation-item2">Contacto</div>
-        </div>
-      </div>
-
-      {user && (
-        <button onClick={onLogout} className="logout-button">
-          Logout
-        </button>
-      )}
-
-      <input
-        type="text"
-        placeholder="Search..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        onKeyDown={handleChange}
-        className="search-input"
-      />
+<div class="header">
+  <img class="image-1" src="image-10.png" />
+  <div class="menu-item-horizontal">
+    <div class="content">
+      <div class="navigation-item">Home</div>
     </div>
+  </div>
+  <div class="menu-item-horizontal2">
+    <div class="content2">
+      <div class="navigation-item2">Nuestra historia</div>
+    </div>
+  </div>
+  <div class="menu-item-horizontal2">
+    <div class="content2">
+      <div class="navigation-item2">Nuestro proceso</div>
+    </div>
+  </div>
+  <div class="menu-item-horizontal2">
+    <div class="content2">
+      <div class="navigation-item2">FAQ</div>
+    </div>
+  </div>
+  <div class="menu-item-horizontal2">
+    <div class="content2">
+      <div class="navigation-item2">Ubicación y horarios</div>
+    </div>
+  </div>
+  <div class="menu-item-horizontal2">
+    <div class="content2">
+      <img class="icon-mail-outlined" src="icon-mail-outlined0.svg" />
+      <div class="navigation-item2">Contacto</div>
+    </div>
+  </div>
+</div>
+
   );
 };
 
