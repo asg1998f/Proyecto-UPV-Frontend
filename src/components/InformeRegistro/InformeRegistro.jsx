@@ -1,14 +1,8 @@
 import React from 'react';
 import './InformeRegistro.scss'; // Import your styles
-import { useDispatch, useSelector } from 'react-redux';
-import { updateFormField } from '../redux/actions'; // Example Redux action
 
 const Formulario = () => {
-  const dispatch = useDispatch();
-  const formData = useSelector((state) => state.form); // Access Redux state
-  const handleInputChange = (field, value) => {
-    dispatch(updateFormField(field, value)); // Dispatch Redux action
-  };
+
   return (
     <div class="frame-427319507">
   <div class="cabecera">
