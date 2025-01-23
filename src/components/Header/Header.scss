@@ -1,107 +1,85 @@
-.header,
-.header * {
+.nav-top-bar-desktop,
+.nav-top-bar-desktop * {
   box-sizing: border-box;
 }
-.header {
-  background: var(--fondos-fondo, #f5f5f5);
-  padding: 0px 80px 0px 80px;
+
+.titulo-salvem-les-fotos {
+  background: var(--negro-menu, #141515);
+  padding: 0 72px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 64px;
+  position: relative;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.logo-components,
+.logo-components * {
+  box-sizing: border-box;
+}
+.logo-text {
+  display: flex;
+  flex-direction: row;
+  gap: 3.28px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 76px;
+  height: 64px;
+  position: relative;
+  object-fit: cover;
+  color:#e94f37
+
+}
+
+  
+
+.frame-11 {
   display: flex;
   flex-direction: row;
   gap: 16px;
   align-items: center;
   justify-content: flex-start;
   flex-shrink: 0;
-  height: 80px;
-  position: relative;
-}
-.image-1 {
-  flex-shrink: 0;
-  width: 139px;
-  height: 46px;
-  position: relative;
-  object-fit: cover;
-}
-.menu-item-horizontal {
-  background: var(
-    --components-menu-component-horizontalitemselectedbg,
-    rgba(0, 0, 0, 0)
-  );
-  padding: 0px var(--components-menu-global-padding, 16px) 0px
-    var(--components-menu-global-padding, 16px);
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
   height: 64px;
   position: relative;
 }
-.content {
-  border-style: solid;
-  border-color: var(--principal, #e94f37);
-  border-width: 0px 0px 2px 0px;
-  padding: var(--space-padding-paddingsm, 12px) 0px
-    var(--space-padding-paddingcontentvertical, 12px) 0px;
+
+.nav-item {
+  padding: 16px;
   display: flex;
   flex-direction: row;
-  gap: var(--components-menu-global-marginxs, 8px);
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  flex: 1;
+  justify-content: flex-start;
+  flex-shrink: 0;
   position: relative;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
-.navigation-item {
-  color: var(--principal, #e94f37);
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
-  position: relative;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.menu-item-horizontal2 {
-  padding: 0px var(--components-menu-global-padding, 16px) 0px
-    var(--components-menu-global-padding, 16px);
+
+.nav-item-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0px;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-shrink: 0;
-  height: 64px;
   position: relative;
 }
-.content2 {
-  padding: var(--space-padding-paddingsm, 12px) 0px
-    var(--space-padding-paddingcontentvertical, 12px) 0px;
-  display: flex;
-  flex-direction: row;
-  gap: var(--components-menu-global-marginxs, 8px);
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  position: relative;
-}
-.navigation-item2 {
-  color: var(--components-menu-component-itemcolor, rgba(0, 0, 0, 0.88));
+
+.nav-content {
+  color: var(--blanco-roto, #f5f5f5);
   text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
+  font-family: var(--body-16-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-16-font-size, 16px);
+  font-weight: var(--body-16-font-weight, 500);
   position: relative;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.icon-mail-outlined {
-  flex-shrink: 0;
-  width: var(--components-menu-component-iconsize, 14px);
-  height: var(--components-menu-component-iconsize, 14px);
-  position: relative;
-  overflow: visible;
 }
