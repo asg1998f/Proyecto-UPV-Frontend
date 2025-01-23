@@ -86,43 +86,21 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="ubicacion-y-horarios">
-        <div className="secondary-headline">Ubicación y horarios</div>
-        <div className="frame-62">
-          <div className="horarios-y-ubicacion">
-            <div className="card-ubicacion-y-horarios">
-              <img
-                className="icon-cloud-outlined"
-                src="icon-cloud-outlined0.svg"
-                alt="Icono de horarios"
-              />
-              <div className="texto-dire">
-                <div className="direccion">Horarios</div>
-                <div className="detalles-horarios">
-                  <span>Lunes a viernes: 7:30 hasta las 21:00</span>
-                  <span>Sábados: 8:00 hasta las 14:00</span>
-                  <span>Domingo: Cerrado</span>
-                </div>
-              </div>
-            </div>
-            <div className="card-ubicacion-y-horarios">
-              <img
-                className="icon-cloud-outlined2"
-                src="icon-cloud-outlined1.svg"
-                alt="Icono de dirección"
-              />
-              <div className="texto-dire">
-                <div className="direccion">Dirección</div>
-                <div className="direccion-detalle">
-                  Camino de Vera, s/n, Edificio 3M - 3N, 46022 Valencia
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="google-maps-container">
-            <div className="google-maps-map">
-              <iframe
+      <div class="encu-ntranos">
+  <div class="frame-80">
+    <div class="titulo">
+      <div class="headline">
+        <div class="salvem-les-fotos">Encuéntranos</div>
+        <div
+          class="puedes-venir-a-traernos-tus-fotograf-as-a-la-facultad-de-bellas-artes-de-la-upv"
+        >
+          Puedes venir a traernos tus fotografías a la Facultad de Bellas Artes
+          de la UPV.
+        </div>
+      </div>
+    </div>
+    <div class="frame-78">
+    <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1539.6753710334099!2d-0.34454972892483!3d39.48399400990552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1737546898503!5m2!1ses!2ses"
                 width="100%"
                 height="450"
@@ -132,11 +110,52 @@ const Landing = () => {
                 aria-hidden="false"
                 tabIndex="0"
                 title="Ubicación"
-              ></iframe>
-            </div>
+              ></iframe> 
+      <div class="frame-73">
+        <div class="frame-68">
+          <img class="vector" src="vector0.svg" />
+          <div class="salvem-les-fotos2">
+            Camino de Vera, s/n, Edificio 3M - 3N,
+            <br />
+            46022 Valencia
           </div>
         </div>
+        <div class="frame-69">
+          <img class="vector2" src="vector1.svg" />
+          <div class="salvem-les-fotos3">
+            L-V 07:30 a 21:00
+            <br />
+            S 08:00
+            <br />
+            D Cerrado
+          </div>
+        </div>
+        <div class="frame-70">
+          <img class="vector3" src="vector2.svg" />
+          <div class="salvem-les-fotos2">673 881 136</div>
+        </div>
+        <div class="frame-72">
+          <img class="vector4" src="vector3.svg" />
+          <div class="salvem-les-fotos2">restauración@upv.es</div>
+        </div>
+        <div class="frame-71">
+          <img class="vector5" src="vector4.svg" />
+          <div class="salvem-les-fotos4">salvemoslesfotos</div>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="frame-79">
+    <img class="vector-1" src="vector-10.svg" />
+    <div class="frame-77">
+      <div class="cookies">Cookies</div>
+      <div class="aviso-legal">Aviso legal</div>
+      <div class="pol-tica-de-privacidad">Política de privacidad</div>
+      <div class="contacto">Contacto</div>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };
