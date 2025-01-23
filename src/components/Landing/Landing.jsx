@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { gapi } from "gapi-script";
 
 const Landing = () => {
   const subirFotos = () => {
