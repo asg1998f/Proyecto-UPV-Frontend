@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState } from "react";
+import { gapi } from "gapi-script";
 
 const Landing = () => {
+  const subirFotos = () => {
+
+  }
+
   return (
-    <div>De nada Mario :) tkm</div>
-  )
-}
+    <div>
+      <h1>Subir Archivos a Google Drive</h1>
+      <input
+        type="file"
+        multiple
+        onChange={handleFileChange}
+        accept="*/*"
+      />
+      <button onClick={subirFotos} disabled={files.length === 0}>
+        Subir Archivos
+      </button>
+    </div>
+  );
+};
 
 export default Landing
