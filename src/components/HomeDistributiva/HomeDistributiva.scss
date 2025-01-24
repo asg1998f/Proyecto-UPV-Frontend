@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.fondo{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    height: 100vh;
+}
+
+.nav-sup{
+    background: #393E41;
+    
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .nav-sup-titulo{
+        font-family: Inter;
+        font-size: 16.56px;
+        font-weight: 700;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: white;
+
+    }
+
+    .ant-input-search{
+        width: 339px;
+        height: 40px;
+        border-radius: 8px 0px 0px 0px;
+    }
+    .ant-input, .ant-btn{
+        background-color: #ECEEF3;
+        color: #ECEEF3;
+    }
+}
+
+.pantalla-inf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 10px;
+
+    .pantalla-inf-titulo{
+        font-family: "Inter-Bold", sans-serif;
+        width: 80%;
+        font-size: 20px;
+        margin-left: -35px;
+    }
+
+    .pantalla-inf-botones{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 10px;
+        height: 85%;
+
+        .pantalla-inf-boton{
+            width: 161px;
+            height: 144px;
+            padding: 16px;
+            border-radius: 24px;
+            background: #FFFFFF;
+            margin-top: 10px;
+            position: relative;
+
+
+            .icono1-inf-boton{
+                top: 20px; 
+                left: 20px;
+                position: absolute;
+            }
+            .icono2-inf-boton{
+                top: 20px; 
+                right: 20px;
+                position: absolute;
+            }
+            .icono3-inf-boton{    
+                bottom: 20px; 
+                left: 20px;
+                position: absolute;
+                text-align: center;
+                color: #000022;
+                font-family: "Inter";
+                font-weight: 500;
+                font-size: 19px;
+                margin-bottom: 5px;
+            }
+            .icono4-inf-boton{
+                bottom: 20px; 
+                right: 20px;
+                position: absolute;
+            }
+        
+        }
+    
+    }
+}
