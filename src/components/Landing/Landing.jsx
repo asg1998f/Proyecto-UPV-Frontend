@@ -1,21 +1,20 @@
 import React from 'react';
 import './Landing.scss';
 import foto from '../../assets/random2.png';
-import historia from '../../assets/historia.jpg'
-import historia2 from '../../assets/historia2.jpg'
-import pictureOutlined from '../../assets/icons/picture-outlined0.svg';
-import clearOutlined from '../../assets/icons/clear-outlined0.svg';
-import laptopOutlined from '../../assets/icons/laptop-outlined0.svg';
-import hourglassOutlined from '../../assets/icons/hourglass-outlined0.svg';
-import giftOutlined from '../../assets/icons/gift-outlined0.svg';
+import historia from '../../assets/historia.jpg';
+import historia2 from '../../assets/historia2.jpg';
+import imgpf from '../../assets/imgpf.png';
+import { FaPhotoVideo, FaBroom, FaLaptop, FaHourglass, FaGift } from 'react-icons/fa';
+
 const Landing = () => {
   return (
     <>
-    <div>
-      <div className="image-container foto">
-        <img className="foto" src={foto} alt="Imagen" />
+      {/* Imagen principal */}
+      <div className="image-container">
+        <img className="foto" src={foto} alt="Imagen principal" />
       </div>
 
+      {/* Información inicial */}
       <section className="informacion-primer-fold">
         <header className="section-text">
           <h1 className="headline">
@@ -33,11 +32,11 @@ const Landing = () => {
         </header>
 
         <div className="datos">
-          <div className="lbumes">
+          <div className="albumes">
             <div className="_1-800">1.800</div>
             <div className="paragraph2">Álbumes</div>
           </div>
-          <div className="fotograf-a">
+          <div className="fotografias">
             <div className="_230-000">230.000</div>
             <div className="paragraph2">Fotografías</div>
           </div>
@@ -51,8 +50,8 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      </div>
 
+      {/* Barra de navegación superior */}
       <nav className="navbar-top">
         <div className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n">
           <span>
@@ -65,90 +64,77 @@ const Landing = () => {
         </div>
       </nav>
 
+      {/* Nuestro proceso */}
       <section className="nuestro-proceso">
-      <div class="titulo-nuestroproceso">
-    <div class="headline">
-      <div class="salvem-les-fotos">Nuestro proceso</div>
-      <div
-        class="si-quieres-recuperar-tus-im-genes-da-adas-por-la-dana-de-manera-gratuita-tr-enos-tus-lbumes-o-im-genes-a-la-facultad-de-bellas-artes-de-la-upv"
-      >
-        Si quieres recuperar tus imágenes dañadas por la DANA de manera
-        gratuita, tráenos tus álbumes o imágenes a la Facultad de Bellas Artes
-        de la UPV.
-      </div>
-    </div>
-  </div>
-  <div class="proceso">
-    <div class="frame-60">
-    <img className="icon" src={pictureOutlined} alt="Icono de proceso" />
-            <div className="frame-57">
-              <h3 className="tr-enos-tu-lbum-y-recuerdos">Tráenos tu álbum y recuerdos</h3>
+        <div className="titulo-nuestroproceso">
+          <div className="headline">
+            <div className="titulo-nuestroproceso">Nuestro proceso</div>
+            <div className="parrafo-nuestroproceso">
+              Si quieres recuperar tus imágenes dañadas por la DANA de manera gratuita, 
+              tráenos tus álbumes o imágenes a la Facultad de Bellas Artes de la UPV.
+            </div>
+          </div>
+        </div>
+
+        <div className="proceso">
+          <div className="frame">
+            <FaPhotoVideo className="icon" />
+            <div className="frame-text">
+              <h3 className='titulo-iconos'>Tráenos tu álbum y recuerdos</h3>
               <p>Recepcionamos y organizamos las fotografías recibidas y las almacenamos hasta su limpieza.</p>
             </div>
           </div>
-          <div className="frame-61">
-            <img className="icon" src={clearOutlined} alt="Icono de limpieza" />
-            <div className="frame-56">
-              <h3 className="restauramos-los-da-os">Restauramos los daños</h3>
+          <div className="frame">
+            <FaBroom className="icon" />
+            <div className="frame-text">
+              <h3 className='titulo-iconos'>Restauramos los daños</h3>
               <p>Lavado, limpieza e higienización mediante diferentes procesos para restaurar los daños.</p>
             </div>
           </div>
-          <div className="frame-63">
-            <img className="icon" src={laptopOutlined} alt="Icono de digitalización" />
-            <div className="frame-59">
-              <h3 className="digitalizamos-las-im-genes">Digitalizamos las imágenes</h3>
+          <div className="frame">
+            <FaLaptop className="icon" />
+            <div className="frame-text">
+              <h3 className='titulo-iconos'>Digitalizamos las imágenes</h3>
               <p>Digitalizamos tus fotografías restauradas para que las tengas en ambos formatos.</p>
             </div>
           </div>
-          <div className="frame-62">
-            <img className="icon" src={hourglassOutlined} alt="Icono de montaje" />
-            <div className="frame-58">
-              <h3 className="montamos-en-orden-cronol-gico">Montamos en orden cronológico</h3>
+          <div className="frame">
+            <FaHourglass className="icon" />
+            <div className="frame-text">
+              <h3 className='titulo-iconos'>Montamos en orden cronológico</h3>
               <p>Montamos tus fotografías restauradas en el mismo orden que tus álbumes originales.</p>
             </div>
           </div>
-          <div className="frame-562">
-            <img className="icon" src={giftOutlined} alt="Icono de entrega" />
-            <div className="frame-64">
-              <h3 className="te-devolvemos-tus-recuerdos">Te devolvemos tus recuerdos</h3>
+          <div className="frame">
+            <FaGift className="icon" />
+            <div className="frame-text">
+              <h3 className='titulo-iconos'>Te devolvemos tus recuerdos</h3>
               <p>Te entregamos las fotografías que hemos podido recuperar, para conservar tus recuerdos.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  <div class="im-genes">
-    <div class="frame-74">
-      <img
-        class="captura-de-pantalla-2025-01-22-a-las-13-06-16-1"
-        src="captura-de-pantalla-2025-01-22-a-las-13-06-16-10.png"
-      />
-      <div class="foto-antes-de-la-restauraci-n">
-        Foto antes de la restauración.
-      </div>
-    </div>
-    <div class="frame-75">
-      <img
-        class="captura-de-pantalla-2025-01-22-a-las-13-06-16-2"
-        src="captura-de-pantalla-2025-01-22-a-las-13-06-16-20.png"
-      />
-      <div class="foto-despu-s-de-la-restauraci-n">
-        Foto después de la restauración.
-      </div>
-    </div>
-  </div>
-  </section>
+      </section>
 
-  <div
-  class="mensaje"
->
-  <div class="parrafo">
-    ‘’No podíamos quedarnos de brazos cruzados’’
-  </div>
-  <div class="firma">
-    Ana López, responsable de Restauración
-  </div>
-</div>
+      {/* Imágenes antes y después */}
+      <section className="im-genes">
+        <div className="frame-74">
+          <img className="captura" src="captura1.png" alt="Antes" />
+          <div className="foto-antes">Foto antes de la restauración.</div>
+        </div>
+        <div className="frame-75">
+          <img className="captura" src="captura2.png" alt="Después" />
+          <div className="foto-despues">Foto después de la restauración.</div>
+        </div>
+      </section>
 
-    <section className="nuestra-historia">
+      {/* Mensaje destacado */}
+      <div className="mensaje">
+        <div className="parrafo">‘’No podíamos quedarnos de brazos cruzados’’</div>
+        <div className="firma">Ana López, responsable de Restauración</div>
+      </div>
+
+      {/* Nuestra historia */}
+      <section className="nuestra-historia">
     <div class="nuestra-historia">
   <div class="primer-bloque-nuestrahistoria">
     <div class="historia">
@@ -196,9 +182,72 @@ const Landing = () => {
   </div>
 </div>
     </section>
-    
 
+    <div class="faqs">
+  <div class="faqs-header">
+    <h1 class="faqs-title">Preguntas Frecuentes</h1>
+    <p class="faqs-subtitle">Qué necesitas saber</p>
+  </div>
+  <div class="faqs-content">
+    <div class="faq-item">
+      <button class="faq-toggle" aria-expanded="false">
+        <span class="faq-question">¿Cómo mantener en el mejor estado las fotografías hasta que pueda llevarlas?</span>
+        <img class="faq-icon" src="icon-jam-icons-outline-logos-plus0.svg" alt="Expandir pregunta" />
+      </button>
+      <div class="faq-answer">
+        Mantén las fotografías en un lugar seco, lejos de la luz directa del sol, y guárdalas en sobres o cajas libres de ácido.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" aria-expanded="false">
+        <span class="faq-question">¿Dónde tengo que llevar las fotografías?</span>
+        <img class="faq-icon" src="icon-jam-icons-outline-logos-plus1.svg" alt="Expandir pregunta" />
+      </button>
+      <div class="faq-answer">
+        Puedes llevarlas a cualquiera de nuestras oficinas o enviarlas por correo a nuestra dirección oficial.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" aria-expanded="false">
+        <span class="faq-question">¿Qué procesos utilizáis para recuperar las fotografías?</span>
+        <img class="faq-icon" src="icon-jam-icons-outline-logos-plus2.svg" alt="Expandir pregunta" />
+      </button>
+      <div class="faq-answer">
+        Utilizamos tecnología avanzada de restauración digital y limpieza manual para recuperar las fotografías.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" aria-expanded="false">
+        <span class="faq-question">¿Se pueden recuperar todas mis fotografías?</span>
+        <img class="faq-icon" src="icon-jam-icons-outline-logos-plus3.svg" alt="Expandir pregunta" />
+      </button>
+      <div class="faq-answer">
+        En la mayoría de los casos, sí. Sin embargo, dependerá del estado actual de las fotografías.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" aria-expanded="false">
+        <span class="faq-question">¿Cuánto tiempo se tarda en recuperar las fotografías?</span>
+        <img class="faq-icon" src="icon-jam-icons-outline-logos-plus4.svg" alt="Expandir pregunta" />
+      </button>
+      <div class="faq-answer">
+        El proceso puede tomar entre una y dos semanas, dependiendo de la cantidad y el estado de las fotografías.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-toggle" aria-expanded="false">
+        <span class="faq-question">¿Qué tipo de profesionales trabajan en el proyecto?</span>
+        <img class="faq-icon" src="icon-jam-icons-outline-logos-plus5.svg" alt="Expandir pregunta" />
+      </button>
+      <div class="faq-answer">
+        Contamos con expertos en restauración digital, fotógrafos profesionales y conservadores de arte.
+      </div>
+    </div>
+  </div>
+  <img class="faqs-image" src="frame-760.png" alt="Imagen representativa" />
+</div>
 
+      {/* Ubicación y horarios */}
       <section className="ubicacion-y-horarios">
         <h2 className="secondary-headline">Ubicación y horarios</h2>
         <div className="frame-62">
