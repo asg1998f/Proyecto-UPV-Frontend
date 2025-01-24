@@ -1,0 +1,47 @@
+.restauracion {
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.restauracion-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.restauracion-header h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.restauracion-header span {
+  font-size: 14px;
+  color: gray;
+}
+
+.restauracion-carpetas {
+  text-align: center;
+}
+
+.carpetas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.carpeta {
+  background: #f4f4f4;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.carpeta:hover {
+  transform: scale(1.05);
+}
+
+.carpeta-icono {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
