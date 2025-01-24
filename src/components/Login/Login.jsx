@@ -1,5 +1,5 @@
 import React from 'react';
-import './Landing.scss';
+import './Login.scss';
 
 const Login = () => {
   return (
