@@ -1,11 +1,13 @@
 import React from 'react';
 import './Landing.scss';
 import foto from '../../assets/random2.png';
+import historia from '../../assets/historia.jpg'
+import historia2 from '../../assets/historia2.jpg'
 
 const Landing = () => {
   return (
     <>
-      {/* Imagen al lado del texto */}
+    <div>
       <div className="image-container foto">
         <img className="foto" src={foto} alt="Imagen" />
       </div>
@@ -45,6 +47,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
+      </div>
 
       <nav className="navbar-top">
         <div className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n">
@@ -173,15 +176,54 @@ const Landing = () => {
 </div>
 
     <section className="nuestra-historia">
-      <header className="titulo-nuestrahistoria">
-        <h2 className="nuestra-historia2">Nuestra historia</h2>
-        <p className="descripcion-nuestrahistoria">
-          El proyecto RECUPERAR LAS MEMORIAS, impulsado por la Facultad de Bellas Artes de la Universitat Politècnica de
-          València, tiene como objetivo fundamental recuperar las fotografías familiares y la memoria de varias generaciones
-          de familias valencianas que el barro no consiguió borrar.
-        </p>
-      </header>
+    <div class="nuestra-historia">
+  <div class="primer-bloque-nuestrahistoria">
+    <div class="historia">
+      <div class="titulo-nuestrahistoria">Nuestra historia</div>
+      <div class="texto">
+        <div
+          class="subtitulo-historia"
+        >
+          Recuperar las Memorias nació del lodo y la devastación, pero sobre
+          todo, de nuestro compromiso con la memoria y la identidad.
+        </div>
+        <div
+          class="parrafo-primerbloque"
+        >
+          El 29 de octubre de 2024, una riada sin precedentes arrasó municipios
+          enteros de Valencia, llevándose consigo hogares, pertenencias y, lo
+          más doloroso, los recuerdos de toda una vida. Fotografías flotaban a
+          la deriva, atrapadas en el barro, a punto de perderse para siempre.
+        </div>
+      </div>
+    </div>
+    <img className= "imagenhistoria1" src={historia} alt="Nuestra historia" />
+  </div>
+  <div class="segundo-bloque-nuestrahistoria">
+  <img className= "imagenhistoria2" src={historia2} alt="Recuperando memorias" />
+    <div
+      class="parrafo-segundobloque"
+    >
+      Desde la Facultad de Bellas Artes de la Universitat Politècnica de
+      València, decidimos unir fuerzas para hacer frente a esta pérdida
+      irreparable. Así nació nuestro laboratorio de recuperación, donde
+      trabajamos día tras día recogiendo, limpiando, restaurando y digitalizando
+      miles de fotografías familiares. Sabemos que cada imagen es mucho más que
+      papel; es un trozo de historia, de identidad, de amor.
+      <br />
+      <br />
+      Lo que comenzó como una labor de emergencia, hoy se ha transformado en un
+      proyecto lleno de esperanza: Recuperar las Memorias. No solo
+      salvaguardamos fotografías, sino que también reconstruimos las memorias
+      que en ellas viven. Porque creemos que recordar es el acto de amor más
+      grande que podemos ofrecer, y estamos aquí para asegurarnos de que esas
+      historias sigan vivas, intactas y listas para ser compartidas con las
+      generaciones futuras.
+    </div>
+  </div>
+</div>
     </section>
+    
 
 
       <section className="ubicacion-y-horarios">

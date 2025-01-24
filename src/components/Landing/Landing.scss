@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+}
+
 //PRIMER FOLD 
 
 .image-container{
@@ -709,13 +713,12 @@
   color: var(--blanco-roto, #f5f5f5);
   text-align: center;
   font-family: var(--display-2-font-family, "Inter-Bold", sans-serif);
-  font-size: 80px; /* Incrementé el tamaño del texto */
-  line-height: 110px; /* Ajusté la altura de línea para que sea proporcional */
+  font-size: 50px;
+  line-height: 110px; 
   font-weight: var(--display-2-font-weight, 700);
   position: relative;
-  width: 100%; /* Ajusté para que el ancho se adapte mejor al contenido */
+  width: 100%;
 }
-
 
 .firma {
   color: var(--blanco-roto, #f5f5f5);
@@ -729,8 +732,8 @@
   width: 1134px;
 }
 
-
 //NUESTRA HISTORIA 
+
 .nuestra-historia,
 .nuestra-historia * {
   box-sizing: border-box;
@@ -748,7 +751,7 @@
   height: 1004px;
   position: relative;
 }
-.primer-bloque {
+.primer-bloque-nuestrahistoria {
   display: flex;
   flex-direction: row;
   row-gap: 56px;
@@ -770,11 +773,11 @@
   width: 573px;
   position: relative;
 }
-.salvem-les-fotos {
+.titulo-nuestrahistoria {
   color: var(--gris-oscuro, #26292b);
   text-align: left;
   font-family: var(--h1-font-family, "Inter-Bold", sans-serif);
-  font-size: var(--h1-font-size, 60px);
+  font-size: var(--h1-font-size, 65px);
   line-height: var(--h1-line-height, 110%);
   font-weight: var(--h1-font-weight, 700);
   position: relative;
@@ -791,7 +794,7 @@
   height: 206px;
   position: relative;
 }
-.recuperar-las-memorias-naci-del-lodo-y-la-devastaci-n-pero-sobre-todo-de-nuestro-compromiso-con-la-memoria-y-la-identidad {
+.subtitulo-historia{
   color: var(--gris-oscuro, #26292b);
   text-align: left;
   font-family: var(--h3-font-family, "Inter-Medium", sans-serif);
@@ -799,25 +802,29 @@
   font-weight: var(--h3-font-weight, 500);
   position: relative;
   align-self: stretch;
+  max-width: 35rem; 
+  text-align: justify; 
 }
-.el-29-de-octubre-de-2024-una-riada-sin-precedentes-arras-municipios-enteros-de-valencia-llev-ndose-consigo-hogares-pertenencias-y-lo-m-s-doloroso-los-recuerdos-de-toda-una-vida-fotograf-as-flotaban-a-la-deriva-atrapadas-en-el-barro-a-punto-de-perderse-para-siempre {
+.parrafo-primerbloque {
   color: var(--gris-oscuro, #26292b);
   text-align: left;
   font-family: var(--body-16-font-family, "Inter-Medium", sans-serif);
-  font-size: var(--body-16-font-size, 16px);
+  font-size: var(--body-16-font-size, 22px);
   font-weight: var(--body-16-font-weight, 500);
   position: relative;
-  flex: 1;
-  width: 527px;
+  flex: 2;
+  max-width: 35rem; /* Máxima anchura para buen diseño */
+  text-align: justify; /* Justifica el texto */
 }
-.captura-de-pantalla-2025-01-22-a-las-11-10-02-1 {
+
+.historia {
   flex-shrink: 0;
   width: 521px;
   height: 347px;
   position: relative;
   object-fit: cover;
 }
-.segundo-bloque {
+.segundo-bloque-nuestrahistoria{
   display: flex;
   flex-direction: row;
   row-gap: 102px;
@@ -829,19 +836,33 @@
   flex-shrink: 0;
   position: relative;
 }
-.captura-de-pantalla-2025-01-22-a-las-13-01-08-1 {
+.historia2{
   flex-shrink: 0;
   width: 524px;
   height: 352.4px;
   position: relative;
   object-fit: cover;
 }
-.desde-la-facultad-de-bellas-artes-de-la-universitat-polit-cnica-de-val-ncia-decidimos-unir-fuerzas-para-hacer-frente-a-esta-p-rdida-irreparable-as-naci-nuestro-laboratorio-de-recuperaci-n-donde-trabajamos-d-a-tras-d-a-recogiendo-limpiando-restaurando-y-digitalizando-miles-de-fotograf-as-familiares-sabemos-que-cada-imagen-es-mucho-m-s-que-papel-es-un-trozo-de-historia-de-identidad-de-amor-lo-que-comenz-como-una-labor-de-emergencia-hoy-se-ha-transformado-en-un-proyecto-lleno-de-esperanza-recuperar-las-memorias-no-solo-salvaguardamos-fotograf-as-sino-que-tambi-n-reconstruimos-las-memorias-que-en-ellas-viven-porque-creemos-que-recordar-es-el-acto-de-amor-m-s-grande-que-podemos-ofrecer-y-estamos-aqu-para-asegurarnos-de-que-esas-historias-sigan-vivas-intactas-y-listas-para-ser-compartidas-con-las-generaciones-futuras {
+.parrafo-segundobloque{
   color: var(--gris-oscuro, #26292b);
   text-align: left;
   font-family: var(--body-16-font-family, "Inter-Medium", sans-serif);
-  font-size: var(--body-16-font-size, 16px);
+  font-size: var(--body-16-font-size, 22px);
   font-weight: var(--body-16-font-weight, 500);
   position: relative;
-  width: 524px;
+  max-width: 35rem; /* Máxima anchura para buen diseño */
+  text-align: justify; /* Justifica el texto */
+}
+.imagenhistoria1 {
+  flex-shrink: 0;
+  height: 370px;
+  position: relative;
+  object-fit: cover;
+}
+
+.imagenhistoria2{
+  flex-shrink: 0;
+  height: 450px;
+  position: relative;
+  object-fit: cover;
 }
