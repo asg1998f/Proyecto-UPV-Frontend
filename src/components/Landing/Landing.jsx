@@ -3,7 +3,11 @@ import './Landing.scss';
 import foto from '../../assets/random2.png';
 import historia from '../../assets/historia.jpg'
 import historia2 from '../../assets/historia2.jpg'
-
+import pictureOutlined from '../../assets/icons/picture-outlined0.svg';
+import clearOutlined from '../../assets/icons/clear-outlined0.svg';
+import laptopOutlined from '../../assets/icons/laptop-outlined0.svg';
+import hourglassOutlined from '../../assets/icons/hourglass-outlined0.svg';
+import giftOutlined from '../../assets/icons/gift-outlined0.svg';
 const Landing = () => {
   return (
     <>
@@ -76,72 +80,41 @@ const Landing = () => {
   </div>
   <div class="proceso">
     <div class="frame-60">
-      <img class="picture-outlined" src="picture-outlined0.svg" />
-      <div class="frame-57">
-        <div class="tr-enos-tu-lbum-y-recuerdos">
-          Tráenos tu álbum y recuerdos
-        </div>
-        <div
-          class="recepcionamos-y-organizamos-las-fotograf-as-recibidas-y-las-almacenamos-hasta-su-limpieza"
-        >
-          Recepcionamos y organizamos las fotografías recibidas y las
-          almacenamos hasta su limpieza.
-        </div>
-      </div>
-    </div>
-    <div class="frame-61">
-      <img class="clear-outlined" src="clear-outlined0.svg" />
-      <div class="frame-56">
-        <div class="restauramos-los-da-os">Restauramos los daños</div>
-        <div
-          class="lavado-limpieza-e-higienizaci-n-mediante-diferentes-procesos-para-restaurar-los-da-os"
-        >
-          Lavado, limpieza e higienización mediante diferentes procesos para
-          restaurar los daños.
-        </div>
-      </div>
-    </div>
-    <div class="frame-63">
-      <img class="laptop-outlined" src="laptop-outlined0.svg" />
-      <div class="frame-59">
-        <div class="digitalizamos-las-im-genes">Digitalizamos las imágenes</div>
-        <div
-          class="digitalizamos-tus-fotograf-as-restauradas-para-que-las-tengas-en-ambos-formatos"
-        >
-          Digitalizamos tus fotografías restauradas para que las tengas en ambos
-          formatos.
+    <img className="icon" src={pictureOutlined} alt="Icono de proceso" />
+            <div className="frame-57">
+              <h3 className="tr-enos-tu-lbum-y-recuerdos">Tráenos tu álbum y recuerdos</h3>
+              <p>Recepcionamos y organizamos las fotografías recibidas y las almacenamos hasta su limpieza.</p>
+            </div>
+          </div>
+          <div className="frame-61">
+            <img className="icon" src={clearOutlined} alt="Icono de limpieza" />
+            <div className="frame-56">
+              <h3 className="restauramos-los-da-os">Restauramos los daños</h3>
+              <p>Lavado, limpieza e higienización mediante diferentes procesos para restaurar los daños.</p>
+            </div>
+          </div>
+          <div className="frame-63">
+            <img className="icon" src={laptopOutlined} alt="Icono de digitalización" />
+            <div className="frame-59">
+              <h3 className="digitalizamos-las-im-genes">Digitalizamos las imágenes</h3>
+              <p>Digitalizamos tus fotografías restauradas para que las tengas en ambos formatos.</p>
+            </div>
+          </div>
+          <div className="frame-62">
+            <img className="icon" src={hourglassOutlined} alt="Icono de montaje" />
+            <div className="frame-58">
+              <h3 className="montamos-en-orden-cronol-gico">Montamos en orden cronológico</h3>
+              <p>Montamos tus fotografías restauradas en el mismo orden que tus álbumes originales.</p>
+            </div>
+          </div>
+          <div className="frame-562">
+            <img className="icon" src={giftOutlined} alt="Icono de entrega" />
+            <div className="frame-64">
+              <h3 className="te-devolvemos-tus-recuerdos">Te devolvemos tus recuerdos</h3>
+              <p>Te entregamos las fotografías que hemos podido recuperar, para conservar tus recuerdos.</p>
         </div>
       </div>
     </div>
-    <div class="frame-62">
-      <img class="hourglass-outlined" src="hourglass-outlined0.svg" />
-      <div class="frame-58">
-        <div class="montamos-en-orden-cronol-gico">
-          Montamos en orden cronológico
-        </div>
-        <div
-          class="montamos-tus-fotograf-as-restauradas-en-el-mismo-orden-que-tus-lbumes-originales"
-        >
-          Montamos tus fotografías restauradas en el mismo orden que tus álbumes
-          originales.
-        </div>
-      </div>
-    </div>
-    <div class="frame-562">
-      <div class="frame-64">
-        <img class="gift-outlined" src="gift-outlined0.svg" />
-        <div class="te-devolvemos-tus-recuerdos">
-          Te devolvemos tus recuerdos
-        </div>
-        <div
-          class="te-entregamos-las-fotograf-as-que-hemos-podido-recuperar-para-conservar-tus-recuerdos"
-        >
-          Te entregamos las fotografías que hemos podido recuperar, para
-          conservar tus recuerdos.
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="im-genes">
     <div class="frame-74">
       <img
