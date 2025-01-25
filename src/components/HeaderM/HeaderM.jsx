@@ -5,11 +5,7 @@ import Search from 'antd/es/input/Search'
 const HeaderM = (props) => {
   return (
     <div className="nav-sup">
-<<<<<<< HEAD
-            <div>
-=======
             <div className="nav-sup-titulo">
->>>>>>> develop
                 <p className='tituloHeader'>{props.title}</p>
                 <img src={props.logo} alt="" srcset="" />
             </div>
