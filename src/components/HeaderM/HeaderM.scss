@@ -4,12 +4,16 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+<<<<<<< HEAD
 .fondo{
     display: flex;
     flex-direction: column;
     background-color: #F5F5F5;
     height: 100vh;
 }
+=======
+
+>>>>>>> develop
 .nav-sup{
     background: #393E41;
     border-bottom-right-radius: 24px;
@@ -20,14 +24,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .nav-sup-titulo{
-        font-family: Inter;
-        font-size: 16.56px;
-        font-weight: 700;
-        text-align: center;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        color: white;
+        margin-bottom: 20px;
     }
     .ant-input-search{
         width: 339px;
@@ -38,43 +37,4 @@
         background-color: #ECEEF3;
         color: #ECEEF3;
     }
-}
-.pantalla-inf{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    padding: 10px;
-}
-.pantalla-inf-botones{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 10px;
-    height: 85%;
-}
-.pantalla-inf-boton{
-    width: 161px;
-    height: 144px;
-    padding: 16px;
-    border-radius: 24px;
-    background: #FFFFFF;
-    margin-top: 10px;
-}
-.tituloHeader{
-    //styleName: Medium;
-font-family: Inter;
-font-size: 22px;
-font-weight: 500;
-line-height: 24.2px;
-text-align: center;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-color: white;
-}
-.divReturnHeader{
-    display: flex;
-    flex-direction: column;
 }

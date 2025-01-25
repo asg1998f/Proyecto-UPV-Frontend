@@ -5,13 +5,23 @@ import Landing from './components/Landing/Landing'
 import InformeRegistro from './components/InformeRegistro/InformeRegistro'
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
+<<<<<<< HEAD
 import Header from './components/HeaderM/HeaderM'
+=======
+import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
+import LogoSalvar from './assets/iconos/LogoSalvar.png'
+>>>>>>> develop
 
+const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  navigator.userAgent
+)
 
 function App() {
 
-  return (
+  return (   
     <>
+    {/* {esMobil ? 
+    (       */}
     <BrowserRouter>
     <Header/>
     <Routes>

@@ -1,10 +1,11 @@
 import React from 'react'
-import './Header.scss'
+import './HeaderM.scss'
 import Search from 'antd/es/input/Search'
-const Header = (props) => {
+
+const HeaderM = (props) => {
   return (
     <div className="nav-sup">
-            <div>
+            <div className="nav-sup-titulo">
                 <p className='tituloHeader'>{props.title}</p>
                 <img src={props.logo} alt="" srcset="" />
             </div>
@@ -17,4 +18,5 @@ const Header = (props) => {
     </div>
   )
 }
-export default Header
+
+export default HeaderM
