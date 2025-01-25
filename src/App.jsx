@@ -7,6 +7,7 @@ import Header from './components/Header/Header'
 import Login from './components/Login/Login'
 import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
 import LogoSalvar from './assets/iconos/LogoSalvar.png'
+import RestauracionImagenes from './components/RestauracionImagenes/RestauracionImagenes'
 
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<HomeDistributiva
       logo = {LogoSalvar}/>}></Route>
+       <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
       </Routes>
     </BrowserRouter>
       ) 

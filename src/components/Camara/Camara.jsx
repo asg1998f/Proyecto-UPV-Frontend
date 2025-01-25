@@ -6,7 +6,7 @@ export default class Camara extends Component {
     super(props);
     this.state = {
       imagen: null,
-      mostrarCamara: false // La cámara estará cerrada por defecto
+      mostrarCamara: false 
     };
     this.webcam = React.createRef();
   }
@@ -20,17 +20,17 @@ export default class Camara extends Component {
   };
 
   cerrarCamara = () => {
-    // Detiene los tracks activos del stream
+    
     if (this.webcam.current && this.webcam.current.stream) {
       const tracks = this.webcam.current.stream.getTracks();
       tracks.forEach((track) => track.stop());
-      this.webcam.current.stream = null; // Limpia la referencia del stream
+      this.webcam.current.stream = null; 
     }
 
-    // Actualiza el estado interno y llama al método onClose del componente padre
+
     this.setState({ mostrarCamara: false }, () => {
       if (this.props.onClose) {
-        this.props.onClose(); // Notifica al componente padre que se ha cerrado la cámara
+        this.props.onClose(); 
       }
     });
   };
@@ -41,7 +41,7 @@ export default class Camara extends Component {
 
   render() {
     const videoConstraints = {
-      facingMode: "environment" // Configura la cámara trasera
+      facingMode: "environment" 
     };
 
     return (
@@ -56,7 +56,7 @@ export default class Camara extends Component {
               width={350}
               videoConstraints={videoConstraints}
               onUserMedia={(stream) => {
-                this.webcam.current.stream = stream; // Guarda la referencia del stream
+                this.webcam.current.stream = stream; 
               }}
               onUserMediaError={() => {
                 console.error("Error al acceder a la cámara");
