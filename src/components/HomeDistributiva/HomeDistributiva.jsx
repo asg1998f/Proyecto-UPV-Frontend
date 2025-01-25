@@ -1,15 +1,15 @@
 import "./HomeDistributiva.scss"
 import HeaderM from '../HeaderM/HeaderM'
-import Registro from '../../assets/iconos/IconoRegistrar.png'
-import RegistroFlecha from '../../assets/iconos/IconoRegistrarFlecha.png'
-import Master from '../../assets/iconos/IconoMaster.png'
-import Almacen from '../../assets/iconos/IconoAlmacen.png'
-import AlmacenFlecha from '../../assets/iconos/IconoAlmacenFlecha.png'
-import Restaurar from '../../assets/iconos/IconoRestaurar.png'
-import RestaurarFlecha from '../../assets/iconos/IconoRestaurarFlecha.png'
-import Digitalizar from '../../assets/iconos/IconoDigitalizar.png'
-import Entregar from '../../assets/iconos/IconoEntregar.png'
-import EntregarFlecha from '../../assets/iconos/IconoEntregarFlecha.png'
+// import Registro from '../../assets/iconos/IconoRegistrar.png'
+// import RegistroFlecha from '../../assets/iconos/IconoRegistrarFlecha.png'
+// import Master from '../../assets/iconos/IconoMaster.png'
+// import Almacen from '../../assets/iconos/IconoAlmacen.png'
+// import AlmacenFlecha from '../../assets/iconos/IconoAlmacenFlecha.png'
+// import Restaurar from '../../assets/iconos/IconoRestaurar.png'
+// import RestaurarFlecha from '../../assets/iconos/IconoRestaurarFlecha.png'
+// import Digitalizar from '../../assets/iconos/IconoDigitalizar.png'
+// import Entregar from '../../assets/iconos/IconoEntregar.png'
+// import EntregarFlecha from '../../assets/iconos/IconoEntregarFlecha.png'
 
 
 
@@ -30,7 +30,7 @@ const HomeDistributiva = (props) => {
             <div className="pantalla-inf-botones">
                 <div className="pantalla-inf-boton">
                     <div className="icono1-inf-boton">
-                        <img src={Registro}/>
+                        {/* <img src={Registro}/> */}
                     </div>
                     <div className="icono2-inf-boton">
                         
@@ -39,12 +39,12 @@ const HomeDistributiva = (props) => {
                         Registrar
                     </div>
                     <div className="icono4-inf-boton">
-                        <img src={RegistroFlecha}/>
+                        {/* <img src={RegistroFlecha}/> */}
                     </div>
                 </div>
                 <div className="pantalla-inf-boton">
                 <div className="icono1-inf-boton">
-                        <img src={Master}/>
+                        {/* <img src={Master}/> */}
                     </div>
                     <div className="icono2-inf-boton">
                         
@@ -59,7 +59,7 @@ const HomeDistributiva = (props) => {
                 </div>
                 <div className="pantalla-inf-boton">
                 <div className="icono1-inf-boton">
-                        <img src={Almacen}/>
+                        {/* <img src={Almacen}/> */}
                     </div>
                     <div className="icono2-inf-boton">
                         
@@ -68,13 +68,13 @@ const HomeDistributiva = (props) => {
                         Almacén
                     </div>
                     <div className="icono4-inf-boton">
-                        <img src={AlmacenFlecha}/>
+                        {/* <img src={AlmacenFlecha}/> */}
                     </div>
                 
                 </div>
                 <div className="pantalla-inf-boton">
                 <div className="icono1-inf-boton">
-                        <img src={Restaurar}/>
+                        {/* <img src={Restaurar}/> */}
                     </div>
                     <div className="icono2-inf-boton">
                         
@@ -83,13 +83,13 @@ const HomeDistributiva = (props) => {
                         Restaurar
                     </div>
                     <div className="icono4-inf-boton">
-                        <img src={RestaurarFlecha}/>
+                        {/* <img src={RestaurarFlecha}/> */}
                     </div>
                 
                 </div>
                 <div className="pantalla-inf-boton">
                 <div className="icono1-inf-boton">
-                        <img src={Digitalizar}/>
+                        {/* <img src={Digitalizar}/> */}
                     </div>
                     <div className="icono2-inf-boton">
                         
@@ -104,7 +104,7 @@ const HomeDistributiva = (props) => {
                 </div>
                 <div className="pantalla-inf-boton">
                 <div className="icono1-inf-boton">
-                        <img src={Entregar}/>
+                        {/* <img src={Entregar}/> */}
                     </div>
                     <div className="icono2-inf-boton">
                         
@@ -113,7 +113,7 @@ const HomeDistributiva = (props) => {
                         Entregar
                     </div>
                     <div className="icono4-inf-boton">
-                        <img src={EntregarFlecha}/>
+                        {/* <img src={EntregarFlecha}/> */}
                     </div>
 
                 </div>
