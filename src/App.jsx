@@ -5,23 +5,39 @@ import Landing from './components/Landing/Landing'
 import InformeRegistro from './components/InformeRegistro/InformeRegistro'
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
+import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
+import LogoSalvar from './assets/iconos/LogoSalvar.png'
 import Dashboard from './components/Dashboard/Dashboard'
 
+const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  navigator.userAgent
+)
 
 function App() {
 
-  return (
+  return (   
     <>
+    {esMobil ? 
+    (      
     <BrowserRouter>
-    <Header/>
-    <Routes>
-      <Route path="/" element={ <Landing/>} />
-      <Route path="/informeregistro" element={<InformeRegistro/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
-    </Routes>
+      <Routes>
+        <Route path="/home" element={<HomeDistributiva
+      logo = {LogoSalvar}/>}></Route>
+      </Routes>
     </BrowserRouter>
-    
+      ) 
+    :
+     (
+      <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" element={ <Landing/>} />
+        <Route path="/informeregistro" element={<InformeRegistro/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+      </Routes>
+      </BrowserRouter>)}
+
     </>
   )
 }

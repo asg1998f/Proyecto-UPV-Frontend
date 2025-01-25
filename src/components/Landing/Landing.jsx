@@ -2,6 +2,7 @@ import React from 'react';
 import './Landing.scss';
 
 const Landing = () => {
+  
   return (
     <div className="nuestra-historia">
       <div className="titulo">
@@ -161,3 +162,4 @@ const Landing = () => {
 };
 
 export default Landing
+
