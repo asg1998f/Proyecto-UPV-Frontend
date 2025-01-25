@@ -20,7 +20,9 @@ function App() {
     (
     <BrowserRouter>
       <Routes>
-        <Route path="/ubicacionAlmacenmb" element={<UbicacionAlmacen
+       <HeaderM/>
+        <Route path="/restauracionLote" element={<restauracionLote/>}/>
+        <Route path="Home" element={<UbicacionAlmacen
       logo = {avion}/>}></Route>
       </Routes>
     </BrowserRouter>
