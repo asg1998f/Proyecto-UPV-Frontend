@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import iconoregistro from "../../assets/registrar-icono.png"
+import "./InformeRegistro.scss"
 
 const InformeRegistro = () => {
   const obtenerFechaActual = () => {
@@ -260,10 +262,12 @@ const InformeRegistro = () => {
     <div className="container-formulario">
       <div className='sector-0'>
         <div className='container-titulo'>
-          <div className='logo-back'>back</div>
+        <svg className='atras' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M22.2857 10.0088H5.14286L10.7829 3.42405C10.9435 3.23799 11.0711 3.01663 11.1581 2.77274C11.2451 2.52884 11.2899 2.26724 11.2899 2.00303C11.2899 1.73881 11.2451 1.47721 11.1581 1.23332C11.0711 0.989426 10.9435 0.768064 10.7829 0.582004C10.4617 0.209234 10.0272 0 9.57429 0C9.1214 0 8.68691 0.209234 8.36572 0.582004L1.01143 9.1882C0.367564 9.93544 0.00382764 10.9503 0 12.0102C0.00834272 13.0632 0.371733 14.0699 1.01143 14.8123L8.36572 23.4185C8.52555 23.6038 8.71508 23.7505 8.92349 23.8503C9.1319 23.95 9.3551 24.0009 9.58035 24C9.80559 23.9991 10.0285 23.9463 10.2363 23.8448C10.4441 23.7433 10.6327 23.5951 10.7914 23.4084C10.9501 23.2218 11.0758 23.0006 11.1613 22.7572C11.2467 22.5139 11.2903 22.2533 11.2895 21.9904C11.2887 21.7274 11.2436 21.4672 11.1566 21.2246C11.0697 20.9819 10.9427 20.7617 10.7829 20.5764L5.14286 14.0117H22.2857C22.7404 14.0117 23.1764 13.8008 23.4979 13.4255C23.8194 13.0501 24 12.5411 24 12.0102C24 11.4794 23.8194 10.9703 23.4979 10.595C23.1764 10.2197 22.7404 10.0088 22.2857 10.0088Z" fill="#E6E6E6"/>
+</svg>
           <div className='titulo-vista'>
-            <h2 className='logo-registro'>registro</h2>
-    <p className='titulo-1'>REGISTRAR</p>
+    <img src={iconoregistro} alt="registrar"></img>   
+    <p className='titulo-1'>Registrar</p>
     </div>
     </div>
     </div>
@@ -272,6 +276,7 @@ const InformeRegistro = () => {
         <div className="fecha-entrada">
           <label className="fecha">Fecha de entrada</label>
           <input
+          className='input-fecha'
             type="text"
             name="fechaentrada"
             value={fechaentrada}
@@ -284,6 +289,7 @@ const InformeRegistro = () => {
         <div className="numero-registro">
           <label className="num-registro">N. de registro</label>
           <input
+          className='input-nregistro'
             type="text"
             name="numeroregistro"
             value={numeroregistro}
@@ -318,6 +324,7 @@ const InformeRegistro = () => {
        <div className='radio-buttons-1'> 
         <div className='conpropietario'>
         <input
+        className='radio-button'
             type="radio"
             name="radiobtn1"
             checked={conpropietario}
@@ -332,6 +339,7 @@ const InformeRegistro = () => {
         </div>
         <div className='anonimo'>
         <input
+        className='radio-button'
             type="radio"
             name="radiobtn1"
             checked={anonimo}
@@ -348,8 +356,9 @@ const InformeRegistro = () => {
         </div>
         {errors.radiobtn1 && <p className="error">{errors.radiobtn1}</p>}
         <div className='nombre'>
-          <label className='nombre-propietario'>Nombre</label>
+          <label className='label-propietario'>Nombre</label>
           <input
+          className='input-sector2'
             type="text"
             name="nombre"
             value={nombre}
@@ -360,8 +369,9 @@ const InformeRegistro = () => {
            {errors.nombre && <p className="error">{errors.nombre}</p>}
         </div>
         <div className='apellido'>
-          <label className='apellido-propietario'>Apellido</label>
+          <label className='label-propietario'>Apellido</label>
           <input
+          className='input-sector2'
             type="text"
             name="apellido"
             value={apellido}
@@ -371,12 +381,14 @@ const InformeRegistro = () => {
           /> 
           {errors.apellido && <p className="error">{errors.apellido}</p>}
         </div>
-        <div className='dni+telefono'>
+        <div className='dni-telefono'>
           <div className='dni'>
-          <label className='dni-propietario'>DNI</label>
+          <label className='label-propietario'>DNI</label>
           <input
+          className='input-dni-telefono'
             type="text"
             name="dni"
+            placeholder='00000000M'
             value={dni}
             onChange={onChange}
             pattern="\d{8}[A-Z]"
@@ -386,10 +398,12 @@ const InformeRegistro = () => {
           {errors.dni && <p className="error">{errors.dni}</p>}
           </div>
           <div className='telefono'>
-          <label className='telefono-propietario'>Teléfono</label>
+          <label className='label-propietario'>Teléfono</label>
           <input
+          className='input-dni-telefono'
             type="number"
             name="telefono"
+            placeholder='Ex: 000 000 000'
             value={telefono}
             onChange={onChange}
             pattern="\d{9}"
@@ -400,8 +414,9 @@ const InformeRegistro = () => {
           </div>
         </div>
         <div className='correo'>
-        <label className='correo-propietario'>Correo</label>
+        <label className='label-propietario'>Correo</label>
           <input
+          className='input-sector2'
             type="email"
             name="correo"
             value={correo}
@@ -412,8 +427,9 @@ const InformeRegistro = () => {
           {errors.correo && <p className="error">{errors.correo}</p>}
         </div>
         <div className='lugar'>
-        <label className='lugar-propietario'>Lugar</label>
+        <label className='label-propietario'>Lugar</label>
           <input
+          className='input-sector2'
             type="text"
             name="lugar"
             value={lugar}
@@ -427,6 +443,7 @@ const InformeRegistro = () => {
         <div className='inputs-numericos'>
           <div className='album'>
           <input
+          className='input-recoge'
             type="number"
             name="album"
             value={album}
@@ -435,40 +452,44 @@ const InformeRegistro = () => {
           {errors.album && <p className="error">{errors.album}</p>}
           <label className='album-propietario'>Album(es)</label>
           </div>
-          <div className='fotosenmarcadas'>
+          <div className='album'>
           <input
+          className='input-recoge'
             type="number"
             name="fotosenmarcadas"
             value={fotosenmarcadas}
             onChange={onChange}
           />
           {errors.fotosenmarcadas && <p className="error">{errors.fotosenmarcadas}</p>}
-          <label className='fotosenmarcadas-propietario'>Fotos enmarcadas</label>
+          <label className='album-propietario'>Fotos enmarcadas</label>
           </div>
-          <div className='negativos'>
+          <div className='album'>
           <input
+          className='input-recoge'
             type="number"
             name="negativos"
             value={negativos}
             onChange={onChange}
           />
           {errors.negativos && <p className="error">{errors.negativos}</p>}
-          <label className='negativos-propietario'>Negativos</label>
+          <label className='album-propietario'>Negativos</label>
           </div>
-          <div className='conjuntofotografico'>
+          <div className='album'>
           <input
+          className='input-recoge'
             type="number"
             name="conjuntofotografico"
             value={conjuntofotografico}
             onChange={onChange}
           />
           {errors.conjuntofotografico && <p className="error">{errors.conjuntofotografico}</p>}
-          <label className='conjuntofotografico-propietario'>Conjunto fotográfico</label>
+          <label className='album-propietario'>Conjunto fotográfico</label>
           </div>
         </div>
         <div className='otros'>
         <label className="recoge-otros">Otros</label>
           <input
+          className='input-otros'
             type="text"
             name="otros"
             value={otros}
@@ -478,10 +499,13 @@ const InformeRegistro = () => {
         </div>
       </div>
       <div className='sector-4'>
+    
         <h2 className='estadogeneral'>Estado general</h2>
+       
         <div className='radio-buttons-2'> 
         <div className='bueno'>
         <input
+        className='radio-button'
             type="radio"
             name="radio-button-2"
             value={bueno}
@@ -491,8 +515,9 @@ const InformeRegistro = () => {
           />
           <label className='radio-bueno'>Bueno</label>
         </div>
-        <div className='aceptable'>
+        <div className='bueno'>
         <input
+        className='radio-button'
             type="radio"
             name="radio-button-2"
             value={aceptable}
@@ -502,8 +527,9 @@ const InformeRegistro = () => {
           />
           <label className='radio-aceptable'>Aceptable</label>
         </div>
-        <div className='malo'>
+        <div className='bueno'>
         <input
+        className='radio-button'
             type="radio"
             name="radio-button-2"
             value={malo}
@@ -511,7 +537,7 @@ const InformeRegistro = () => {
               setFormData({ ...formData, bueno: false, aceptable: false, malo: true })
             }
           />
-          <label className='radio-malo'>Malo</label>
+          <label className='radio-bueno'>Malo</label>
         </div>
         </div>
         {errors.estado && <p className="error">{errors.estado}</p>}
