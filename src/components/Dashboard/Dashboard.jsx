@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Dashboard.scss"
+import Logo from '../../assets/iconos/LogoSalvar.png'
 import Registro from '../../assets/iconos/IconoRegistrarR.png'
 import Master from '../../assets/iconos/IconoMasterA.png'
 import MasterFlecha from '../../assets/iconos/IconoFlechaM.png'
@@ -16,6 +17,13 @@ import FlechaGris from '../../assets/iconos/IconoFlechaG.png'
 import CerrarSesion from '../../assets/iconos/IconoCerrarSesionN.png'
 import Lote from '../../assets/iconos/IconoCarpetaN.png'
 import Buscar from '../../assets/iconos/IconoBuscarG.png'
+import CheckRegistrar from '../../assets/iconos/IconoCheckR.png'
+import CheckMaster from '../../assets/iconos/IconoCheckM.png'
+import CheckAlmacen from '../../assets/iconos/IconoCheckA.png'
+import CheckRestaurar from '../../assets/iconos/IconoCheckRt.png'
+import CheckDigitalizar from '../../assets/iconos/IconoCheckD.png'
+import CheckMontaje from '../../assets/iconos/IconoCheckMt.png'
+import CheckEntrega from '../../assets/iconos/IconoCheckE.png'
 
 const Dashboard = () => {
     return (
@@ -93,7 +101,7 @@ const Dashboard = () => {
                                 <div className="registrar">Registrar</div>
                             </div>
                             <div className="campos">
-                                <img className="icono3" src="icono9.svg" />
+                                <img className="icono3" src={CheckRegistrar} />
                             </div>
                         </div>
                         <div className="liempieza">
@@ -101,7 +109,7 @@ const Dashboard = () => {
                                 <div className="m-ster">Máster</div>
                             </div>
                             <div className="campos">
-                                <img className="icono10" src="icono16.svg" />
+                                <img className="icono10" src={CheckMaster} />
                             </div>
                         </div>
                         <img className="line-3" src="line-30.svg" />
@@ -111,7 +119,7 @@ const Dashboard = () => {
                                 <div className="almac-n">Almacén</div>
                             </div>
                             <div className="campos">
-                                <img className="icono17" src="icono23.svg" />
+                                <img className="icono17" src={CheckAlmacen} />
                             </div>
                         </div>
                         <div className="cabecera">
@@ -119,7 +127,7 @@ const Dashboard = () => {
                                 <div className="restaurar">Restaurar</div>
                             </div>
                             <div className="campos">
-                                <img className="icono24" src="icono30.svg" />
+                                <img className="icono24" src={CheckRestaurar} />
                             </div>
                         </div>
                         <div className="frame-427319622">
@@ -127,7 +135,7 @@ const Dashboard = () => {
                                 <div className="digitalizar">Digitalizar</div>
                             </div>
                             <div className="campos">
-                                <img className="icono31" src="icono37.svg" />
+                                <img className="icono31" src={CheckDigitalizar} />
                             </div>
                         </div>
                         <div className="frame-427319623">
@@ -135,7 +143,7 @@ const Dashboard = () => {
                                 <div className="montaje">Montaje</div>
                             </div>
                             <div className="campos">
-                                <img className="icono38" src="icono44.svg" />
+                                <img className="icono38" src={CheckMontaje} />
                             </div>
                         </div>
                         <div className="frame-427319624">
@@ -143,7 +151,7 @@ const Dashboard = () => {
                                 <div className="entregar">Entregar</div>
                             </div>
                             <div className="campos">
-                                <img className="icono45" src="icono51.svg" />
+                                <img className="icono45" src={CheckEntrega} />
                             </div>
                         </div>
                     </div>
@@ -275,15 +283,12 @@ const Dashboard = () => {
                     </div>
                     <div className="logos">
                         <div className="salvem-les-fotos">
-                            <span>
-                                <span className="salvem-les-fotos-span">
-                                    SALVEM
-                                    <br />
-                                </span>
-                                <span className="salvem-les-fotos-span2">LES FOTOS</span>
-                            </span>
+                            <div className="salvem-les-fotos-span">
+                            <img src={Logo} />
+                            </div>
                         </div>
                     </div>
+                    <br />
                 </div>
                 <div className="scroll">
                     <div className="rectangle3"></div>
