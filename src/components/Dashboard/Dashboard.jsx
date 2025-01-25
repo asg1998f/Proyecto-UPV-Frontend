@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Dashboard.scss"
-import Logo from '../../assets/iconos/LogoSalvar.png'
+import Logo from '../../assets/iconos/LogoN.png'
+import LogoUsuario from '../../assets/iconos/LogoUsuario.png'
 import Registro from '../../assets/iconos/IconoRegistrarR.png'
 import Master from '../../assets/iconos/IconoMasterA.png'
 import MasterFlecha from '../../assets/iconos/IconoFlechaM.png'
@@ -36,7 +37,7 @@ const Dashboard = () => {
                             <div className="auto-layout-horizontal3">
                                 <div className="component-70">
                                     <div className="frame-427319640">
-                                        <img className="oc-on-the-laptop" src="oc-on-the-laptop0.svg" />
+                                        <img className="oc-on-the-laptop" src={LogoUsuario} />
                                     </div>
                                 </div>
                                 <div className="dario-rodriguez">Dario Rodriguez</div>
@@ -283,9 +284,7 @@ const Dashboard = () => {
                     </div>
                     <div className="logos">
                         <div className="salvem-les-fotos">
-                            <div className="salvem-les-fotos-span">
-                            <img src={Logo} />
-                            </div>
+                            <img className="logo-negro" src={Logo} />
                         </div>
                     </div>
                     <br />
