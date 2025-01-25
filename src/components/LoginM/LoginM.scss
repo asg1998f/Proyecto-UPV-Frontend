@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    }
+    
+
+.container-formulario {
+    display: flex;
+    width: 390px;
+    padding: 121.431px 24px 158.431px 24px;
+    flex-direction: column;
+    align-items: center;
+    background: var(--Fondos-Fondo, #F7F8FA);
+}
+
+.titulo {
+    display: flex;
+    justify-items: center;
+    width: 316px;
+    height: 160px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.salvem {
+    color: var(--Negro-texto, #002);
+text-align: center;
+font-family: Inter;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 0%;
+}
+
+.les-fotos {
+    color: var(--Negro-texto, #002);
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.container-usuario {
+    display: flex;
+    flex-direction: column;
+    width: 342px;
+    justify-content: center;
+    gap: 12px;
+flex-shrink: 0;
+}
+
+
+.input-usuario {
+    display: flex;
+align-items: center;
+gap: 16px;
+align-self: stretch;
+margin-top: 5px;
+}
+
+.label-usuario {
+    color: var(--Negro-texto, #002);
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%; 
+}
+
+.container-contraseña {
+    display: flex;
+    flex-direction: column;
+    width: 342px;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+.btn {
+    border-radius: 100px;
+background: var(--Textos-Negro-texto, #002);
+color: var(--Fondos-Fondo-Blanco, #FFF);
+display: flex;
+width: 342px;
+height: 56px;
+padding: 12px;
+justify-content: center;
+align-items: center;
+gap: 12px;
+flex-shrink: 0;
+margin-top: 60px;
+}
+
+.login {
+    color: var(--Fondos-Fondo-Blanco, #FFF);
+/* Header/Header XS */
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 110%;
+}
+
+.formulario {
+    display: flex;
+    padding: 24px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.forgot-password {
+    color: var(--Textos-Negro-texto, #002);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%;
+}
+
+.label-contraseña {
+    color: var(--Textos-Negro-texto, #002);
+
+/* Body Semibold/Body Semi Bold S */
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%; /* 18.2px */
+}
+
+.raro{
+    display: flex;
+width: 342px;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.texto {
+    display: flex;
+width: 316px;
+height: 160px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}

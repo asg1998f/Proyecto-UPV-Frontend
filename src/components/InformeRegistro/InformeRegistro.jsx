@@ -258,7 +258,15 @@ const InformeRegistro = () => {
   };
   return (
     <div className="container-formulario">
-    <h1 className='titulo-1'>INFORME DE REGISTRO</h1>
+      <div className='sector-0'>
+        <div className='container-titulo'>
+          <div className='logo-back'>back</div>
+          <div className='titulo-vista'>
+            <h2 className='logo-registro'>registro</h2>
+    <p className='titulo-1'>REGISTRAR</p>
+    </div>
+    </div>
+    </div>
     <form onSubmit={onSubmit}>
       <div className="sector-1">
         <div className="fecha-entrada">
