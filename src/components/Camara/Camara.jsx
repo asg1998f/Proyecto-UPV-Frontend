@@ -6,7 +6,7 @@ export default class Camara extends Component {
     super(props);
     this.state = {
       imagen: null,
-      mostrarCamara: true // Estado para mostrar u ocultar la cámara
+      mostrarCamara: false // La cámara estará cerrada por defecto
     };
     this.webcam = React.createRef();
   }
@@ -24,6 +24,7 @@ export default class Camara extends Component {
     if (this.webcam.current && this.webcam.current.stream) {
       const tracks = this.webcam.current.stream.getTracks();
       tracks.forEach((track) => track.stop());
+      this.webcam.current.stream = null; // Limpia la referencia del stream
     }
 
     // Actualiza el estado interno y llama al método onClose del componente padre
@@ -57,6 +58,9 @@ export default class Camara extends Component {
               onUserMedia={(stream) => {
                 this.webcam.current.stream = stream; // Guarda la referencia del stream
               }}
+              onUserMediaError={() => {
+                console.error("Error al acceder a la cámara");
+              }}
             />
             <br />
             <button onClick={this.foto}>Hacer captura</button>
@@ -80,6 +84,7 @@ export default class Camara extends Component {
     );
   }
 }
+
 
 
 
