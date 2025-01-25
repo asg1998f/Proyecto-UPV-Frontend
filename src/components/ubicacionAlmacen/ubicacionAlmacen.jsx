@@ -15,124 +15,106 @@ const UbicacionAlmacen = (props) => {
     logo = {props.logo}
     />
 
-    <div className="home-ub">
-      <div className="logo-ub">
-        <img className="vector1" src={vector1} alt="Logo" />
-        <div className="frame-427319580">
-          <div className="frame-427319550">
-            <div className="icono">
-              <img className="fi-sr-box" src={fiSrBox} alt="Icono" />
-            </div>
-            <div className="almac-n">Almacén</div>
-          </div>
-          <div className="frame-427319552">
-            <div className="_0012-ft">0012-FT</div>
-            <div className="_3-lbumes-40-fotos-y-1-marco">
-              3 álbumes, 40 fotos y 1 marco
-            </div>
-          </div>
+<div class="home">
+  <div class="logo">
+    <img class="vector" src="vector0.svg" />
+    <div class="frame-427319580">
+      <div class="frame-427319550">
+        <div class="icono">
+          <img class="fi-sr-box" src="fi-sr-box0.svg" />
         </div>
+        <div class="almac-n">Almacén</div>
       </div>
-      <div className="frame-427319553">
-        <div className="frame-427319592">
-          <div className="frame-427319548">
-            <div className="est-ubicado">Está ubicado</div>
-            <div className="frame-427319538">
-              <div className="frame-427319539">
-                <div className="dropdown">
-                  <div className="boton">
-                    <div className="wrapper">
-                      <div className="text">
-                        <div className="placeholder">Congelador 3</div>
-                        <img className="vector2" src={vector1} alt="Dropdown" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="frame-427319535-datos">
-                  <div className="_01">
-                    <div className="wrapper2">
-                      <div className="input">
-                        <div className="_3">3</div>
-                      </div>
-                    </div>
-                    <div className="text2">Album(es)</div>
-                  </div>
-                  <div className="_2">
-                    <div className="wrapper2">
-                      <div className="input">
-                        <div className="_3">3</div>
-                      </div>
-                    </div>                    
-                  </div>
-                  <div className="_4">
-                    <div className="wrapper2">
-                      <div className="input">
-                        <div className="_3">3</div>
-                      </div>
-                    </div>
-                    <div className="text2">Conjunto fotográfico</div>
-                  </div>
-                  <div className="_5">
-                    <div className="wrapper2">
-                      <div className="input">
-                        <div className="_3">3</div>
-                      </div>
-                    </div>
-                    <div className="text2">Fotos enmarcadas</div>
-                  </div>
-                  <div className="_32">
-                    <div className="wrapper2">
-                      <div className="input">
-                        <div className="_3">3</div>
-                      </div>
-                    </div>
-                    <div className="text2">Negativos</div>
-                  </div>
-                  <div className="_6">
-                    <div className="wrapper2">
-                      <div className="input">
-                        <div className="_3">3</div>
-                      </div>
-                    </div>
-                    <div className="text2">Diapositivas</div>
-                  </div>
-                  <div className="_7">
-                    <div className="wrapper2">
-                      <div className="input">
-                        <div className="_3">3</div>
-                      </div>
-                    </div>
-                    <div className="text2">Orlas</div>
-                  </div>
-                  <div className="vertical-form-item-input">
-                    <div className="label">
-                      <div className="title">Otros</div>
-                    </div>
-                    <div className="field">
-                      <div className="queda-un-marco-fuera-del-congelador">
-                        Queda un marco fuera del congelador
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="validado-por-cristina-p">
-            Validado por: Cristina P.
-          </div>
-        </div>
-      </div>
-      <div className="frame-427319584">
-        <div className="bot-n">
-          <div className="validar">Editar</div>
-        </div>
-        <div className="bot-n2">
-          <div className="validar2">Restaurar</div>
+      <div class="frame-427319552">
+        <div class="_0012-ft">0012-FT</div>
+        <div class="_3-lbumes-40-fotos-y-1-marco">
+          3 álbumes, 40 fotos y 1 marco
         </div>
       </div>
     </div>
+  </div>
+  <div class="frame-427319549">
+    <div class="a-adir-ubicaci-n">Añadir ubicación</div>
+    <div class="frame-427319538">
+      <div class="frame-427319539">
+        <div class="dropdown">
+          <img class="icono2" src="icono1.svg" />
+          <div class="boton">
+            <div class="wrapper">
+              <div class="text">
+                <div class="placeholder">Congelador</div>
+                <img class="vector2" src="vector1.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-427319535-datos">
+          <div class="_01">
+            <div class="wrapper2">
+              <div class="input">
+                <div class="_3">3</div>
+              </div>
+            </div>
+            <div class="text2">Album(es)</div>
+          </div>
+          <div class="_4">
+            <div class="wrapper2">
+              <div class="input">
+                <div class="_3">0</div>
+              </div>
+            </div>
+            <div class="text2">Conjunto fotográfico</div>
+          </div>
+          <div class="_5">
+            <div class="wrapper2">
+              <div class="input">
+                <div class="_3">0</div>
+              </div>
+            </div>
+            <div class="text2">Fotos enmarcadas</div>
+          </div>
+          <div class="_32">
+            <div class="wrapper2">
+              <div class="input">
+                <div class="_3">8</div>
+              </div>
+            </div>
+            <div class="text2">Negativos</div>
+          </div>
+          <div class="vertical-form-item-input">
+            <div class="label">
+              <div class="title">Otros</div>
+            </div>
+            <div class="field">
+              <div class="queda-un-marco-fuera-del-congelador">
+                Queda un marco fuera del congelador
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <img class="icono3" src="icono2.svg" />
+        <div class="boton">
+          <div class="wrapper">
+            <div class="text">
+              <div class="placeholder">Armario</div>
+              <img class="vector3" src="vector2.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-427319582">
+        <img class="icono4" src="icono3.svg" />
+        <div class="label2">Pasa directamente a restauración</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot-n">
+    <div class="validar">Validar</div>
+  </div>
+</div>
+
     </>
   );
 };

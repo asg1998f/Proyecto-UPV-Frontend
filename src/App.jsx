@@ -20,8 +20,8 @@ function App() {
     (
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<UbicacionAlmacen
-      logo = {avion}/>}></Route>
+      <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
+        <Route path="UbicacionAlmacen" element={<UbicacionAlmacen logo = {avion}/>}></Route>
       </Routes>
     </BrowserRouter>
       )
@@ -32,7 +32,6 @@ function App() {
       <Routes>
         <Route path="/" element={ <Landing/>} />
         <Route path="/informeregistro" element={<InformeRegistro/>}/>
-        <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen/>}/>
       </Routes>
       </BrowserRouter>)}
     </>
