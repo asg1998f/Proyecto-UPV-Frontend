@@ -1,4 +1,6 @@
-import './Restauracion.scss'; // Archivo de estilos
+import { FaArrowRight } from "react-icons/fa";
+import HeaderRestauracion from '../HeaderRestauracion/HederRestauracion';
+import './Restauracion.scss';
 
 const Restauracion = () => {
   const carpetas = [
@@ -11,16 +13,12 @@ const Restauracion = () => {
 
   const handleSeleccionarCarpeta = (nombreCarpeta) => {
     alert(`Accediendo a la cámara para: ${nombreCarpeta}`);
-    // Aquí puedes incluir la lógica para abrir la cámara
+    // Aquí la lógica para abrir la cámara
   };
 
   return (
     <div className="restauracion">
-      <div className="restauracion-header">
-        <h2>Restauración</h2>
-        <p>0012-FT</p>
-        <span>3 álbumes, 40 fotos y 1 marco</span>
-      </div>
+      <HeaderRestauracion></HeaderRestauracion>
       <div className="restauracion-carpetas">
         <p>¿Qué quieres fotografiar?</p>
         <div className="carpetas-grid">
@@ -32,7 +30,10 @@ const Restauracion = () => {
             >
               <div className="carpeta-icono">📁</div>
               <p>{carpeta.nombre}</p>
-            </div>
+                <div className="icon-circle"> 
+                  <FaArrowRight style={{  color: "black", fontSize: "16px", marginTop: "7px" }} /> 
+                </div>
+              </div>
           ))}
         </div>
       </div>
