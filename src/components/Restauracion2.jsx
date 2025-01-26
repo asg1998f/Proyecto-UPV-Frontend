@@ -12,9 +12,10 @@ const Restauracion2 = () => {
       {/* Sección de imágenes */}
       <section className="imagenes-section">
         <h2>Imágenes</h2>
+        <button className="boton-seleccionar">Seleccionar</button>
         <div className="imagenes-grid">
           {/* Generar imágenes dinámicamente */}
-          {[...Array(12)].map((_, index) => (
+          {[...Array(13)].map((_, index) => (
             <div className="imagen-item" key={index}>
               <img src={gato} alt={`Imagen ${index + 1}`} />
             </div>

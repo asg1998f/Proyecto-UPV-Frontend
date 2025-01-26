@@ -68,17 +68,29 @@
     .boton-validar {
       padding: 10px 16px;
       border: none;
-      border-radius: 8px;
+      border-radius: 50px;
       font-size: 14px;
       cursor: pointer;
     }
   
     .boton-agregar {
       background-color: #e0e0e0;
+      color: #0a0909;
     }
   
     .boton-validar {
-      background-color: #dff37c;
-      color: black;
+      background-color: #002;
+      color: rgb(245, 241, 245);
     }
   }
+  
+  .boton-seleccionar {
+    background-color: #dff37c;
+    color: black;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    display: flex;
+    justify-items: flex-end;   
+}
