@@ -542,3 +542,24 @@ margin-top: 60px;
   align-items: flex-end;
   justify-content: flex-start;
 }
+
+
+.error {
+  color: #d9534f; /* Rojo claro */
+  background-color: #f9d6d5; /* Fondo rojo pálido */
+  border: 1px solid #d9534f;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-top: 5px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
