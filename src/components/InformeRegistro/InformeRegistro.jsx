@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import iconoregistro from "../../assets/registrar-icono.png"
 import "./InformeRegistro.scss"
+import {  Button  } from 'antd';
 
 const InformeRegistro = () => {
   const obtenerFechaActual = () => {
@@ -8,7 +9,7 @@ const InformeRegistro = () => {
     const dia = String(fechaActual.getDate()).padStart(2, '0');
     const mes = String(fechaActual.getMonth() + 1).padStart(2, '0');
     const anio = fechaActual.getFullYear();
-    return `${dia}/${mes}/${anio}`; // Formato DD/MM/AAAA
+    return `${dia}/${mes}/${anio}`; 
   };
 
   const [formData, setFormData] = useState({
@@ -80,15 +81,13 @@ const InformeRegistro = () => {
     const newErrors = {};
 
     if (fechaentrada) {
-      const fechaRegex = /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/; // Formato DD/MM/AAAA
+      const fechaRegex = /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/; 
       if (!fechaRegex.test(fechaentrada)) {
         newErrors.fechaentrada = "El formato de fecha debe ser DD/MM/AAAA";
       } else {
-        const [dia, mes, anio] = fechaentrada.split("/").map(Number); // Dividimos la fecha en partes
-        const fechaIngresada = new Date(anio, mes - 1, dia); // Creamos un objeto Date
+        const [dia, mes, anio] = fechaentrada.split("/").map(Number); 
+        const fechaIngresada = new Date(anio, mes - 1, dia); 
         const fechaActual = new Date();
-    
-        // Validar si la fecha ingresada es posterior a la fecha actual
         if (fechaIngresada > fechaActual) {
           newErrors.fechaentrada = "La fecha de entrada no puede ser posterior al día actual";
         }
@@ -100,20 +99,18 @@ const InformeRegistro = () => {
     if (!numeroregistro) {
       newErrors.numeroregistro = "El número de registro es obligatorio";
     } else {
-      const registroRegex = /^\d{4}$/; // Asegura que sean 4 números
+      const registroRegex = /^\d{4}$/; 
       if (!registroRegex.test(numeroregistro)) {
         newErrors.numeroregistro = "El número de registro debe contener exactamente 4 números";
       } else if (!nombre || !apellido) {
         newErrors.numeroregistro = "Debe completar los campos Nombre y Apellido antes de generar el número de registro completo";
       } else {
-        // Generar el número de registro con el formato deseado
         const primeraLetraNombre = nombre.trim().charAt(0).toUpperCase();
         const primeraLetraApellido = apellido.trim().charAt(0).toUpperCase();
         const formattedRegistro = `${numeroregistro}-${primeraLetraNombre}${primeraLetraApellido}`;
-        formData.numeroregistro = formattedRegistro; // Actualiza el número de registro en el estado
+        formData.numeroregistro = formattedRegistro; 
       }
     }
-    
 
     if (!conpropietario && !anonimo) {
       newErrors.propietario = "Debe seleccionar Con propietario o Anónimo";
@@ -192,21 +189,19 @@ const InformeRegistro = () => {
     
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Devuelve true si no hay errores
+    return Object.keys(newErrors).length === 0; 
   };
 
   const getNextRegistroNumber = async () => {
     try {
-      // Llamada a la API o base de datos para obtener el último registro
-      const response = await fetch('/api/ultimoregistro'); // Reemplaza con tu endpoint real
+      const response = await fetch('/api/ultimoregistro'); 
       const data = await response.json();
   
       if (data && data.ultimoRegistro) {
-        // Extraer el número del formato "0456-AS" usando regex
         const match = data.ultimoRegistro.match(/^(\d{4})-/);
         if (match) {
-          const lastNumber = parseInt(match[1], 10); // Convertir a número
-          const nextNumber = String(lastNumber + 1).padStart(4, '0'); // Incrementar y rellenar con ceros
+          const lastNumber = parseInt(match[1], 10); 
+          const nextNumber = String(lastNumber + 1).padStart(4, '0'); 
           return nextNumber;
         } else {
           throw new Error("El formato del número de registro no es válido.");
@@ -216,12 +211,9 @@ const InformeRegistro = () => {
       }
     } catch (error) {
       console.error("Error al obtener el siguiente número de registro:", error);
-      return "0001"; // Valor por defecto si ocurre un error
+      return "0001"; 
     }
   };
-
-  
-  
 
   const onChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -231,8 +223,6 @@ const InformeRegistro = () => {
         ...prevFormData,
         [name]: type === "checkbox" || type === "radio" ? checked : value,
       };
-  
-      // Verificar si el número de registro necesita formatearse
       if (name === "nombre" || name === "apellido") {
         const { nombre, apellido, numeroregistro } = updatedFormData;
   
@@ -246,8 +236,6 @@ const InformeRegistro = () => {
       return updatedFormData;
     });
   };
-  
-
   const onSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -298,7 +286,6 @@ const InformeRegistro = () => {
             onChange={(e) => {
               const { value } = e.target;
               if (/^\d{0,4}$/.test(value)) {
-                // Solo permite hasta 4 números
                 setFormData({
                   ...formData,
                   numeroregistro: value,
@@ -306,7 +293,6 @@ const InformeRegistro = () => {
               }
             }}
             onBlur={() => {
-              // Al salir del campo, agregar automáticamente el guion y las iniciales
               if (numeroregistro.length === 4 && nombre && apellido) {
                 const formatted = `${numeroregistro}-${nombre.charAt(0).toUpperCase()}${apellido.charAt(0).toUpperCase()}`;
                 setFormData({
@@ -517,7 +503,7 @@ const InformeRegistro = () => {
         </div>
         <div className='bueno'>
         <input
-        className='radio-button'
+        className='radio-button-aceptable'
             type="radio"
             name="radio-button-2"
             value={aceptable}
@@ -525,7 +511,7 @@ const InformeRegistro = () => {
               setFormData({ ...formData, bueno: false, aceptable: true, malo: false })
             }
           />
-          <label className='radio-aceptable'>Aceptable</label>
+          <label className='label-aceptable'>Aceptable</label>
         </div>
         <div className='bueno'>
         <input
@@ -547,45 +533,47 @@ const InformeRegistro = () => {
         <div className='check-box'> 
         <div className='barro'>
         <input
+        className='checkbox-1'
             type="checkbox"
             name="barro"
             value={barro}
             onChange={onChange}
           />
-          <label className='checkbox-bueno'>Barro</label>
+          <label className='label-checkbox'>Barro</label>
         </div>
         <div className='humedad'>
         <input
+        className='checkbox-1'
             type="checkbox"
             name="humedad"
             value={humedad}
             onChange={onChange}
           />
-          <label className='checkbox-humedad'>Humedad</label>
+          <label className='label-checkbox'>Humedad</label>
         </div>
         <div className='hongos'>
         <input
+        className='checkbox-1'
             type="checkbox"
             name="hongos"
             value={hongos}
             onChange={onChange}
           />
-          <label className='checkbox-hongos'>Hongos</label>
+          <label className='label-checkbox'>Hongos</label>
         </div>
         </div>
         {errors.tipoDano && <p className="error">{errors.tipoDano}</p>}
       </div>
       <div className='sector-6'>
         <h2 className='observaciones'>Observaciones</h2>
-        <div className='input-observaciones'>
-        <input
-            type="text"
+
+        <textarea
+            className='input-observaciones'
             name="observaciones"
             value={observaciones}
             onChange={onChange}
           />
           {errors.observaciones && <p className="error">{errors.observaciones}</p>}
-        </div>
       </div>
       <div className='sector-7'>
       </div>
@@ -594,6 +582,7 @@ const InformeRegistro = () => {
         <div className='responsable-dni'>
         <label className='dni-responsable'>DNI</label>
           <input
+          className='input-sector2'
             type="text"
             name="dniresponsable"
             placeholder='00000000M'
@@ -604,7 +593,9 @@ const InformeRegistro = () => {
         </div>
       </div>
       <div className='btn-registrar'>
-      <button type="registrar">Registrar</button>
+      <Button className='btn' type="primary" shape="round" >
+            <p className='login'>Registrar</p>
+          </Button>
       </div>
     </form>
   </div>
