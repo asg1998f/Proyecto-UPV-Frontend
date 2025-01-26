@@ -136,14 +136,14 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #ffffff;
   border: none;
   padding: 10px 15px;
   border-radius: 8px;
   font-size: 16px;
-  color: #000022;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background: var(--fondos-fondo, #f7f8fa);
+  color: #aaaaaa;
+  transition: background 0.3s, color 0.3s;
 }
 
 .menu-button img {
@@ -156,15 +156,13 @@ h3 {
   height: 20px;
 }
 
+.menu-button img.arrow {
+  transition: filter 0.3s;
+}
+
 .menu-button.active {
   background: white;
   color: #000000;
-}
-
-.menu-button.disabled {
-  color: #aaaaaa;
-  background: var(--fondos-fondo, #f7f8fa);
-  pointer-events: none;
 }
 
 .logout {
