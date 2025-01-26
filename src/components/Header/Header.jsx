@@ -11,7 +11,6 @@ const Header = () => {
 
   return (
     <div className="nav-top-bar-desktop">
-      {/* Logo */}
       <div className="logo-container">
         <img className="logo" src={logo} alt="Salvem les Fotos" />
       </div>

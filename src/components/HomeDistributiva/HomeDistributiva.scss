@@ -13,8 +13,7 @@
 }
 
 .nav-sup{
-    background: #393E41;
-    
+    background-color: white;
     border-bottom-right-radius: 24px;
     border-bottom-left-radius: 24px;
     width: 100%;
@@ -32,7 +31,6 @@
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
         color: white;
-
     }
 
     .ant-input-search{
@@ -40,6 +38,7 @@
         height: 40px;
         border-radius: 8px 0px 0px 0px;
     }
+
     .ant-input, .ant-btn{
         background-color: #ECEEF3;
         color: #ECEEF3;
@@ -55,7 +54,7 @@
     padding: 10px;
 
     .pantalla-inf-titulo{
-        font-family: "Inter-Bold", sans-serif;
+        font-family: "Inter";
         width: 80%;
         font-size: 20px;
         margin-left: -35px;
@@ -74,10 +73,8 @@
             height: 144px;
             padding: 16px;
             border-radius: 24px;
-            background: #FFFFFF;
             margin-top: 10px;
             position: relative;
-
 
             .icono1-inf-boton{
                 top: 20px; 
@@ -100,6 +97,9 @@
                 font-size: 19px;
                 margin-bottom: 5px;
             }
+            .tb{
+                color: white;
+            }
             .icono4-inf-boton{
                 bottom: 20px; 
                 right: 20px;
@@ -107,6 +107,25 @@
             }
         
         }
+        .registrar{
+            background-color: #EE5E37;
+        }
+        .master{
+            background-color: #4558C8;
+        }
+        .almacen{
+            background-color: #DE9CFD;
+        }
+        .restaurar{
+            background-color: #DFF37C;
+        }
+        .digitalizar{
+            background-color: #23967F;
+        }
+        .entregar{
+            background-color: #FFB17A;
+        }
+
     
     }
 }
