@@ -2,15 +2,16 @@ import "./RestauracionCuatro.scss";
 import Vector from "../../assets/images/Vector.png"
 import Broom from "../../assets/images/escobita.png"
 import Folder from "../../assets/iconos/IconoCarpetaRT.png"
+import Search from "../../assets/iconos/IconoRestaurar4Rt.png"
 
 
 const RestauracionCuatro = () => {
   return (
 <div className="restauraci-n">
   <div className="home">
-    <div className="logo">
+    <div className="logoRestauracion4">
       <img src={Vector} alt="flecha izquierda" />
-      <div className="frame-427319580">
+      <div className="frame-427319580Restauracion4">
         <div className="frame-427319553">
           <div className="icono">
             <img className="fi-sr-broom" src={Broom} />
@@ -24,7 +25,7 @@ const RestauracionCuatro = () => {
             </div>
           </div>
           <div className="input-addon-icon">
-            
+            <img src={Search} alt="" />
           </div>
         </div>
       </div>
