@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import './App.css'
 import UbicacionAlmacen from './components/UbicacionAlmacen/UbicacionAlmacen'
 import InformeRegistro from './components/InformeRegistro/InformeRegistro'
@@ -52,11 +53,38 @@ function App() {
       <Routes>
         <Route path="/" element={ <Landing/>} />
         <Route path="/login" element={<Login/>}/>
+        <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
       </BrowserRouter>)}
     </>
   )
 }
+//   return (   
+//     <>
+//     {esMobil ? 
+//     (      
+//     <BrowserRouter>
+//     <Header/>
+//     <Routes>
+//       <Route path="/" element={ <Landing/>} />
+//       <Route path="/informeregistro" element={<InformeRegistro/>}/>
+
+//     </Routes>
+//     </BrowserRouter>
+//     <div>
+//       <FaseSecado
+//       title = "Secado"
+//       logo = {avion}
+//       />
+//       <FaseLimpieza 
+//       title = "Limpieza"
+//       logo = {escoba}
+//       /> 
+//     </div>
+    
+//     </>
+//   )
+// }
 
 export default App;
