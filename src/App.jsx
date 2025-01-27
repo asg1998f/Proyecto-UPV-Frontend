@@ -5,7 +5,12 @@ import UbicacionAlmacen from './components/UbicacionAlmacen/UbicacionAlmacen'
 import InformeRegistro from './components/InformeRegistro/InformeRegistro'
 import Header from './components/Header/Header'
 import Landing from './components/Landing/Landing'
-import avion from './assets/images/fi-sr-box0/fi-sr-box0.svg'
+import Login from './components/Login/Login'
+import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
+import LogoSalvar from './assets/iconos/LogoSalvar.png'
+import Almacenaje from './components/Almacenaje/Almacenaje'
+import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
+
 
 
 
@@ -21,7 +26,8 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
-        <Route path="UbicacionAlmacen" element={<UbicacionAlmacen logo = {avion}/>}></Route>
+      <Route path="/UbicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
+      <Route path="/Almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
       </Routes>
     </BrowserRouter>
       )
@@ -32,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Landing/>} />
         <Route path="/informeregistro" element={<InformeRegistro/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
       </BrowserRouter>)}
     </>
