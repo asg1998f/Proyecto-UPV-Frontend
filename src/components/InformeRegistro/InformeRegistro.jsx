@@ -2,8 +2,17 @@ import React, { useEffect, useState } from 'react'
 import iconoregistro from "../../assets/registrar-icono.png"
 import "./InformeRegistro.scss"
 import {  Button  } from 'antd';
+import Camara from '../Camara/Camara';
+import imgcamara from '../../assets/iconos/IconoCamara.png'
 
 const InformeRegistro = () => {
+  const [mostrarCamara, setMostrarCamara] = useState(false);
+  const manejarEscaneo = () => {
+    setMostrarCamara(!mostrarCamara);
+  };
+  const cerrarCamaraDesdeRegistro = () => {
+    setMostrarCamara(false); // Esto oculta la cámara
+  };
   const obtenerFechaActual = () => {
     const fechaActual = new Date();
     const dia = String(fechaActual.getDate()).padStart(2, '0');
@@ -247,7 +256,7 @@ const InformeRegistro = () => {
     }
   };
   return (
-    <div className="container-formulario">
+    <div className="container-formularioRegistro">
       <div className='sector-0'>
       <svg className='atras' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 <path d="M22.2857 10.0088H5.14286L10.7829 3.42405C10.9435 3.23799 11.0711 3.01663 11.1581 2.77274C11.2451 2.52884 11.2899 2.26724 11.2899 2.00303C11.2899 1.73881 11.2451 1.47721 11.1581 1.23332C11.0711 0.989426 10.9435 0.768064 10.7829 0.582004C10.4617 0.209234 10.0272 0 9.57429 0C9.1214 0 8.68691 0.209234 8.36572 0.582004L1.01143 9.1882C0.367564 9.93544 0.00382764 10.9503 0 12.0102C0.00834272 13.0632 0.371733 14.0699 1.01143 14.8123L8.36572 23.4185C8.52555 23.6038 8.71508 23.7505 8.92349 23.8503C9.1319 23.95 9.3551 24.0009 9.58035 24C9.80559 23.9991 10.0285 23.9463 10.2363 23.8448C10.4441 23.7433 10.6327 23.5951 10.7914 23.4084C10.9501 23.2218 11.0758 23.0006 11.1613 22.7572C11.2467 22.5139 11.2903 22.2533 11.2895 21.9904C11.2887 21.7274 11.2436 21.4672 11.1566 21.2246C11.0697 20.9819 10.9427 20.7617 10.7829 20.5764L5.14286 14.0117H22.2857C22.7404 14.0117 23.1764 13.8008 23.4979 13.4255C23.8194 13.0501 24 12.5411 24 12.0102C24 11.4794 23.8194 10.9703 23.4979 10.595C23.1764 10.2197 22.7404 10.0088 22.2857 10.0088Z" fill="#E6E6E6"/>
@@ -576,21 +585,16 @@ const InformeRegistro = () => {
           {errors.observaciones && <p className="error">{errors.observaciones}</p>}
       </div>
       <div className="sector-7">
-        <div
-          className="continue-with-google-left-aligned-fixed"
+        <Button
+          className="btn-camara"
           onClick={manejarEscaneo}
         >
-          <img className="camera" src="camera0.svg" alt="Cámara" />
+          <img className="camera" src={imgcamara} alt="Cámara" />
           <div className="escanear-formulario2">Escanear formulario</div>
-        </div>
-        <div className="pdf">
-          <img className="rectangle-118" src="rectangle-1180.png" alt="PDF" />
-          <div className="pdf2">Pdf</div>
-          <img className="vector" src="vector0.svg" alt="Vector" />
-        </div>
-        <div className="button">
-          <img className="close" src="close0.svg" alt="Cerrar" />
-        </div>
+        </Button>
+        <Button className="cerrar-btn">
+          <div className="cerrar-camara">Cerrar camara</div>
+        </Button>
         {mostrarCamara && (
           <div className="modal-camara">
             <Camara onClose={cerrarCamaraDesdeRegistro} />

@@ -7,7 +7,8 @@ import React from 'react';
 import Camara from "./components/Camara/Camara.jsx"
 import ReactDOM from 'react-dom'
 import './App.css';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from '../reportWebVitals.jsx'
+
 createRoot(document.getElementById('root')).render(
 <Provider store={store}>
     <App />
