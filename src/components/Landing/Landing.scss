@@ -1,32 +1,26 @@
-//PRIMER FOLD 
-
-.image-container{
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  position: absolute;
-  left: 1000px;
-  justify-content: flex-end;
 
-  img{
-    width: 100%;
-    flex-shrink: 0;
-  height: 1078px;
-  position: relative;
-  object-fit: cover;
-  }
 }
-.foto{
-  z-index: 2;
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 
-
+//PRIMER FOLD 
 .informacion-primer-fold,
 .informacion-primer-fold * {
   box-sizing: border-box;
 }
+
 .informacion-primer-fold {
+  width: 100%;
+  object-fit: cover;
   background-color: black;
-  padding: 240px 144px 96px 144px;
   display: flex;
   flex-direction: column;
   gap: 318px;
@@ -34,9 +28,37 @@
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
-  height: 1078px;
+  height: 100%;
+  overflow: hidden;
   position: relative;
+  padding-left: 5%;
+
+  .image-container {
+    max-width: 55%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 20%;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 100%;
+      flex-shrink: 0;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .foto {
+    z-index: 2;
+    z-index: 2;
+    height: 20%;
+    width: auto;
+    object-fit: cover;
+    object-position: top;
+  }
 }
+
 .section-text {
   display: flex;
   flex-direction: column;
@@ -44,19 +66,25 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
-  width: 485px;
+  width: 2085px;
   position: relative;
+
 }
+
 .headline {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   align-items: flex-start;
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
 }
+
 .top {
   display: flex;
   flex-direction: column;
@@ -66,9 +94,11 @@
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
+  width: 100%;
 }
+
 .facultad-de-bellas-artes {
-  color: var(--principal, #e94f37);
+  color: var(--new-folder-principal, #e94f37);
   text-align: left;
   font-family: var(--upper-subtitulo-font-family, "Inter-Bold", sans-serif);
   font-size: var(--upper-subtitulo-font-size, 20px);
@@ -77,8 +107,9 @@
   position: relative;
   align-self: stretch;
 }
-.titulosalvem-les-fotos {
-  color: var(--blanco-roto, #f5f5f5);
+
+.salvem-les-fotos {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
   font-family: var(--h1-font-family, "Inter-Bold", sans-serif);
   font-size: var(--h1-font-size, 60px);
@@ -87,17 +118,21 @@
   position: relative;
   align-self: stretch;
 }
+
 .paragraph {
-  color: var(--blanco-roto, #f5f5f5);
+  color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
   font-family: var(--h3-font-family, "Inter-Medium", sans-serif);
   font-size: var(--h3-font-size, 24px);
   font-weight: var(--h3-font-weight, 500);
   position: relative;
   align-self: stretch;
+  z-index: 9;
+  width: 31%;
 }
+
 .secondary-btn {
-  background: var(--principal, #e94f37);
+  background: var(--new-folder-principal, #e94f37);
   border-radius: 24px;
   padding: 16px 24px 16px 24px;
   display: flex;
@@ -109,8 +144,9 @@
   height: 40px;
   position: relative;
 }
+
 .btn-text {
-  color: var(--blanco-roto, #f5f5f5);
+  color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: center;
   font-family: var(--body-14-font-family, "Inter-Regular", sans-serif);
   font-size: var(--body-14-font-size, 14px);
@@ -118,18 +154,20 @@
   font-weight: var(--body-14-font-weight, 400);
   position: relative;
 }
+
 .datos {
   display: flex;
   flex-direction: row;
-  gap: 80px;
+  gap: 20px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-around;
   align-self: stretch;
   flex-shrink: 0;
   height: 124px;
   position: relative;
-  z-index: 3;
+  margin-bottom: 96px;
 }
+
 .lbumes {
   padding: 0px 16px 0px 16px;
   display: flex;
@@ -140,8 +178,9 @@
   flex-shrink: 0;
   position: relative;
 }
+
 ._1-800 {
-  color: var(--principal, #e94f37);
+  color: var(--new-folder-principal, #e94f37);
   text-align: center;
   font-family: var(--display-1-font-family, "Inter-Bold", sans-serif);
   font-size: var(--display-1-font-size, 64px);
@@ -151,14 +190,16 @@
   position: relative;
   width: 162px;
 }
+
 .paragraph2 {
-  color: var(--blanco-roto, #f5f5f5);
+  color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: center;
   font-family: var(--body-16-font-family, "Inter-Medium", sans-serif);
   font-size: var(--body-16-font-size, 16px);
   font-weight: var(--body-16-font-weight, 500);
   position: relative;
 }
+
 .fotograf-a {
   padding: 0px 16px 0px 16px;
   display: flex;
@@ -169,8 +210,9 @@
   flex-shrink: 0;
   position: relative;
 }
+
 ._230-000 {
-  color: var(--principal, #e94f37);
+  color: var(--new-folder-principal, #e94f37);
   text-align: center;
   font-family: var(--display-1-font-family, "Inter-Bold", sans-serif);
   font-size: var(--display-1-font-size, 64px);
@@ -180,6 +222,7 @@
   position: relative;
   width: 252px;
 }
+
 .intervenciones {
   padding: 0px 16px 0px 16px;
   display: flex;
@@ -191,8 +234,9 @@
   width: 207px;
   position: relative;
 }
+
 ._15-000 {
-  color: var(--principal, #e94f37);
+  color: var(--new-folder-principal, #e94f37);
   text-align: center;
   font-family: var(--display-1-font-family, "Inter-Bold", sans-serif);
   font-size: var(--display-1-font-size, 64px);
@@ -202,8 +246,9 @@
   position: relative;
   width: 202px;
 }
+
 .paragraph3 {
-  color: var(--blanco-roto, #f5f5f5);
+  color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: center;
   font-family: var(--body-16-font-family, "Inter-Medium", sans-serif);
   font-size: var(--body-16-font-size, 16px);
@@ -211,6 +256,7 @@
   position: relative;
   width: 175px;
 }
+
 .voluntarios {
   padding: 0px 16px 0px 16px;
   display: flex;
@@ -222,8 +268,9 @@
   width: 174px;
   position: relative;
 }
+
 ._130 {
-  color: var(--principal, #e94f37);
+  color: var(--new-folder-principal, #e94f37);
   text-align: center;
   font-family: var(--display-1-font-family, "Inter-Bold", sans-serif);
   font-size: var(--display-1-font-size, 64px);
@@ -234,12 +281,12 @@
   width: 110px;
 }
 
-
-//navbar
+//NAVBAR
 .nav-top-bar-desktop,
 .nav-top-bar-desktop * {
   box-sizing: border-box;
 }
+
 .navbar-top {
   background: var(--principal, #e94f37);
   padding: 0px 80px 0px 80px;
@@ -254,6 +301,7 @@
   position: relative;
   box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
 }
+
 .recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n {
   color: var(--blanco-roto, #f5f5f5);
   text-align: left;
@@ -263,6 +311,7 @@
   font-weight: 400;
   position: relative;
 }
+
 .recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span {
   color: var(--blanco-roto, #f5f5f5);
   font-family: "Inter-Bold", sans-serif;
@@ -270,6 +319,7 @@
   line-height: 24px;
   font-weight: 700;
 }
+
 .recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span2 {
   color: var(--blanco-roto, #f5f5f5);
   font-family: "Inter-Regular", sans-serif;
@@ -277,6 +327,7 @@
   line-height: 24px;
   font-weight: 400;
 }
+
 .recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span3 {
   color: var(--blanco-roto, #f5f5f5);
   font-family: "Inter-Bold", sans-serif;
@@ -284,6 +335,7 @@
   line-height: 24px;
   font-weight: 700;
 }
+
 .recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span4 {
   color: var(--blanco-roto, #f5f5f5);
   font-family: "Inter-BoldItalic", sans-serif;
@@ -292,6 +344,7 @@
   font-weight: 700;
   font-style: italic;
 }
+
 .recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span5 {
   color: var(--blanco-roto, #f5f5f5);
   font-family: "Inter-Regular", sans-serif;
@@ -299,6 +352,7 @@
   line-height: 24px;
   font-weight: 400;
 }
+
 .recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span6 {
   color: var(--blanco-roto, #f5f5f5);
   font-family: "Inter-Bold", sans-serif;
@@ -307,390 +361,170 @@
   font-weight: 700;
 }
 
-
-//nuestro proceso
-
 .nuestro-proceso,
 .nuestro-proceso * {
   box-sizing: border-box;
 }
+
 .nuestro-proceso {
-  background: var(--blanco-roto, #f5f5f5);
-  padding: 120px 144px 96px 144px;
+  padding: 96px 24px;
   display: flex;
   flex-direction: column;
   gap: 56px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
+
 .titulo-nuestroproceso {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  width: 892px;
-  position: relative;
-}
-.headline {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.salvem-les-fotos {
-  color: var(--gris-oscuro, #26292b);
-  text-align: left;
+  color: var(--new-folder-gris-oscuro, #26292b);
   font-family: var(--h1-font-family, "Inter-Bold", sans-serif);
-  font-size: var(--h1-font-size, 60px);
-  line-height: var(--h1-line-height, 110%);
-  font-weight: var(--h1-font-weight, 700);
-  position: relative;
-  align-self: stretch;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
 }
-.si-quieres-recuperar-tus-im-genes-da-adas-por-la-dana-de-manera-gratuita-tr-enos-tus-lbumes-o-im-genes-a-la-facultad-de-bellas-artes-de-la-upv {
-  color: var(--gris-oscuro, #26292b);
-  text-align: left;
+
+.parrafo-nuestroproceso {
+  color: var(--new-folder-gris-oscuro, #26292b);
+
   font-family: var(--h3-font-family, "Inter-Medium", sans-serif);
-  font-size: var(--h3-font-size, 24px);
-  font-weight: var(--h3-font-weight, 500);
-  position: relative;
-  align-self: stretch;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 500;
 }
+
 .proceso {
   display: flex;
-  flex-direction: row;
-  row-gap: 48px;
-  align-items: flex-start;
-  justify-content: space-between;
   flex-wrap: wrap;
-  align-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
-.frame-60 {
+
+.frame {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   align-items: center;
   justify-content: flex-start;
-  flex-shrink: 0;
-  width: 192px;
-  position: relative;
+  gap: 12px;
+  padding: 16px;
+  width: 200px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.picture-outlined {
-  flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  position: relative;
-  overflow: visible;
+
+.frame:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-.frame-57 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
+
+.icon {
+  font-size: 38px;
+  color: black;
+  stroke-width: 2px;
 }
-.tr-enos-tu-lbum-y-recuerdos {
-  color: var(--gris-oscuro, #26292b);
+
+.frame-title {
+  color: #26292b;
   text-align: center;
-  font-family: var(--h4-font-family, "Inter-SemiBold", sans-serif);
-  font-size: var(--h4-font-size, 18px);
-  line-height: var(--h4-line-height, 110%);
-  font-weight: var(--h4-font-weight, 600);
-  position: relative;
-  align-self: stretch;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
 }
-.recepcionamos-y-organizamos-las-fotograf-as-recibidas-y-las-almacenamos-hasta-su-limpieza {
-  color: var(--gris-oscuro, #26292b);
+
+.frame-text {
+  color: #26292b;
   text-align: center;
-  font-family: var(--body-12-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--body-12-font-size, 12px);
-  line-height: var(--body-12-line-height, 140%);
-  font-weight: var(--body-12-font-weight, 400);
-  position: relative;
-  align-self: stretch;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 0;
 }
-.frame-61 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  width: 192px;
-  position: relative;
-}
-.clear-outlined {
-  flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  position: relative;
-  overflow: visible;
-}
-.frame-56 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.restauramos-los-da-os {
-  color: var(--gris-oscuro, #26292b);
-  text-align: center;
-  font-family: var(--h4-font-family, "Inter-SemiBold", sans-serif);
-  font-size: var(--h4-font-size, 18px);
-  line-height: var(--h4-line-height, 110%);
-  font-weight: var(--h4-font-weight, 600);
-  position: relative;
-  align-self: stretch;
-}
-.lavado-limpieza-e-higienizaci-n-mediante-diferentes-procesos-para-restaurar-los-da-os {
-  color: var(--gris-oscuro, #26292b);
-  text-align: center;
-  font-family: var(--body-12-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--body-12-font-size, 12px);
-  line-height: var(--body-12-line-height, 140%);
-  font-weight: var(--body-12-font-weight, 400);
-  position: relative;
-  align-self: stretch;
-}
-.frame-63 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  width: 192px;
-  position: relative;
-}
-.laptop-outlined {
-  flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  position: relative;
-  overflow: visible;
-}
-.frame-59 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.digitalizamos-las-im-genes {
-  color: var(--gris-oscuro, #26292b);
-  text-align: center;
-  font-family: var(--h4-font-family, "Inter-SemiBold", sans-serif);
-  font-size: var(--h4-font-size, 18px);
-  line-height: var(--h4-line-height, 110%);
-  font-weight: var(--h4-font-weight, 600);
-  position: relative;
-  align-self: stretch;
-}
-.digitalizamos-tus-fotograf-as-restauradas-para-que-las-tengas-en-ambos-formatos {
-  color: var(--gris-oscuro, #26292b);
-  text-align: center;
-  font-family: var(--body-12-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--body-12-font-size, 12px);
-  line-height: var(--body-12-line-height, 140%);
-  font-weight: var(--body-12-font-weight, 400);
-  position: relative;
-  align-self: stretch;
-}
-.frame-62 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  width: 192px;
-  position: relative;
-}
-.hourglass-outlined {
-  flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  position: relative;
-  overflow: visible;
-}
-.frame-58 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.montamos-en-orden-cronol-gico {
-  color: var(--gris-oscuro, #26292b);
-  text-align: center;
-  font-family: var(--h4-font-family, "Inter-SemiBold", sans-serif);
-  font-size: var(--h4-font-size, 18px);
-  line-height: var(--h4-line-height, 110%);
-  font-weight: var(--h4-font-weight, 600);
-  position: relative;
-  align-self: stretch;
-}
-.montamos-tus-fotograf-as-restauradas-en-el-mismo-orden-que-tus-lbumes-originales {
-  color: var(--gris-oscuro, #26292b);
-  text-align: center;
-  font-family: var(--body-12-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--body-12-font-size, 12px);
-  line-height: var(--body-12-line-height, 140%);
-  font-weight: var(--body-12-font-weight, 400);
-  position: relative;
-  align-self: stretch;
-}
-.frame-562 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  width: 192px;
-  position: relative;
-}
-.frame-64 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.gift-outlined {
-  flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  position: relative;
-  overflow: visible;
-}
-.te-devolvemos-tus-recuerdos {
-  color: var(--gris-oscuro, #26292b);
-  text-align: center;
-  font-family: var(--h4-font-family, "Inter-SemiBold", sans-serif);
-  font-size: var(--h4-font-size, 18px);
-  line-height: var(--h4-line-height, 110%);
-  font-weight: var(--h4-font-weight, 600);
-  position: relative;
-  align-self: stretch;
-}
-.te-entregamos-las-fotograf-as-que-hemos-podido-recuperar-para-conservar-tus-recuerdos {
-  color: var(--gris-oscuro, #26292b);
-  text-align: center;
-  font-family: var(--body-12-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--body-12-font-size, 12px);
-  line-height: var(--body-12-line-height, 140%);
-  font-weight: var(--body-12-font-weight, 400);
-  position: relative;
-  align-self: stretch;
-}
-.im-genes {
+
+.seccion-imagenes-ayd {
   display: flex;
   flex-direction: row;
-  row-gap: 28px;
+  gap: 24px;
+  padding: 80px 16px;
+  justify-content: center;
   align-items: flex-start;
-  justify-content: space-between;
   flex-wrap: wrap;
-  align-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
+  background: white;
 }
-.frame-74 {
+
+.imagen-con-descripcion {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  flex-shrink: 0;
-  width: 561px;
-  position: relative;
+  max-width: 400px;
 }
-.captura-de-pantalla-2025-01-22-a-las-13-06-16-1 {
-  align-self: stretch;
-  flex-shrink: 0;
-  height: 397px;
-  position: relative;
+
+.imagen-con-descripcion img {
+  width: 100%;
+  height: auto;
   object-fit: cover;
+  border-radius: 8px;
 }
-.foto-antes-de-la-restauraci-n {
+
+.imagen-con-descripcion p {
   color: var(--gris-oscuro, #26292b);
-  text-align: left;
-  font-family: var(--body-12-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--body-12-font-size, 12px);
-  line-height: var(--body-12-line-height, 140%);
-  font-weight: var(--body-12-font-weight, 400);
-  position: relative;
-  align-self: stretch;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 0;
 }
-.frame-75 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  width: 561px;
-  position: relative;
-}
-.captura-de-pantalla-2025-01-22-a-las-13-06-16-2 {
-  align-self: stretch;
-  flex-shrink: 0;
-  height: 397px;
-  position: relative;
-  object-fit: cover;
-}
-.foto-despu-s-de-la-restauraci-n {
-  color: var(--gris-oscuro, #26292b);
-  text-align: left;
-  font-family: var(--body-12-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--body-12-font-size, 12px);
-  line-height: var(--body-12-line-height, 140%);
-  font-weight: var(--body-12-font-weight, 400);
-  position: relative;
-  align-self: stretch;
+
+@media (max-width: 768px) {
+  .nuestro-proceso {
+    padding: 48px 16px;
+  }
+
+  .titulo-nuestroproceso {
+    font-size: 1.75rem;
+  }
+
+  .parrafo-nuestroproceso {
+    font-size: 1rem;
+  }
+
+  .proceso {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .frame {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .seccion-imagenes-ayd {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .imagen-con-descripcion {
+    max-width: 100%;
+  }
 }
 
 //MENSAJE 
 .mensaje {
-  background: 
-    linear-gradient(
-      to left,
+  background:
+    linear-gradient(to left,
       rgba(38, 41, 43, 0.6),
-      rgba(38, 41, 43, 0.6)
-    ),
-    url('../../assets/mensaje.jpg'); 
-  background-size: cover; 
+      rgba(38, 41, 43, 0.6)),
+    url('../../assets/imagenes/mensaje.jpg');
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   padding: 0px 80px 0px 80px;
   display: flex;
   flex-direction: column;
@@ -709,13 +543,12 @@
   color: var(--blanco-roto, #f5f5f5);
   text-align: center;
   font-family: var(--display-2-font-family, "Inter-Bold", sans-serif);
-  font-size: 80px; /* Incrementé el tamaño del texto */
-  line-height: 110px; /* Ajusté la altura de línea para que sea proporcional */
+  font-size: 50px;
+  line-height: 110px;
   font-weight: var(--display-2-font-weight, 700);
   position: relative;
-  width: 100%; /* Ajusté para que el ancho se adapte mejor al contenido */
+  width: 100%;
 }
-
 
 .firma {
   color: var(--blanco-roto, #f5f5f5);
@@ -729,49 +562,250 @@
   width: 1134px;
 }
 
-
 //NUESTRA HISTORIA 
-.nuestra-historia,
-.nuestra-historia * {
-  box-sizing: border-box;
-}
 .nuestra-historia {
-  background: var(--blanco-roto, #f5f5f5);
+  margin-bottom: 100px;
+  background: white;
   padding: 120px 144px 96px 144px;
   display: flex;
   flex-direction: column;
   gap: 88px;
+  justify-content: center;
+  position: relative;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .contenedor-historia {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-self: stretch;
+    align-items: center;
+
+  }
+
+  .primer-bloque-nuestrahistoria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 56px;
+
+
+    .texto-historia {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 573px;
+
+      .titulo-historia {
+        color: #26292b;
+        text-align: left;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 65px;
+        line-height: 110%;
+        font-weight: 700;
+      }
+
+      .subtitulo-historia {
+        color: #26292b;
+        font-family: "Inter-Medium", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        max-width: 35rem;
+      }
+
+      .parrafo-historia {
+        color: #26292b;
+        font-family: "Inter-Medium", sans-serif;
+        font-size: 22px;
+        font-weight: 500;
+        max-width: 35rem;
+      }
+    }
+
+    .imagen-historia {
+      flex-shrink: 0;
+      width: 521px;
+      height: 370px;
+      object-fit: cover;
+    }
+  }
+
+  .segundo-bloque {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 102px;
+
+    .imagen-historia {
+      flex-shrink: 0;
+      width: 524px;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .parrafo-historia2 {
+      color: #26292b;
+      font-family: "Inter-Medium", sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      max-width: 35rem;
+    }
+  }
+}
+
+//PREGUNTAS FRECUENTES 
+.faqs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+  color: #26292b;
+  background: white;
+
+}
+
+.faqs {
+  flex: 1;
+}
+
+.faqs-header {
+  margin-bottom: 20px;
+}
+
+.faqs-subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f05a28;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.faqs-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.faqs-content {
+  margin-top: 20px;
+}
+
+.faq-item {
+  border-top: 1px solid #f05a28;
+  padding: 10px 0;
+}
+
+.faq-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #26292b;
+}
+
+.faq-toggle:hover {
+  color: #f05a28;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #26292b;
+}
+
+.faqs-image-container {
+  flex: 0.5;
+}
+
+.faqs-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+
+.imgpf {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.encu-ntranos,
+.encu-ntranos * {
+  box-sizing: border-box;
+}
+
+.encu-ntranos {
+  background: var(--new-folder-gris-oscuro, #26292b);
+  padding: 80px 144px 80px 144px;
+  display: flex;
+  flex-direction: column;
+  gap: 93px;
   align-items: flex-start;
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
-  height: 1004px;
+  height: 932px;
   position: relative;
 }
-.primer-bloque {
+
+.frame-80 {
   display: flex;
-  flex-direction: row;
-  row-gap: 56px;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  flex-wrap: wrap;
-  align-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
+  height: 614px;
   position: relative;
 }
-.historia {
+
+.titulo {
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: flex-start;
   justify-content: flex-start;
+  align-self: stretch;
   flex-shrink: 0;
-  width: 573px;
   position: relative;
 }
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
 .salvem-les-fotos {
-  color: var(--gris-oscuro, #26292b);
+  color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
   font-family: var(--h1-font-family, "Inter-Bold", sans-serif);
   font-size: var(--h1-font-size, 60px);
@@ -780,19 +814,9 @@
   position: relative;
   align-self: stretch;
 }
-.texto {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  height: 206px;
-  position: relative;
-}
-.recuperar-las-memorias-naci-del-lodo-y-la-devastaci-n-pero-sobre-todo-de-nuestro-compromiso-con-la-memoria-y-la-identidad {
-  color: var(--gris-oscuro, #26292b);
+
+.puedes-venir-a-traernos-tus-fotograf-as-a-la-facultad-de-bellas-artes-de-la-upv {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
   font-family: var(--h3-font-family, "Inter-Medium", sans-serif);
   font-size: var(--h3-font-size, 24px);
@@ -800,48 +824,199 @@
   position: relative;
   align-self: stretch;
 }
-.el-29-de-octubre-de-2024-una-riada-sin-precedentes-arras-municipios-enteros-de-valencia-llev-ndose-consigo-hogares-pertenencias-y-lo-m-s-doloroso-los-recuerdos-de-toda-una-vida-fotograf-as-flotaban-a-la-deriva-atrapadas-en-el-barro-a-punto-de-perderse-para-siempre {
-  color: var(--gris-oscuro, #26292b);
-  text-align: left;
-  font-family: var(--body-16-font-family, "Inter-Medium", sans-serif);
-  font-size: var(--body-16-font-size, 16px);
-  font-weight: var(--body-16-font-weight, 500);
-  position: relative;
-  flex: 1;
-  width: 527px;
-}
-.captura-de-pantalla-2025-01-22-a-las-11-10-02-1 {
-  flex-shrink: 0;
-  width: 521px;
-  height: 347px;
-  position: relative;
-  object-fit: cover;
-}
-.segundo-bloque {
+
+.frame-78 {
   display: flex;
   flex-direction: row;
-  row-gap: 102px;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  align-content: center;
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
 }
-.captura-de-pantalla-2025-01-22-a-las-13-01-08-1 {
+
+.screenshot-2025-01-20-182312-1 {
   flex-shrink: 0;
-  width: 524px;
-  height: 352.4px;
+  width: 592px;
+  height: 460px;
   position: relative;
   object-fit: cover;
 }
-.desde-la-facultad-de-bellas-artes-de-la-universitat-polit-cnica-de-val-ncia-decidimos-unir-fuerzas-para-hacer-frente-a-esta-p-rdida-irreparable-as-naci-nuestro-laboratorio-de-recuperaci-n-donde-trabajamos-d-a-tras-d-a-recogiendo-limpiando-restaurando-y-digitalizando-miles-de-fotograf-as-familiares-sabemos-que-cada-imagen-es-mucho-m-s-que-papel-es-un-trozo-de-historia-de-identidad-de-amor-lo-que-comenz-como-una-labor-de-emergencia-hoy-se-ha-transformado-en-un-proyecto-lleno-de-esperanza-recuperar-las-memorias-no-solo-salvaguardamos-fotograf-as-sino-que-tambi-n-reconstruimos-las-memorias-que-en-ellas-viven-porque-creemos-que-recordar-es-el-acto-de-amor-m-s-grande-que-podemos-ofrecer-y-estamos-aqu-para-asegurarnos-de-que-esas-historias-sigan-vivas-intactas-y-listas-para-ser-compartidas-con-las-generaciones-futuras {
-  color: var(--gris-oscuro, #26292b);
-  text-align: left;
-  font-family: var(--body-16-font-family, "Inter-Medium", sans-serif);
-  font-size: var(--body-16-font-size, 16px);
-  font-weight: var(--body-16-font-weight, 500);
+
+.frame-73 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 513px;
   position: relative;
-  width: 524px;
+  padding: 5%;
+}
+
+.frame-68 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.salvem-les-fotos2 {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  width: 457px;
+}
+
+.frame-69 {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.salvem-les-fotos3 {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  width: 513px;
+}
+
+.frame-70 {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame-72 {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.icono,
+.icono2,
+.icono3,
+.icono4,
+.vector {
+  font-size: 24px;
+  color: #f9f7f7;
+  margin-right: 10px;
+}
+
+.frame-71 {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.salvem-les-fotos4 {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+  width: 462px;
+}
+
+.frame-79 {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.vector-1 {
+  flex-shrink: 0;
+  width: 1150px;
+  height: 0px;
+  position: relative;
+  overflow: visible;
+}
+
+.frame-77 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.cookies {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
+  text-align: left;
+  font-family: "Roboto-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 110%;
+  font-weight: 700;
+  position: relative;
+}
+
+.aviso-legal {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
+  text-align: left;
+  font-family: "Roboto-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 110%;
+  font-weight: 700;
+  position: relative;
+}
+
+.pol-tica-de-privacidad {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
+  text-align: left;
+  font-family: "Roboto-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 110%;
+  font-weight: 700;
+  position: relative;
+}
+
+.contacto {
+  color: var(--new-folder-blanco-roto, #f5f5f5);
+  text-align: left;
+  font-family: "Roboto-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 110%;
+  font-weight: 700;
+  position: relative;
 }
