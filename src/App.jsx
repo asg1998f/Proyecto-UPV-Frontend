@@ -25,8 +25,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
-        <Route path="/UbicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
-        <Route path="/Almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
+        <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
+        <Route path="/almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
         <Route path="/restauracion" element={<Restauracion/>}/>
         <Route path="/restauracion2" element={<Restauracion2/>}/>
         <Route path="/restauracion4" element={<Restauracion4/>}/>
