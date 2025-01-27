@@ -1,6 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import UbicacionAlmacen from './components/UbicacionAlmacen/UbicacionAlmacen'
+import InformeRegistro from './components/InformeRegistro/InformeRegistro'
+import LoginM from './components/LoginM/LoginM'
+/* import './styles/globalstyles.scss' */
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
 import Restauracion from './components/Restauration/Restauracion'
@@ -31,6 +34,11 @@ function App() {
         <Route path="/restauracion2" element={<Restauracion2/>}/>
         <Route path="/restauracion4" element={<Restauracion4/>}/>
       </Routes>
+    <Routes>
+      <Route path="/" element={ <Landing/>} />
+      <Route path="/informeregistro" element={<InformeRegistro/>}/>
+      <Route path="/loginM" element={<LoginM/>}/>
+    </Routes>
     </BrowserRouter>
       )
     :
