@@ -49,7 +49,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className="fondo">
+            <div className="fondo2">
                 <aside className="sidebar">
                     {/* Header con logo y nombre */}
                     <div className="sideLogo">
