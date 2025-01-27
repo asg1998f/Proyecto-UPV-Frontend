@@ -6,6 +6,9 @@ import InformeRegistro from './components/InformeRegistro/InformeRegistro'
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
 import HeaderM from './components/HeaderM/HeaderM'
+import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
+import LogoSalvar from './assets/iconos/LogoSalvar.png'
+import Dashboard from './components/Dashboard/Dashboard'
 
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent
@@ -36,6 +39,7 @@ function App() {
         <Route path="/informeregistro" element={<InformeRegistro/>}/>
         <Route path="/login" element={<Login/>}/>
         {/* <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen/>}/> */}
+        <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
       </BrowserRouter>)}
     </>
