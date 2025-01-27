@@ -4,7 +4,7 @@ import './App.css'
 import Landing from './components/Landing/Landing'
 import InformeRegistro from './components/InformeRegistro/InformeRegistro'
 import LoginM from './components/LoginM/LoginM'
-import './styles/globalstyles.scss'
+/* import './styles/globalstyles.scss' */
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
 import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'

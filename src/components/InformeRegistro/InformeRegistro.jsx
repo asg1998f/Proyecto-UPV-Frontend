@@ -575,7 +575,27 @@ const InformeRegistro = () => {
           />
           {errors.observaciones && <p className="error">{errors.observaciones}</p>}
       </div>
-      <div className='sector-7'>
+      <div className="sector-7">
+        <div
+          className="continue-with-google-left-aligned-fixed"
+          onClick={manejarEscaneo}
+        >
+          <img className="camera" src="camera0.svg" alt="Cámara" />
+          <div className="escanear-formulario2">Escanear formulario</div>
+        </div>
+        <div className="pdf">
+          <img className="rectangle-118" src="rectangle-1180.png" alt="PDF" />
+          <div className="pdf2">Pdf</div>
+          <img className="vector" src="vector0.svg" alt="Vector" />
+        </div>
+        <div className="button">
+          <img className="close" src="close0.svg" alt="Cerrar" />
+        </div>
+        {mostrarCamara && (
+          <div className="modal-camara">
+            <Camara onClose={cerrarCamaraDesdeRegistro} />
+          </div>
+        )}
       </div>
       <div className='sector-8'>
         <h2 className='responsable'>Responsable</h2>

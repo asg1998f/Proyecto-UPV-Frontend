@@ -7,7 +7,7 @@ const LoginM = () => {
   return (
     <div className='container-formulario'> 
     <div className='raro'>
-    <div className='titulo'>
+    <div className='tituloLoginM'>
         <div className='texto'>
         <h1 className='salvem'>SALVEM</h1>
         <h2 className='les-fotos'>LES FOTOS</h2>
