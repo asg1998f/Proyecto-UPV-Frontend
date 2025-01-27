@@ -9,6 +9,7 @@ import { FaMapMarkerAlt, FaClock, FaPhoneAlt, FaEnvelope, FaInstagram } from "re
 
 
 const Landing = () => {
+  
   return (
     <>
       <div class="informacion-primer-fold">
