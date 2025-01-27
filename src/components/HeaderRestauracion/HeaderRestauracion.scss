@@ -2,28 +2,33 @@
 .logo * {
   box-sizing: border-box;
 }
-.logo {
+.logoRestaurar {
   background: var(--fondos-fondo-blanco, #ffffff);
-  border-radius: 0px 0px 24px 24px;
-  padding: 40px 36px 40px 36px;
-  display: flex;
-  flex-direction: row;
-  row-gap: 36px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  flex-shrink: 0;
-  height: 200px;
-  position: relative;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 24px 24px;
+    padding: 40px 36px 40px 36px;
+    display: flex
+;
+    flex-direction: row;
+    row-gap: 36px;
+    /* column-gap: 20px; */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* align-content: center; */
+    flex-shrink: 0;
+    height: 200px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
-.vector {
+.vectorRestaurar {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  position: relative;
-  overflow: visible;
+    left: 0px;
+    margin: 20px 0px 0px 20px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    overflow: visible;
+    top: 0px;
 }
 .frame-427319580 {
   margin: 0 0 0 -23px;
@@ -64,15 +69,11 @@
 }
 .almac-n {
   color: var(--textos-negro-texto, #000022);
-  text-align: left;
   font-family: var(--medium-font-family, "Inter-Medium", sans-serif);
   font-size: var(--medium-font-size, 22px);
   line-height: var(--medium-line-height, 110%);
   font-weight: var(--medium-font-weight, 500);
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  
 }
 .frame-427319552 {
   display: flex;
