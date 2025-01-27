@@ -10,6 +10,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
+    
     <div className="nav-top-bar-desktop">
       {/* Logo */}
       <div className="logo-container">
