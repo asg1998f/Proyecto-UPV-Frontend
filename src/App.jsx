@@ -14,30 +14,28 @@ const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
 
 function App() {
 
-  return (   
+  return (
     <>
-    {esMobil ? 
-    (      
-    <BrowserRouter>
-      <Routes>
-        <Route path="/home" element={<HomeDistributiva
-      logo = {LogoSalvar}/>}></Route>
-      </Routes>
-    </BrowserRouter>
-      ) 
-    :
-     (
-      <BrowserRouter>
-      <Header/>
-      <Routes>
-        <Route path="/" element={ <Landing/>} />
-        <Route path="/informeregistro" element={<InformeRegistro/>}/>
-        <Route path="/login" element={<Login/>}/>
-      </Routes>
-      </BrowserRouter>)}
+      {esMobil ?
+        (
+          <BrowserRouter>
+            <Routes>
+              <Route path="/home" element={<HomeDistributiva
+                logo={LogoSalvar} />}></Route>
+            </Routes>
+          </BrowserRouter>
+        ) : (
+          <BrowserRouter>
+            <Header />
+            <Routes>
+
+              <Route path="/" element={<Landing />} />
+              <Route path="/informeregistro" element={<InformeRegistro />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </BrowserRouter>)}
 
     </>
   )
 }
-
 export default App

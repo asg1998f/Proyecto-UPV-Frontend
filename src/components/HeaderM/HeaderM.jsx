@@ -2,12 +2,13 @@ import React from 'react'
 import './HeaderM.scss'
 import Search from 'antd/es/input/Search'
 
-const HeaderM = (props) => {
+const HeaderM = () => {
   return (
+
     <div className="nav-sup">
             <div className="nav-sup-titulo">
                 <p className='tituloHeader'>{props.title}</p>
-                <img src={props.logo} alt="" srcset="" />
+                <img src={props.logo} alt=" srcset" />
             </div>
             <div className="nav-sup-search-bar">
             <Search
