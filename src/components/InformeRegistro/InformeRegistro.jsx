@@ -621,7 +621,6 @@ const InformeRegistro = () => {
       <div className='btn-registrar'>
       <Button className='btn' type="primary" shape="round"  onClick={onSubmit} >
             <p className='login'>Registrar</p>
-            
           </Button>
       </div>
     </form>
