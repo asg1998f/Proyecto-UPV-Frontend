@@ -15,9 +15,7 @@ import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
 
 
 
-const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-  navigator.userAgent
-)
+const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent)
 function App() {
   return (
     <>

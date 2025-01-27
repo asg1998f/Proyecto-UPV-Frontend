@@ -1,5 +1,5 @@
 import React from 'react';
-import './InformeRegistro.scss'; // Import your styles
+import './InformeRegistro.scss'; 
 
 const Formulario = () => {
 
