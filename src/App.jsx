@@ -12,6 +12,7 @@ import RestauracionImagenes from './components/RestauracionImagenes/Restauracion
 import Dashboard from './components/Dashboard/Dashboard'
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
+import LoginM from './components/LoginM/LoginM'
 
 
 
@@ -33,6 +34,8 @@ function App() {
       <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
       <Route path="/UbicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
       <Route path="/Almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
+      <Route path="/informeregistro" element={<InformeRegistro/>}/>
+      <Route path="/loginm" element={<LoginM/>}/>
       </Routes>
     </BrowserRouter>
       )
