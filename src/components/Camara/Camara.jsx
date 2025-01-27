@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import Webcam from "react-webcam";
-
 export default class Camara extends Component {
   constructor(props) {
     super(props);
     this.state = {
       imagen: null,
-      mostrarCamara: false 
+      mostrarCamara: false
     };
     this.webcam = React.createRef();
   }
-
   foto = () => {
     const captura = this.webcam.current.getScreenshot();
     console.log(captura);
@@ -18,32 +16,25 @@ export default class Camara extends Component {
       imagen: captura
     });
   };
-
   cerrarCamara = () => {
-    
     if (this.webcam.current && this.webcam.current.stream) {
       const tracks = this.webcam.current.stream.getTracks();
       tracks.forEach((track) => track.stop());
-      this.webcam.current.stream = null; 
+      this.webcam.current.stream = null;
     }
-
-
     this.setState({ mostrarCamara: false }, () => {
       if (this.props.onClose) {
-        this.props.onClose(); 
+        this.props.onClose();
       }
     });
   };
-
   abrirCamara = () => {
     this.setState({ mostrarCamara: true });
   };
-
   render() {
     const videoConstraints = {
-      facingMode: "environment" 
+      facingMode: "environment"
     };
-
     return (
       <div className="App">
         {this.state.mostrarCamara ? (
@@ -56,7 +47,7 @@ export default class Camara extends Component {
               width={350}
               videoConstraints={videoConstraints}
               onUserMedia={(stream) => {
-                this.webcam.current.stream = stream; 
+                this.webcam.current.stream = stream;
               }}
               onUserMediaError={() => {
                 console.error("Error al acceder a la cámara");
@@ -84,9 +75,3 @@ export default class Camara extends Component {
     );
   }
 }
-
-
-
-
-
-

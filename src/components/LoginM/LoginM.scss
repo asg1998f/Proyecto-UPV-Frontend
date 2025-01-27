@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
     }
+    
+
 .container-formulario {
     display: flex;
     width: 100%;
@@ -40,6 +42,8 @@ line-height: 0%;
     gap: 12px;
 flex-shrink: 0;
 }
+
+
 .input-usuario {
     display: flex;
 align-items: center;
@@ -53,8 +57,9 @@ font-family: Inter;
 font-size: 14px;
 font-style: normal;
 font-weight: 600;
-line-height: 130%;
+line-height: 130%; 
 }
+
 .container-contraseña {
     display: flex;
     flex-direction: column;
@@ -62,6 +67,8 @@ line-height: 130%;
     justify-content: center;
     gap: 12px;
 }
+
+
 .btn {
     border-radius: 100px;
 background: var(--Textos-Negro-texto, #002);
@@ -101,8 +108,10 @@ font-style: normal;
 font-weight: 400;
 line-height: 130%;
 }
+
 .label-contraseña {
     color: var(--Textos-Negro-texto, #002);
+
 /* Body Semibold/Body Semi Bold S */
 font-family: Inter;
 font-size: 14px;
