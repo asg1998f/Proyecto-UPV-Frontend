@@ -6,7 +6,7 @@ import LoginM from './components/LoginM/LoginM'
 /* import './styles/globalstyles.scss' */
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
-import Restauracion from './components/Restauration/Restauracion'
+import Restauracion from './components/Restauracion/Restauracion'
 import Restauracion2 from './components/Restauracion2';
 import Restauracion4 from './components/RestauracionCuatro/RestauracionCuatro';
 import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
