@@ -1,5 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import HeaderRestauracion from '../HeaderRestauracion/HederRestauracion';
+import Folder from "../../assets/iconos/IconoCarpetaRT.png"
+
 import './Restauracion.scss';
 
 const Restauracion = () => {
@@ -28,10 +30,14 @@ const Restauracion = () => {
               className="carpeta"
               onClick={() => handleSeleccionarCarpeta(carpeta.nombre)}
             >
-              <div className="carpeta-icono">📁</div>
+              <div className="icono3">
+                <img className="folder-open-outlined" src={Folder}/>
+              </div>
+              <div className="parent">
               <p>{carpeta.nombre}</p>
                 <div className="icon-circle"> 
                   <FaArrowRight style={{  color: "black", fontSize: "16px", marginTop: "7px" }} /> 
+                </div>
                 </div>
               </div>
           ))}

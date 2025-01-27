@@ -1,5 +1,8 @@
 import "./RestauracionCuatro.scss";
 import Vector from "../../assets/images/Vector.png"
+import Broom from "../../assets/images/escobita.png"
+import Folder from "../../assets/iconos/IconoCarpetaRT.png"
+
 
 const RestauracionCuatro = () => {
   return (
@@ -10,7 +13,7 @@ const RestauracionCuatro = () => {
       <div className="frame-427319580">
         <div className="frame-427319553">
           <div className="icono">
-            <img className="fi-sr-broom" src="fi-sr-broom0.svg" />
+            <img className="fi-sr-broom" src={Broom} />
           </div>
           <div className="restauraci-n2">Restaurar</div>
         </div>
@@ -21,9 +24,7 @@ const RestauracionCuatro = () => {
             </div>
           </div>
           <div className="input-addon-icon">
-            <div className="icono2">
-              <img className="search-outlined" src="search-outlined0.svg" />
-            </div>
+            
           </div>
         </div>
       </div>
@@ -39,7 +40,7 @@ const RestauracionCuatro = () => {
                   <div className="icono3">
                     <img
                       className="folder-open-outlined"
-                      src="folder-open-outlined0.svg"
+                      src={Folder}
                     />
                   </div>
                   <div className="frame-39955">
@@ -49,7 +50,9 @@ const RestauracionCuatro = () => {
                 </div>
               </div>
             </div>
-            <img className="icono4" src="icono3.svg" />
+            <div className="checkbox-container">
+                <input type="checkbox" id="item1" name="item1" />
+            </div>
           </div>
         </div>
         <div className="component-60">
@@ -60,7 +63,7 @@ const RestauracionCuatro = () => {
                   <div className="icono3">
                     <img
                       className="folder-open-outlined2"
-                      src="folder-open-outlined1.svg"
+                      src={Folder}
                     />
                   </div>
                   <div className="frame-39955">
@@ -70,7 +73,9 @@ const RestauracionCuatro = () => {
                 </div>
               </div>
             </div>
-            <img className="icono5" src="icono5.svg" />
+            <div className="checkbox-container">
+                <input type="checkbox" id="item1" name="item1" />
+            </div>
           </div>
         </div>
         <div className="component-57">
@@ -81,7 +86,7 @@ const RestauracionCuatro = () => {
                   <div className="icono3">
                     <img
                       className="folder-open-outlined3"
-                      src="folder-open-outlined2.svg"
+                      src={Folder}
                     />
                   </div>
                   <div className="frame-39955">
@@ -91,7 +96,9 @@ const RestauracionCuatro = () => {
                 </div>
               </div>
             </div>
-            <img className="icono6" src="icono7.svg" />
+            <div className="checkbox-container">
+                <input type="checkbox" id="item1" name="item1" />
+            </div>
           </div>
         </div>
         <div className="component-58">
@@ -102,7 +109,7 @@ const RestauracionCuatro = () => {
                   <div className="icono3">
                     <img
                       className="folder-open-outlined4"
-                      src="folder-open-outlined3.svg"
+                      src={Folder}
                     />
                   </div>
                   <div className="frame-39955">
@@ -112,7 +119,9 @@ const RestauracionCuatro = () => {
                 </div>
               </div>
             </div>
-            <img className="icono7" src="icono9.svg" />
+            <div className="checkbox-container">
+                <input type="checkbox" id="item1" name="item1" />
+            </div>
           </div>
         </div>
         <div className="component-55">
@@ -123,7 +132,7 @@ const RestauracionCuatro = () => {
                   <div className="icono3">
                     <img
                       className="folder-open-outlined5"
-                      src="folder-open-outlined4.svg"
+                      src={Folder}
                     />
                   </div>
                   <div className="frame-39955">
@@ -133,7 +142,9 @@ const RestauracionCuatro = () => {
                 </div>
               </div>
             </div>
-            <img className="icono8" src="icono11.svg" />
+            <div className="checkbox-container">
+                <input type="checkbox" id="item1" name="item1" />
+            </div>
           </div>
         </div>
         <div className="component-56">
@@ -144,7 +155,7 @@ const RestauracionCuatro = () => {
                   <div className="icono3">
                     <img
                       className="folder-open-outlined6"
-                      src="folder-open-outlined5.svg"
+                      src={Folder}
                     />
                   </div>
                   <div className="frame-39955">
@@ -154,7 +165,9 @@ const RestauracionCuatro = () => {
                 </div>
               </div>
             </div>
-            <img className="icono9" src="icono13.svg" />
+            <div className="checkbox-container">
+                <input type="checkbox" id="item1" name="item1" />
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Restauracion from './components/Restauration/Restauracion'
 import Restauracion2 from './components/Restauracion2';
-import RestauracionCuatro from './components/RestauracionCuatro/RestauracionCuatro';import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
+import RestauracionCuatro from './components/RestauracionCuatro/RestauracionCuatro';
+import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
 import LogoSalvar from './assets/iconos/LogoSalvar.png'
 
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -20,6 +21,9 @@ function App() {
       <Routes>
         <Route path="/home" element={<HomeDistributiva
       logo = {LogoSalvar}/>}></Route>
+            <Route path="/restauracion" element={<Restauracion/>}/>
+      <Route path="/restauracion2" element={<Restauracion2/>}/>
+      <Route path="/restauracionCuatro" element={<RestauracionCuatro/>}/>
       </Routes>
     </BrowserRouter>
       ) 
