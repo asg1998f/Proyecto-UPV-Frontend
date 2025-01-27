@@ -11,9 +11,9 @@ const HeaderRestauracion =()=>{
           <div className="icono">
             <img className="fi-sr-broom" src={Broom} />
           </div>
-          <div className="almac-n">Restaurar</div>
+          <div className="almac-nRestauracion">Restaurar</div>
         <div className="frame-427319552">
-          <div className="_0012-ft">0012-FT</div>
+          <div className="_0012-ftRestauracion">0012-FT</div>
             3 álbumes, 40 fotos y 1 marco
         </div>
     </div>
