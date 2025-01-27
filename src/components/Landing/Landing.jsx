@@ -223,19 +223,19 @@ const Landing = () => {
 
 
       <div class="encu-ntranos">
-  <div class="frame-80">
-    <div class="titulo">
-      <div class="headline">
-        <div class="salvem-les-fotos">Encuéntranos</div>
-        <div
-          class="puedes-venir-a-traernos-tus-fotograf-as-a-la-facultad-de-bellas-artes-de-la-upv"
-        >
-          Puedes venir a traernos tus fotografías a la Facultad de Bellas Artes
-          de la UPV.
-        </div>
-      </div>
-    </div>
-    <div class="frame-78">
+        <div class="frame-80">
+          <div class="titulo">
+            <div class="headline">
+              <div class="salvem-les-fotos">Encuéntranos</div>
+              <div
+                class="puedes-venir-a-traernos-tus-fotograf-as-a-la-facultad-de-bellas-artes-de-la-upv"
+              >
+                Puedes venir a traernos tus fotografías a la Facultad de Bellas Artes
+                de la UPV.
+              </div>
+            </div>
+          </div>
+          <div class="frame-78">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1539.6753710334099!2d-0.34454972892483!3d39.48399400990552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1737546898503!5m2!1ses!2ses"
               width="100%"
@@ -247,50 +247,50 @@ const Landing = () => {
               tabIndex="0"
               title="Ubicación"
             ></iframe>
-     <div className="frame-73">
-            <div className="frame-68">
-              <FaMapMarkerAlt className="icono" />
-              <div className="salvem-les-fotos2">
-                Camino de Vera, s/n, Edificio 3M - 3N,
-                <br />
-                46022 Valencia
+            <div className="frame-73">
+              <div className="frame-68">
+                <FaMapMarkerAlt className="icono" />
+                <div className="salvem-les-fotos2">
+                  Camino de Vera, s/n, Edificio 3M - 3N,
+                  <br />
+                  46022 Valencia
+                </div>
+              </div>
+              <div className="frame-69">
+                <FaClock className="icono2" />
+                <div className="salvem-les-fotos3">
+                  L-V 07:30 a 21:00
+                  <br />
+                  S 08:00
+                  <br />
+                  D Cerrado
+                </div>
+              </div>
+              <div className="frame-70">
+                <FaPhoneAlt className="icono3" />
+                <div className="salvem-les-fotos2">673 881 136</div>
+              </div>
+              <div className="frame-72">
+                <FaEnvelope className="icono4" />
+                <div className="salvem-les-fotos2">restauración@upv.es</div>
+              </div>
+              <div className="frame-71">
+                <FaInstagram className="vector" />
+                <div className="salvem-les-fotos4">salvemoslesfotos</div>
               </div>
             </div>
-            <div className="frame-69">
-              <FaClock className="icono2" />
-              <div className="salvem-les-fotos3">
-                L-V 07:30 a 21:00
-                <br />
-                S 08:00
-                <br />
-                D Cerrado
-              </div>
-            </div>
-        <div className="frame-70">
-              <FaPhoneAlt className="icono3" />
-              <div className="salvem-les-fotos2">673 881 136</div>
-            </div>
-            <div className="frame-72">
-              <FaEnvelope className="icono4" />
-              <div className="salvem-les-fotos2">restauración@upv.es</div>
-            </div>
-            <div className="frame-71">
-              <FaInstagram className="vector" />
-              <div className="salvem-les-fotos4">salvemoslesfotos</div>
-            </div>
+          </div>
+        </div>
+        <div class="frame-79">
+          <img class="vector-1" src="vector-10.svg" />
+          <div class="frame-77">
+            <div class="cookies">Cookies</div>
+            <div class="aviso-legal">Aviso legal</div>
+            <div class="pol-tica-de-privacidad">Política de privacidad</div>
+            <div class="contacto">Contacto</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="frame-79">
-    <img class="vector-1" src="vector-10.svg" />
-    <div class="frame-77">
-      <div class="cookies">Cookies</div>
-      <div class="aviso-legal">Aviso legal</div>
-      <div class="pol-tica-de-privacidad">Política de privacidad</div>
-      <div class="contacto">Contacto</div>
-    </div>
-  </div>
-</div>
 
 
     </>
