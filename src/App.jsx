@@ -11,6 +11,7 @@ import LogoSalvar from './assets/iconos/LogoSalvar.png'
 import Dashboard from './components/Dashboard/Dashboard'
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
+import Entrega from './components/Entrega/Entrega'
 
 
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
       <Route path="/UbicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
       <Route path="/Almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
+      <Route path="/Entrega" element={<Entrega icono = {IconoAlmacenH}/>}></Route>
       </Routes>
     </BrowserRouter>
       )
