@@ -6,13 +6,8 @@ import LoginM from './components/LoginM/LoginM'
 /* import './styles/globalstyles.scss' */
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
-<<<<<<< HEAD
-import HeaderM from './components/HeaderM/HeaderM'
-=======
-import Restauracion from './components/Restauration/Restauracion'
-import Restauracion2 from './components/Restauracion2';
+import Restauracion from './components/Restauracion/Restauracion'
 import Restauracion4 from './components/RestauracionCuatro/RestauracionCuatro';
->>>>>>> 239d671446fdcdbc943c2c25f0d6392f92c1ebb8
 import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
 import Landing from './components/Landing/Landing'
 import LogoSalvar from './assets/iconos/LogoSalvar.png'
@@ -26,34 +21,21 @@ const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
 )
 
 function App() {
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 239d671446fdcdbc943c2c25f0d6392f92c1ebb8
   return (
     <>
     {esMobil ?
     (
     <BrowserRouter>
       <Routes>
-<<<<<<< HEAD
-       <HeaderM/>
-        <Route path="/restauracionLote" element={<restauracionLote/>}/>
-        <Route path="Home" element={<UbicacionAlmacen
-      logo = {avion}/>}></Route>
-=======
 
         <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
         <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
         <Route path="/almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
         <Route path="/restauracion" element={<Restauracion/>}/>
-        <Route path="/restauracion2" element={<Restauracion2/>}/>
         <Route path="/restauracion4" element={<Restauracion4/>}/>
 
        <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
 
->>>>>>> 239d671446fdcdbc943c2c25f0d6392f92c1ebb8
       </Routes>
     <Routes>
       <Route path="/" element={ <Landing/>} />
