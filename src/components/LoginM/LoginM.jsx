@@ -20,8 +20,8 @@ const LoginM = () => {
                 </label>
                 <Form.Item>
         <Select className='input-usuario' placeholder="Usuario">
-          <Select.Option value="admin">Admin</Select.Option>
-          <Select.Option value="trabajador">Trabajador</Select.Option>
+          <Select.Option name="admin" value="admin">Administrador</Select.Option>
+          <Select.Option name="trabajador" value="trabajador">Trabajador</Select.Option>
         </Select>
       </Form.Item>
             </div>

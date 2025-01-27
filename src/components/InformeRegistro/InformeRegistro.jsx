@@ -2,19 +2,35 @@ import React, { useEffect, useState } from 'react'
 import iconoregistro from "../../assets/registrar-icono.png"
 import "./InformeRegistro.scss"
 import {  Button  } from 'antd';
+import { jsPDF } from 'jspdf';
 import Camara from '../Camara/Camara';
 import imgcamara from '../../assets/iconos/IconoCamara.png'
 import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
 import { useNavigate } from 'react-router-dom';
 
 const InformeRegistro = () => {
-  const [mostrarCamara, setMostrarCamara] = useState(false);
+  const [mostrarCamara, setMostrarCamara] = useState(false); // Estado para mostrar la cámara
+  const [archivoPDF, setArchivoPDF] = useState(null); // Estado para guardar el PDF
+
   const manejarEscaneo = () => {
-    setMostrarCamara(!mostrarCamara);
+    setMostrarCamara(true);
   };
+
   const cerrarCamaraDesdeRegistro = () => {
-    setMostrarCamara(false); 
+    setMostrarCamara(false);
   };
+
+  const manejarCaptura = (fotoBase64) => {
+    // Convertir la imagen Base64 a un archivo PDF
+    const pdf = new jsPDF();
+    pdf.addImage(fotoBase64, 'JPEG', 10, 10, 190, 0); // Ajustar la imagen al ancho del PDF
+    const blobPDF = pdf.output('blob'); // Generar el PDF como Blob
+    const archivo = new File([blobPDF], 'captura.pdf', { type: 'application/pdf' });
+
+    setArchivoPDF(archivo); // Guardar el archivo PDF en el estado
+    setMostrarCamara(false); // Cerrar la cámara
+  };
+
   const obtenerFechaActual = () => {
     const fechaActual = new Date();
     const dia = String(fechaActual.getDate()).padStart(2, '0');
@@ -587,22 +603,34 @@ const InformeRegistro = () => {
           {errors.observaciones && <p className="error">{errors.observaciones}</p>}
       </div>
       <div className="sector-7">
-        <Button
-          className="btn-camara"
-          onClick={manejarEscaneo}
-        >
-          <img className="camera" src={imgcamara} alt="Cámara" />
-          <div className="escanear-formulario2">Escanear formulario</div>
-        </Button>
-        <Button className="cerrar-btn">
-          <div className="cerrar-camara">Cerrar camara</div>
-        </Button>
-        {mostrarCamara && (
-          <div className="modal-camara">
-            <Camara onClose={cerrarCamaraDesdeRegistro} />
-          </div>
-        )}
-      </div>
+      {/* Botón para abrir la cámara */}
+      <button type="button" className="btn-camara" onClick={manejarEscaneo}>
+        <img className="camera" src={imgcamara} alt="Cámara" />
+        <div className="escanear-formulario2">Escanear formulario</div>
+      </button>
+
+      {/* Modal de la cámara */}
+      {mostrarCamara && (
+        <div className="modal-camara">
+          <Camara onClose={cerrarCamaraDesdeRegistro} onCapture={manejarCaptura} />
+        </div>
+      )}
+
+      {/* Mostrar el archivo PDF generado */}
+      {archivoPDF && (
+        <div>
+          <p>Archivo generado:</p>
+          <a
+            href={URL.createObjectURL(archivoPDF)}
+            download={archivoPDF.name}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Descargar PDF
+          </a>
+        </div>
+      )}
+    </div>
       <div className='sector-8'>
         <h2 className='responsable'>Responsable</h2>
         <div className='responsable-dni'>
