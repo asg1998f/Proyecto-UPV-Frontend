@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
 import logo from "../../assets/images/Logo.png"
