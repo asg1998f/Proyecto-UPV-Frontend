@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import './App.css'
 import UbicacionAlmacen from './components/UbicacionAlmacen/UbicacionAlmacen'
 import InformeRegistro from './components/InformeRegistro/InformeRegistro'
@@ -6,8 +7,7 @@ import LoginM from './components/LoginM/LoginM'
 /* import './styles/globalstyles.scss' */
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
-import Restauracion from './components/Restauration/Restauracion'
-import Restauracion2 from './components/Restauracion2';
+import Restauracion from './components/Restauracion/Restauracion'
 import Restauracion4 from './components/RestauracionCuatro/RestauracionCuatro';
 import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
 import Landing from './components/Landing/Landing'
@@ -33,7 +33,6 @@ function App() {
         <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
         <Route path="/almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
         <Route path="/restauracion" element={<Restauracion/>}/>
-        <Route path="/restauracion2" element={<Restauracion2/>}/>
         <Route path="/restauracion4" element={<Restauracion4/>}/>
 
        <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
@@ -53,11 +52,38 @@ function App() {
       <Routes>
         <Route path="/" element={ <Landing/>} />
         <Route path="/login" element={<Login/>}/>
+        <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
       </BrowserRouter>)}
     </>
   )
 }
+//   return (   
+//     <>
+//     {esMobil ? 
+//     (      
+//     <BrowserRouter>
+//     <Header/>
+//     <Routes>
+//       <Route path="/" element={ <Landing/>} />
+//       <Route path="/informeregistro" element={<InformeRegistro/>}/>
+
+//     </Routes>
+//     </BrowserRouter>
+//     <div>
+//       <FaseSecado
+//       title = "Secado"
+//       logo = {avion}
+//       />
+//       <FaseLimpieza 
+//       title = "Limpieza"
+//       logo = {escoba}
+//       /> 
+//     </div>
+    
+//     </>
+//   )
+// }
 
 export default App;
