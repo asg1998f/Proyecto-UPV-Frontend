@@ -43,7 +43,7 @@ const HomeDistributiva = (props) => {
                         <img src={RegistroFlecha}/>
                     </div>
                 </div>
-                <div className="pantalla-inf-boton master" onClick={()=>{navigate("/")}}>
+                <div className="pantalla-inf-boton master">
                     <div className="icono1-inf-boton">
                         <img src={Master}/>
                     </div>
@@ -58,7 +58,7 @@ const HomeDistributiva = (props) => {
                     </div>
                 
                 </div>
-                <div className="pantalla-inf-boton almacen" onClick={()=>{navigate("/")}}>
+                <div className="pantalla-inf-boton almacen" onClick={()=>{navigate("/almacenaje")}}>
                     <div className="icono1-inf-boton">
                             <img src={Almacen}/>
                         </div>
@@ -73,7 +73,7 @@ const HomeDistributiva = (props) => {
                         </div>
                     
                     </div>
-                <div className="pantalla-inf-boton restaurar" onClick={()=>{navigate("/")}}>
+                <div className="pantalla-inf-boton restaurar" onClick={()=>{navigate("/restauracion")}}>
                     <div className="icono1-inf-boton">
                             <img src={Restaurar}/>
                         </div>
@@ -88,7 +88,7 @@ const HomeDistributiva = (props) => {
                         </div>
                     
                     </div>
-                <div className="pantalla-inf-boton digitalizar" onClick={()=>{navigate("/")}}>
+                <div className="pantalla-inf-boton digitalizar">
                     <div className="icono1-inf-boton">
                             <img src={Digitalizar}/>
                         </div>
