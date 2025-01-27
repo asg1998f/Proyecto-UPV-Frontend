@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
 import logo from "../../assets/images/Logo.png"
@@ -10,8 +9,8 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
+    
     <div className="nav-top-bar-desktop">
-      {/* Logo */}
       <div className="logo-container">
         <img className="logo" src={logo} alt="Salvem les Fotos" />
       </div>

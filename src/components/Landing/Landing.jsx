@@ -3,6 +3,7 @@ import './Landing.scss';
 import foto from '../../assets/random2.png';
 
 const Landing = () => {
+  
   return (
     <>
       {/* Imagen al lado del texto */}

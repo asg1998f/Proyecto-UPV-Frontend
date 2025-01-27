@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.nav-sup{
+    background-color: white;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .nav-sup-titulo{
+        margin-bottom: 20px;
+    }
+    .ant-input-search{
+        width: 339px;
+        height: 40px;
+        border-radius: 8px 0px 0px 0px;
+    }
+    .ant-input, .ant-btn{
+        background-color: #ECEEF3;
+        color: #ECEEF3;
+    }
+}
