@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"; // Importar axios
 import "./RestauracionImagenes.scss";
-import IconoRestaurar from "../../assets/iconos/IconoRestaurar.png";
+import IconoRestaurarR from "../../assets/iconos/IconoRestaurarR.png";
 import FlechaIzquierda from "../../assets/iconos/FlechaIzquierda.png";
 import IconoPapelera from "../../assets/iconos/IconoPapelera.png";
 
@@ -82,9 +82,9 @@ const RestauracionImagenes = () => {
             <div className="frame-427319580">
               <div className="frame-427319550">
                 <div className="icono">
-                  <img src={IconoRestaurar} alt="Icono restaurar" />
+                  <img src={IconoRestaurarR} alt="Icono restaurar" />
                 </div>
-                <div className="almac-n">Restaurar</div>
+                <div className="almac-n">Restauración</div>
               </div>
               <div className="frame-427319552">
                 {/* Mostrar el número de serie */}
@@ -104,7 +104,7 @@ const RestauracionImagenes = () => {
             </div>
           </div>
 
-          <div className="cards">
+          <div className="cardsRestauracion">
             {images.map((image) => (
               <div
                 className={`image-check-no-check ${
@@ -139,6 +139,7 @@ const RestauracionImagenes = () => {
         )}
 
         {/* Botón Añadir más */}
+       <div className="padreBotones">
         <div className="bot-n">
           <label className="validar" htmlFor="addMore">
             Añadir más
@@ -151,13 +152,14 @@ const RestauracionImagenes = () => {
             style={{ display: "none" }}
             multiple
             onChange={handleAddMore}
-          />
+            />
         </div>
 
         <div className="bot-n2" onClick={() => setShowModal(true)}>
           <div className="validar2">Validar subida</div>
         </div>
       </div>
+            </div> 
 
       {/* Modal */}
       {showModal && (
