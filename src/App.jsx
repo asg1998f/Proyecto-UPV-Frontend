@@ -16,10 +16,13 @@ import RestauracionImagenes from './components/RestauracionImagenes/Restauracion
 import Dashboard from './components/Dashboard/Dashboard'
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
+
+import FolderSystem from './components/FolderSystem/FolderSystem'
+
 import Entrega from './components/Entrega/Entrega'
 import IconoEntregarE from './assets/iconos/IconoEntregarE.png'
 
-const entregar = "Entregar"
+
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent
 )
@@ -27,6 +30,7 @@ const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
 function App() {
   return (
     <>
+
       {esMobil ? (
         <BrowserRouter>
           <Routes>
@@ -62,9 +66,11 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/carpetas" element={<FolderSystem/>}/>
           </Routes>
         </BrowserRouter>
       )}
+
     </>
   );
 }
