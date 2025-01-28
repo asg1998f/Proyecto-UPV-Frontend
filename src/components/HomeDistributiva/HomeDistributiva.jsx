@@ -12,11 +12,28 @@ import Entregar from '../../assets/iconos/IconoEntregarH.png'
 import EntregarFlecha from '../../assets/iconos/IconoFlechaHE.png'
 import { useNavigate } from "react-router-dom"
 
+import { useState } from "react"
+import Validacion from "../Validacion/Validacion";
+import { validar } from "../../features/auth/authSlice"
+import { useDispatch, useSelector } from "react-redux"
+
+
 const HomeDistributiva = (props) => {
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
+    const [modalAbierto, setModalAbierto] = useState(false)
+  
+    const handleConfirm = async (dni) => { 
+        await dispatch( validar(dni))   
+      let esCorrecto = localStorage.getItem("dni")
+        if(esCorrecto == "true" ){  
+            alert("El DNI  es correcto.");
+        }
+      setModalAbierto(false);
+    }
   return (
-    <div className="fondo">
+    <>
+    <div className={modalAbierto ? "blur-background" : "fondo"}>
         <div className="nav-sup">
             <HeaderM
                 title = {props.title}
@@ -29,7 +46,7 @@ const HomeDistributiva = (props) => {
                 ¿A qué fase quieres acceder?
             </div>
             <div className="pantalla-inf-botones">
-                <div className="pantalla-inf-boton registrar" onClick={()=>{navigate("/")}}>
+                <div className="pantalla-inf-boton registrar" onClick={()=>{navigate("/informeregistro")}}>
                     <div className="icono1-inf-boton">
                         <img src={Registro}/>
                     </div>
@@ -103,7 +120,7 @@ const HomeDistributiva = (props) => {
                         </div>
                     
                     </div>
-                <div className="pantalla-inf-boton entregar" onClick={()=>{navigate("/")}}>
+                <div className="pantalla-inf-boton entregar" onClick={()=>{navigate("/entrega")}}>
                     <div className="icono1-inf-boton">
                             <img src={Entregar}/>
                         </div>
@@ -122,7 +139,18 @@ const HomeDistributiva = (props) => {
                 </div>
             
         </div>
-    </div>
+        </div>
+
+  <div >
+    <button onClick={() => setModalAbierto(true)}>Validar</button>
+    <Validacion 
+      isOpen={modalAbierto} 
+      onClose={() => setModalAbierto(false)} 
+      onConfirm={handleConfirm} 
+    />
+  </div>
+</>
+
   )
 }
 
