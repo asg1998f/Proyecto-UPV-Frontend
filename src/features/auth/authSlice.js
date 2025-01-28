@@ -2,14 +2,11 @@ import { createAsyncThunk, createSlice, } from "@reduxjs/toolkit";
 import authService from "./authService";
 
 const user = JSON.parse(localStorage.getItem("user")) || null;
-
 const token = localStorage.getItem("token") || "";
-
-
 
 const initialState = {
     user: user,
-    token: token
+    token: token,
 };
 
 export const authSlice = createSlice({
@@ -36,6 +33,9 @@ extraReducers: (builder) => {
         state.isError = true
         state.message = action.payload
       })
+      .addCase(validar.fulfilled,(state,action)=>{
+        state.esCorrecto = action.payload
+      })
   },
 })
 
@@ -55,7 +55,13 @@ export const register = createAsyncThunk('auth/register',async(user)=>{
       console.error(error);
     }
   });
-  
-    
+
+  export const validar = createAsyncThunk("auth/validar", async (dni) => {
+    try {
+      return await authService.validar(dni);
+    } catch (error) {
+      console.error(error);
+    }
+  });
 
 export default authSlice.reducer;
