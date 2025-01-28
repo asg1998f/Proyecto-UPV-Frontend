@@ -2,26 +2,27 @@ import React from "react";
 import "./UbicacionAlmacen.scss";
 import IconoAlmacenA from "../../assets/iconos/IconoAlmacenA.png";
 import { useNavigate } from "react-router-dom";
+import FlechaNavigate from "../FlechaNavigate/FlechaNavigate";
 
 const UbicacionAlmacen = () => {
   const navigate = useNavigate();
 
   return (
     <div class="home">
-      <div class="logo">
-        <img class="vector" src="vector0.svg" />
-        <div class="frame-427319580">
-          <div class="frame-427319550">
-            <div class="icono">
-              <img class="fi-sr-box" src="fi-sr-box0.svg" />
-            </div>
-            <div class="almac-n">Almacén</div>
+      <div className="zona-1">
+        <div className="caja-flecha">
+          <div className="flecha-navigate">
+            <FlechaNavigate />
           </div>
-          <div class="frame-427319552">
-            <div class="_0012-ft">0012-FT</div>
-            <div class="_3-lbumes-40-fotos-y-1-marco">
-              3 álbumes, 40 fotos y 1 marco
-            </div>
+        </div>
+        <div className="logo-anadir">
+          <div className="titulo-anadir-almacen">
+            <img src={IconoAlmacenA} />
+            <p>Almacén</p>
+          </div>
+          <div className="lote-contenido">
+            <h1 className="lote-anadir">0012-FT</h1>
+            <p>Contenido</p>
           </div>
         </div>
       </div>
