@@ -9,8 +9,8 @@ const LoginM = () => {
     <div className='raro'>
     <div className='tituloLoginM'>
         <div className='texto'>
-        <h1 className='salvem'>SALVEM</h1>
-        <h2 className='les-fotos'>LES FOTOS</h2>
+        <span className='salvem'>SALVEM</span>
+        <span className='les-fotos'>LES FOTOS</span>
         </div>
     </div>
     <div className='formulario'>
