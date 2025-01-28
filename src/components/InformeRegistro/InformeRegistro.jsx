@@ -8,7 +8,9 @@ import imgcamara from '../../assets/iconos/IconoCamara.png'
 import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLast } from '../../features/lote/loteSlice';
+import { getLast, updateByNregistro } from '../../features/lote/loteSlice';
+import axios from "axios";
+
 
 const InformeRegistro = () => {
   const [mostrarCamara, setMostrarCamara] = useState(false); // Estado para mostrar la cámara
@@ -302,7 +304,7 @@ setRegistroInput(updatedString)
       
       const formularioFiltrado = {
         nombrePropietario : formData.nombrePropietario + " " +formData.apellido,
-        conPropietario : formData.conPropietario,
+        conPropietario : formData.conPropietario?true:false,
         otros: formData.otros,
         lugar: formData.lugar,
         observaciones: formData.observaciones,
@@ -318,8 +320,22 @@ setRegistroInput(updatedString)
         fotosenmarcadas:formData.fotosenmarcadas,
         negativos:formData.negativos
       }
+      const dataForm = new FormData();
+      dataForm.append("archivo", document.getElementById("pdf").files[0]);
       console.log("Formulario enviado:", formularioFiltrado);
-      await axios.post('https://desafio-tripulaciones-429508457144.europe-west1.run.app'+"/crear_estrucutra_completa?nombre_principal="+formularioFiltrado.nRegistro+"&cantidad_albumes="+formularioFiltrado.album+"&cantidad_marcos="+formularioFiltrado.fotosenmarcadas+"&cantidad_negativos="+formularioFiltrado.negativos)
+      const file = new File([archivoPDF], formularioFiltrado.nRegistro+"-Registro", { type: "application/pdf" });
+      
+      console.log(formularioFiltrado.nRegistro);
+      console.log(formularioFiltrado);
+      
+      
+      await axios.post("https://desafio-tripulaciones-429508457144.europe-west1.run.app/crear_estructura_completa?nombre_principal="+formularioFiltrado.nRegistro+"&cantidad_albumes="+formularioFiltrado.album+"&cantidad_marcos="+formularioFiltrado.fotosenmarcadas+"&cantidad_negativos="+formularioFiltrado.negativos,dataForm,{
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      })
+      dispatch(updateByNregistro({nRegistro:formularioFiltrado.nRegistro,body:formularioFiltrado}))
+
     } else {
       alert("Por favor, corrija los errores en el formulario.");
     }
@@ -681,6 +697,7 @@ setRegistroInput(updatedString)
           >
             Descargar PDF
           </a>
+          <input type="file" name="" id="pdf"/>
         </div>
       )}
     </div>
@@ -700,6 +717,7 @@ setRegistroInput(updatedString)
         </div>
       </div>
       <div className='btn-registrar'>
+        
       <Button className='btn' type="primary" shape="round"  onClick={onSubmit} >
             <p className='login'>Registrar</p>
           </Button>

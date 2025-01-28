@@ -200,6 +200,13 @@ export const createTipo = createAsyncThunk("tipos/create", async (tipo) => {
     console.error(error);
   }
 });
+export const updateByNregistro = createAsyncThunk("lotes/updateByNregistro", async (obj) => {
+  try {
+    return await loteService.updateByNregistro(obj);
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 export const loteSlice = createSlice({
   name: "lotes",
