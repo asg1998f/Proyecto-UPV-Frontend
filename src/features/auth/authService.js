@@ -25,6 +25,17 @@ const getDniById = async (id) => {
   const res = await axios.get(API_DNI + "/id/" + id);
   return res.data;
 };
+const validar = async(dni)=>{
+  const res = await axios.get(API_URL + '/dniVerificados')
+  let esCorrecto = false
+  res.data.map((user)=>{
+    if(user.dni == dni){
+      esCorrecto = true
+    }
+  })
+  localStorage.setItem("dni", esCorrecto);
+  return res.data
+}
 
 const getAllUsers = async () => {
   const res = await axios.get(API_USERS + "/");
@@ -41,7 +52,8 @@ const authService = {
   getUserById,
   getDniById,
   getAllUsers,
-  getAllDni
+  getAllDni,
+  validar
 };
 
 export default authService;

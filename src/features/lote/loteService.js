@@ -12,6 +12,12 @@ const getAllLotes = async () => {
   const res = await axios.get(API_LOTES + "/");
   return res.data;
 };
+const updateByNregistro = async (obj) => {
+  console.log(obj);
+  
+  const res = await axios.put(API_LOTES+"/nRegistro/"+obj.nRegistro,obj.body)
+  return res.data
+}
 const getAllSubcarpetas = async () => {
   const res = await axios.get(API_SUBCARPETAS + "/");
   return res.data;
@@ -124,7 +130,8 @@ const loteService = {
   createFoto,
   createHistorial,
   createFase,
-  createTipo
+  createTipo,
+  updateByNregistro
 };
 
 export default loteService;
