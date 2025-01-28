@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"; // Importar axios
-import Webcam from "react-webcam";
 import "./RestauracionImagenes.scss";
 import IconoRestaurarR from "../../assets/iconos/IconoRestaurarR.png";
 import papelera from "../../assets/iconos/IconoPapelera.png";
@@ -17,7 +16,6 @@ const RestauracionImagenes = () => {
   const [selectedImages, setSelectedImages] = useState([]);
   const [isSelecting, setIsSelecting] = useState(false); // Nuevo estado para modo selección
   const [documentSerial, setDocumentSerial] = useState("Cargando...");
-  const [isCameraOpen, setIsCameraOpen] = useState(false);
 
   // Fetch document serial
   useEffect(() => {
@@ -53,18 +51,6 @@ const RestauracionImagenes = () => {
     setIsSelecting(!isSelecting); // Alternar el modo de selección
     if (isSelecting) setSelectedImages([]); // Limpiar selección al salir del modo
   };
-
-  const handleCapturePhoto = (webcamRef) => {
-    if (webcamRef.current) {
-      const imageSrc = webcamRef.current.getScreenshot();
-      if (imageSrc) {
-        setImages([...images, { id: images.length + 1, src: imageSrc }]);
-        setIsCameraOpen(false);
-      }
-    }
-  };
-
-  const webcamRef = React.useRef(null);
 
   return (
     <>
@@ -137,38 +123,22 @@ const RestauracionImagenes = () => {
           </div>
         )}
 
-        {/* Cámara de fotos */}
-        {isCameraOpen && (
-  <div className="camera-container full-screen">
-    <Webcam
-      audio={false}
-      ref={webcamRef}
-      screenshotFormat="image/jpeg"
-      className="webcam-view"
-    />
-    <div className="camera-buttons">
-      <Button
-        className="capture-button"
-        onClick={() => handleCapturePhoto(webcamRef)}
-      >
-        Capturar
-      </Button>
-      <Button
-        className="close-camera-button"
-        onClick={() => setIsCameraOpen(false)}
-      >
-        Cerrar cámara
-      </Button>
-    </div>
-  </div>
-)}
-
-
         {/* Botones Inferiores */}
-        {selectedImages.length === 0 && !isCameraOpen && (
+        {selectedImages.length === 0 && (
           <div className="padreBotones">
-            <div className="bot-n" onClick={() => setIsCameraOpen(true)}>
-              <div className="validar">Añadir más</div>
+            <div className="bot-n">
+              <label className="validar" htmlFor="addMore">
+                Añadir más
+              </label>
+              <input
+                id="addMore"
+                type="file"
+                accept="image/*"
+                capture="environment"
+                style={{ display: "none" }}
+                multiple
+                onChange={(e) => console.log(e.target.files)}
+              />
             </div>
 
             <div className="bot-n2" onClick={() => console.log("Validar subida")}>
