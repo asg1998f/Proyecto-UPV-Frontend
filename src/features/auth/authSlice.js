@@ -33,9 +33,6 @@ extraReducers: (builder) => {
         state.isError = true
         state.message = action.payload
       })
-      .addCase(validar.fulfilled,(state,action)=>{
-        state.esCorrecto = action.payload
-      })
   },
 })
 
