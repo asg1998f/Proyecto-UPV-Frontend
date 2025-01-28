@@ -17,6 +17,7 @@ import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
 import Entrega from './components/Entrega/Entrega'
 
+
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent
 )
@@ -31,10 +32,13 @@ function App() {
 
         <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
         <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
-        <Route path="/almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
+        <Route path="/Almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
         <Route path="/restauracion" element={<Restauracion/>}/>
         <Route path="/restauracion4" element={<Restauracion4/>}/>
-       <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
+        <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
+        <Route path="/Entrega" element={<Entrega/>} />
+        
+      
 
       </Routes>
     <Routes>

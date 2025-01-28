@@ -1,24 +1,37 @@
 import React from 'react'
 import './Entrega.scss';
-import IconoCarpetaE from'../../assets/iconos/IconoCarpetaE.png'
-import Vector from '../../assets/iconos/Vector.png'
-import IconoEntregarE from '../../assets/iconos/IconoEntregarE.png'
+import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
+import IconoBuscarG from '../../assets/iconos/IconoBuscarG.png'
+import IconoCarpetaE from '../../assets/iconos/IconoCarpetaE.png'
 import IconoCheckSeleccionadoE from '../../assets/iconos/IconoCheckSeleccionadoE.png'
+
+
 const Entrega = () => {
     return(
-    <div className="home">
+        <div className="home">
   <div className="logo">
-    <img className="vector" src={Vector} alt="Vector"/>
+     <FlechaNavigate/>
     <div className="frame-427319580">
       <div className="frame-427319553">
         <div className="icono">
-          <div className="IconoEntregarE">
-            <img className="IconoEntregarE" src={IconoEntregarE} alt="IconoEntregarE"/>
+          <div className="fi-sr-paper-plane">
+          <img className="group" src={IconoCarpetaE}/>
           </div>
         </div>
         <div className="restauraci-n">Entregar</div>
       </div>
-     
+      <div className="component-54">
+        <div className="wrapper">
+          <div className="text">
+            <div className="placeholder">Buscar por ID...</div>
+          </div>
+        </div>
+        <div className="input-addon-icon">
+          <div className="icono2">
+            <img className="search-outlined" src={IconoBuscarG}/>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div className="frame-427319548">
@@ -32,7 +45,7 @@ const Entrega = () => {
                 <div className="icono3">
                   <img
                     className="folder-open-outlined"
-                    src={IconoCarpetaE} alt="IconoCarpetaE"
+                    src={IconoCarpetaE}
                   />
                 </div>
                 <div className="frame-39955">
@@ -42,13 +55,15 @@ const Entrega = () => {
               </div>
             </div>
           </div>
-          <img className="IconoCheckSeleccionadoE" src={IconoCheckSeleccionadoE} />
+          <img className="icono4" src= {IconoCheckSeleccionadoE}/>
         </div>
       </div>
+
     </div>
   </div>
 </div>
+
     )
 }
 
-export default Entrega;
+export default Entrega
