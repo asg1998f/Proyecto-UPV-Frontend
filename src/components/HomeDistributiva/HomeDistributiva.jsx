@@ -29,7 +29,7 @@ const HomeDistributiva = (props) => {
                 ¿A qué fase quieres acceder?
             </div>
             <div className="pantalla-inf-botones">
-                <div className="pantalla-inf-boton registrar" onClick={()=>{navigate("/")}}>
+                <div className="pantalla-inf-boton registrar" onClick={()=>{navigate("/informeregistro")}}>
                     <div className="icono1-inf-boton">
                         <img src={Registro}/>
                     </div>
@@ -103,7 +103,7 @@ const HomeDistributiva = (props) => {
                         </div>
                     
                     </div>
-                <div className="pantalla-inf-boton entregar" onClick={()=>{navigate("/")}}>
+                <div className="pantalla-inf-boton entregar" onClick={()=>{navigate("/entrega")}}>
                     <div className="icono1-inf-boton">
                             <img src={Entregar}/>
                         </div>
