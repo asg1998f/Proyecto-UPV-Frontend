@@ -42,10 +42,7 @@ function App() {
               path="/anadirUbicacion"
               element={<AnadirUbicacion />}
             ></Route>
-            <Route
-              path="/almacenaje"
-              element={<Almacenaje icono={IconoAlmacenH} />}
-            ></Route>
+            <Route path="/Almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
             <Route path="/restauracion" element={<Restauracion />} />
             <Route path="/restauracion4" element={<Restauracion4 />} />
             <Route
@@ -55,6 +52,7 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/informeregistro" element={<InformeRegistro />} />
             <Route path="/loginM" element={<LoginM />} />
+            <Route path="/entrega" element={<Entrega title={"Entregar"} logo = {IconoEntregarE}/>} />
           </Routes>
         </BrowserRouter>
       ) : (
