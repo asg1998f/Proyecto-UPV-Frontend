@@ -1,4 +1,4 @@
-.fondo {
+.fondo2 {
   display: flex; /* Utiliza flexbox para alinear los elementos */
   height: 100vh;
   flex-direction: row; /* Esto coloca los elementos en fila */
@@ -341,12 +341,15 @@ tbody td {
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
+  width:100%;
   margin: 0; /* Elimina el margen que pueda estar causando separación */
   padding: 0; /* Elimina cualquier relleno extra */
 }
 
 .nombreLote span {
-  margin-left: 0; /* Asegura que no haya margen adicional entre la imagen y el texto */
+  
+  padding: 0;
+  margin: 0; /* Asegura que no haya margen adicional entre la imagen y el texto */
   display: inline-block; /* Asegura que el texto se mantenga alineado con la imagen */
 }
 
