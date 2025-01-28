@@ -3,6 +3,7 @@ import loteService from "./loteService";
 
 const initialState = {
   lotes: [],
+  ultimoLote:{}
 };
 
 export const getAllLotes = createAsyncThunk("lotes/getAll", async () => {
@@ -199,6 +200,13 @@ export const createTipo = createAsyncThunk("tipos/create", async (tipo) => {
     console.error(error);
   }
 });
+export const updateByNregistro = createAsyncThunk("lotes/updateByNregistro", async (obj) => {
+  try {
+    return await loteService.updateByNregistro(obj);
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 export const loteSlice = createSlice({
   name: "lotes",
@@ -248,7 +256,7 @@ export const loteSlice = createSlice({
       state.lotes = action.payload;
     });
     builder.addCase(getLast.fulfilled, (state, action) => {
-        state.ultimoLote = action.payload.lotes;
+        state.ultimoLote = action.payload.lote;
       });
     builder.addCase(createLote.fulfilled, (state, action) => {
       state.message = action.payload.message;
