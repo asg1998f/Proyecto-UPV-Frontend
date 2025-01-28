@@ -48,21 +48,19 @@
   position: relative;
 }
 .frame-427319553 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-}
-.icono {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  position: relative;
-  overflow: hidden;
-}
+    display: flex;
+    flex-direction: row; /* Ya debería estar configurado como row */
+    gap: 8px; /* Ajusta el espacio entre el ícono y el texto */
+    align-items: center; /* Alinea verticalmente el texto y el ícono */
+    justify-content: flex-start; /* Asegura que los elementos estén alineados a la izquierda */
+  }
+  .icono {
+    flex-shrink: 0;
+    width: 24px; /* Tamaño del ícono */
+    height: 24px;
+    position: relative;
+    overflow: hidden;
+  }
 .fi-sr-paper-plane {
   width: 100%;
   height: 100%;
@@ -489,4 +487,11 @@
   height: 24px;
   position: relative;
   overflow: visible;
+}
+
+.nav-sup-titulo {
+    a{
+        color:#000022;
+
+    }    
 }

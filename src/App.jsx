@@ -16,8 +16,9 @@ import Dashboard from './components/Dashboard/Dashboard'
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
 import Entrega from './components/Entrega/Entrega'
+import IconoEntregarE from './assets/iconos/IconoEntregarE.png'
 
-
+const entregar = "Entregar"
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent
 )
@@ -36,7 +37,7 @@ function App() {
         <Route path="/restauracion" element={<Restauracion/>}/>
         <Route path="/restauracion4" element={<Restauracion4/>}/>
         <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
-        <Route path="/Entrega" element={<Entrega/>} />
+        <Route path="/entrega" element={<Entrega title={"Entregar"} logo = {IconoEntregarE}/>} />
         
       
 

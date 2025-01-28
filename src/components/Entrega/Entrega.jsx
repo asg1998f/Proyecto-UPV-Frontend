@@ -4,36 +4,16 @@ import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
 import IconoBuscarG from '../../assets/iconos/IconoBuscarG.png'
 import IconoCarpetaE from '../../assets/iconos/IconoCarpetaE.png'
 import IconoCheckSeleccionadoE from '../../assets/iconos/IconoCheckSeleccionadoE.png'
+import HeaderM from '../HeaderM/HeaderM';
 
 
-const Entrega = () => {
+const Entrega = (props) => {
     return(
         <div className="home">
-  <div className="logo">
-     <FlechaNavigate/>
-    <div className="frame-427319580">
-      <div className="frame-427319553">
-        <div className="icono">
-          <div className="fi-sr-paper-plane">
-          <img className="group" src={IconoCarpetaE}/>
-          </div>
-        </div>
-        <div className="restauraci-n">Entregar</div>
-      </div>
-      <div className="component-54">
-        <div className="wrapper">
-          <div className="text">
-            <div className="placeholder">Buscar por ID...</div>
-          </div>
-        </div>
-        <div className="input-addon-icon">
-          <div className="icono2">
-            <img className="search-outlined" src={IconoBuscarG}/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<HeaderM
+    title ={props.title}
+    logo = {props.logo}
+/>
   <div className="frame-427319548">
     <div className="pendiente-de-entregar">Pendiente de entregar</div>
     <div className="cards">

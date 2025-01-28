@@ -1,91 +1,64 @@
 import React from 'react'
-import './Almacenaje.scss';
-
-import IconoCarpetaM from'../../assets/iconos/IconoCarpetaM.png'
-import IconoFlechaM from'../../assets/iconos/IconoFlechaM.png'
-import IconoCarpetaA from'../../assets/iconos/IconoCarpetaA.png'
-import IconoFlechaA from'../../assets/iconos/IconoFlechaA.png'
-import Vector from '../../assets/iconos/Vector.png'
-import { useNavigate } from 'react-router-dom';
-
+import FlechaNavigate from '../FlechaNavigate/FlechaNavigate'
+import Search from 'antd/es/input/Search'
+import carpetarosa from "../../assets/iconos/IconoCarpetaA.png"
+import carpetaazul from "../../assets/iconos/IconoCarpetaM.png"
+import flecharosa from "../../assets/iconos/IconoFlechaA.png"
+import flechaazul from "../../assets/iconos/IconoFlechaM.png"
+import "./Almacenaje.scss"
 
 const Almacenaje = () => {
-const navigate = useNavigate()  
   return (
-    <div className="home">
-      <div className="logo">
-        <img className="vector" src={Vector} alt="Vector" />
-        <div className="frame-427319580">
-          <div className="frame-427319553">
-            <div className="icono">
-              <img className="fi-sr-box" src={IconoCarpetaA} alt="Carpeta M" />
-            </div>
-            <div className="restauraci-n">Almacén</div>
+    <div className='container-almacenaje'>
+      <div className='tramo-1'>
+          <div className='flecha-navigate'>
+          <FlechaNavigate/>
           </div>
-          <div className="component-54">
-            <div className="wrapper">
-              <div className="text">
-                <div className="placeholder">Buscar por ID...</div>
-              </div>
-            </div>
-            <div className="input-addon-icon">
-              <div className="icono2">
-                <img className="search-outlined" src={IconoFlechaM} alt="Search" />
-              </div>
-            </div>
+        <div className='almacen-1'>
+          <div className='titulo-almacen'>
+            <img className="carpeta-rosa" src={carpetarosa}/>
+            <p classname="almacen-texto">Almacén</p>
           </div>
+          <div className="navegador-almacen">
+            <Search
+            placeholder="Buscar por ID..."
+            className='buscador-almacen'
+            />
+            </div>
         </div>
-      </div>
-      <div className="frame-427319548">
-        <div className="pendientes-de-almacenar">Pendientes de almacenar</div>
-        <div className="cards">
-          
-          <div className="component-69" onClick={()=>{navigate("/")}}>
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined2" src={IconoCarpetaM} alt="Carpeta M" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
+        </div>
+        <div className='tramo-2'>
+        <p className='titulo-pendiente'>Pendientes de almacenar</p>
+          <div className='pendiente-almacenar'>
+            <div className='container-pendientes'>
+              <img className="carpeta-pendientes" src={carpetaazul}></img>
+              <div className='codigo-lote'>
+                <p className='font-lote'>0000-AS</p>
+                <p className='font-contenido-lote'>3 albums</p>
               </div>
-              <img className="icono5" src={IconoFlechaM} alt="Flecha M" />
+              <div className='flecha-pendientes'>
+              <img src={flechaazul} ></img>
+              </div>
             </div>
           </div>
-          
-        </div>
-      </div>
-      <div className="frame-427319549">
-        <div className="ubicados-en-almac-n">Ubicados en almacén</div>
-        <div className="cards">
-          <div className="component-64" onClick={()=>{navigate("/")}}>
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined6" src={IconoCarpetaA} alt="Carpeta A" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
+          </div>
+          <div className='tramo-3'>
+          <p className='titulo-ubicado-almacen'>Ubicados almacén</p>
+          <div className='pendiente-almacenar'>
+            <div className='container-ubicado-almacen'>
+              <img className="carpeta-ubicados" src={carpetarosa}></img>
+              <div className='codigo-lote'>
+              <p className='font-lote'>0000-AS</p>
+              <p className='font-contenido-lote'>3 albums</p>
               </div>
-              <img className="icono9" src={IconoFlechaA} alt="Flecha A" />
+            <div></div>
+            <div></div>
+              <img src={flecharosa} className='flecha-ubicados'></img>
             </div>
           </div>
-        </div>
-      </div>
+          </div>
     </div>
-  );
-};
+  )
+}
 
-export default Almacenaje;
+export default Almacenaje
