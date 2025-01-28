@@ -1,27 +1,19 @@
 import React from 'react'
 import './Entrega.scss';
-import IconoCarpetaE from'../../assets/iconos/IconoCarpetaE.png'
-import Vector from '../../assets/iconos/Vector.png'
-import IconoEntregarE from '../../assets/iconos/IconoEntregarE.png'
+import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
+import IconoBuscarG from '../../assets/iconos/IconoBuscarG.png'
+import IconoCarpetaE from '../../assets/iconos/IconoCarpetaE.png'
 import IconoCheckSeleccionadoE from '../../assets/iconos/IconoCheckSeleccionadoE.png'
-const Entrega = () => {
+import HeaderM from '../HeaderM/HeaderM';
+
+
+const Entrega = (props) => {
     return(
-        
-    <div className="home">
-  <div className="logo">
-    <img className="vector" src={Vector} alt="Vector"/>
-    <div className="frame-427319580">
-      <div className="frame-427319553">
-        <div className="icono">
-          <div className="IconoEntregarE">
-            <img className="IconoEntregarE" src={IconoEntregarE} alt="IconoEntregarE"/>
-          </div>
-        </div>
-        <div className="restauraci-n">Entregar</div>
-      </div>
-     
-    </div>
-  </div>
+        <div className="home">
+<HeaderM
+    title ={props.title}
+    logo = {props.logo}
+/>
   <div className="frame-427319548">
     <div className="pendiente-de-entregar">Pendiente de entregar</div>
     <div className="cards">
@@ -33,7 +25,7 @@ const Entrega = () => {
                 <div className="icono3">
                   <img
                     className="folder-open-outlined"
-                    src={IconoCarpetaE} alt="IconoCarpetaE"
+                    src={IconoCarpetaE}
                   />
                 </div>
                 <div className="frame-39955">
@@ -43,13 +35,15 @@ const Entrega = () => {
               </div>
             </div>
           </div>
-          <img className="IconoCheckSeleccionadoE" src={IconoCheckSeleccionadoE} />
+          <img className="icono4" src= {IconoCheckSeleccionadoE}/>
         </div>
       </div>
+
     </div>
   </div>
 </div>
+
     )
 }
 
-export default Entrega;
+export default Entrega

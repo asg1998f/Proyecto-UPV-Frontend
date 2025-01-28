@@ -6,8 +6,8 @@ const HeaderM = (props) => {
   return (
     <div className="nav-sup">
             <div className="nav-sup-titulo">
-                <p className='tituloHeader'>{props.title}</p>
                 <img src={props.logo} alt="" srcset="" />
+                <a className='tituloHeader'>{props.title}</a>
             </div>
             <div className="nav-sup-search-bar">
             <Search
