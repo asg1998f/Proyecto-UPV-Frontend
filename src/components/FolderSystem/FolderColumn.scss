@@ -1,0 +1,72 @@
+.parentTitlep {
+  display: flex;
+}
+
+.parentp {
+  background-color: #f7f8fa;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  max-height: calc(100vh - 100px);
+}
+
+.parentp::-webkit-scrollbar {
+  display: none;
+}
+
+.bigIconp {
+  display: inline;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+
+.columnTitlep {
+  display: inline;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.cardHeaderp {
+  height: 40px;
+  background-color: #f7f8fa;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.doubleArrow {
+  transform: rotate(180deg);
+}
+
+.linep {
+  height: 1px;
+  width: 100%;
+  background-color: #c7c8ca;
+  margin-bottom: 10px;
+}
+
+.itemsParentp {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8fa;
+}
+
+.itemCardp {
+  height: 50px;
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+}
+
+.smallSub {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #555555;
+}
+
+.subtitlep {
+  color: #555555;
+  font-size: 12px;
+}
