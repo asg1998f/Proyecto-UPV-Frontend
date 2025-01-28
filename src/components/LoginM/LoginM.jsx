@@ -9,8 +9,8 @@ const LoginM = () => {
     <div className='raro'>
     <div className='tituloLoginM'>
         <div className='texto'>
-        <h1 className='salvem'>SALVEM</h1>
-        <h2 className='les-fotos'>LES FOTOS</h2>
+        <span className='salvem'>SALVEM</span>
+        <span className='les-fotos'>LES FOTOS</span>
         </div>
     </div>
     <div className='formulario'>
@@ -20,8 +20,8 @@ const LoginM = () => {
                 </label>
                 <Form.Item>
         <Select className='input-usuario' placeholder="Usuario">
-          <Select.Option value="admin">Admin</Select.Option>
-          <Select.Option value="trabajador">Trabajador</Select.Option>
+          <Select.Option name="admin" value="admin">Administrador</Select.Option>
+          <Select.Option name="trabajador" value="trabajador">Trabajador</Select.Option>
         </Select>
       </Form.Item>
             </div>
