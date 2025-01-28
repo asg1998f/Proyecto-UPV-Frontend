@@ -7,10 +7,14 @@ import Camara from '../Camara/Camara';
 import imgcamara from '../../assets/iconos/IconoCamara.png'
 import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getLast } from '../../features/lote/loteSlice';
 
 const InformeRegistro = () => {
   const [mostrarCamara, setMostrarCamara] = useState(false); // Estado para mostrar la cámara
   const [archivoPDF, setArchivoPDF] = useState(null); // Estado para guardar el PDF
+
+  
 
   const manejarEscaneo = () => {
     setMostrarCamara(true);
@@ -42,14 +46,14 @@ const InformeRegistro = () => {
   const [formData, setFormData] = useState({
     /* if (event.target.imageProduct.files[0]) formData.set('imageProduct', event.target.imageProduct.files[0]) */
     fechaentrada: obtenerFechaActual(),
-    numeroregistro: "",
+    nRegistro: "",
     conpropietario: false,
     anonimo: false,
     nombre: "",
     apellido: "",
-    dni: "",
-    telefono: "",
-    correo: "",
+    dniPropietario: "",
+    telefonoPropietario: "",
+    correoPropietario: "",
     lugar: "",
     album: "",
     conjuntofotografico: "",
@@ -61,48 +65,63 @@ const InformeRegistro = () => {
     humedad: false,
     hongos: false,
     observaciones: "",
-    dniresponsable: "",
+    idResponsable: "",
     fotosenmarcadas: "",
     negativos: ""
   });
+  const dispatch = useDispatch();
 
+  const {ultimoLote} = useSelector((state)=> state.lotes)
+  
   useEffect(() => {
-    const fetchRegistro = async () => {
-      const nextRegistro = await getNextRegistroNumber();
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        numeroregistro: nextRegistro,
-      }));
-    };
-
-    fetchRegistro();
+  dispatch(getLast())
+    
   }, []);
+  const nRegistroHandler= () => {
+    console.log(ultimoLote);
+    // Extraer los primeros 4 números
+let numberPart = parseInt(ultimoLote.nRegistro.slice(0, 4), 10); // Convierte "0001" en el número 1
+
+// Incrementar el número en 1
+numberPart += 1;
+
+// Volver a formatear con ceros iniciales si es necesario
+let letraNombre = formData.nombrePropietario[0]
+let letraApellido = formData.apellido[0]
+let updatedString = numberPart.toString().padStart(4, '0') + "-" + letraNombre + letraApellido;
+
+setRegistroInput(updatedString)
+    
+  }
 
   const [errors, setErrors] = useState({});
 
-  const {   fechaentrada,
-            numeroregistro,
-            conpropietario,
-            anonimo,
-            nombre,
-            apellido,
-            dni,
-            telefono,
-            correo, 
-            lugar,
-            album, 
-            conjuntofotografico,
-            fotosenmarcadas,
-            negativos, 
-            otros, 
-            bueno, 
-            aceptable, 
-            malo, 
-            barro, 
-            humedad, 
-            hongos, 
-            observaciones, 
-            dniresponsable} = formData
+  const { 
+    fechaentrada, 
+    nRegistro, 
+    conPropietario, 
+    anonimo, 
+    nombrePropietario, 
+    apellido, 
+    dniPropietario, 
+    telefonoPropietario, 
+    correoPropietario, 
+    lugar, 
+    album, 
+    conjuntofotografico, 
+    fotosenmarcadas, 
+    negativos, 
+    otros, 
+    bueno, 
+    aceptable, 
+    malo, 
+    barro, 
+    humedad, 
+    hongos, 
+    observaciones, 
+    idResponsable 
+  } = formData;
+  const [nRegistroInput,setRegistroInput] = useState("XXXX-YY");
 
   const validateForm = () => {
     const newErrors = {};
@@ -123,31 +142,33 @@ const InformeRegistro = () => {
     
     
     
-    if (!numeroregistro) {
-      newErrors.numeroregistro = "El número de registro es obligatorio";
-    } else {
-      const registroRegex = /^\d{4}$/; 
-      if (!registroRegex.test(numeroregistro)) {
-        newErrors.numeroregistro = "El número de registro debe contener exactamente 4 números";
-      } else if (!nombre || !apellido) {
-        newErrors.numeroregistro = "Debe completar los campos Nombre y Apellido antes de generar el número de registro completo";
-      } else {
-        const primeraLetraNombre = nombre.trim().charAt(0).toUpperCase();
-        const primeraLetraApellido = apellido.trim().charAt(0).toUpperCase();
-        const formattedRegistro = `${numeroregistro}-${primeraLetraNombre}${primeraLetraApellido}`;
-        formData.numeroregistro = formattedRegistro; 
-      }
-    }
+    
+    
+    // if (!nRegistro) {
+    //   newErrors.nRegistro = "El número de registro es obligatorio";
+    // } else {
+    //   const registroRegex = /^\d{4}$/; 
+    //   if (!registroRegex.test(nRegistro)) {
+    //     newErrors.nRegistro = "El número de registro debe contener exactamente 4 números";
+    //   } else if (!nombrePropietario || !apellido) {
+    //     newErrors.nRegistro = "Debe completar los campos Nombre y Apellido antes de generar el número de registro completo";
+    //   } else {
+    //     const primeraLetraNombre = nombrePropietario.trim().charAt(0).toUpperCase();
+    //     const primeraLetraApellido = apellido.trim().charAt(0).toUpperCase();
+    //     const formattedRegistro = `${nRegistro}-${primeraLetraNombre}${primeraLetraApellido}`;
+    //     formData.nRegistro = formattedRegistro; 
+    //   }
+    // }
 
-    if (!conpropietario && !anonimo) {
+    if (!conPropietario && !anonimo) {
       newErrors.propietario = "Debe seleccionar Con propietario o Anónimo";
     }
 
-    if (conpropietario || anonimo) {
-      if (!nombre) {
-        newErrors.nombre = "El nombre es obligatorio.";
-      } else if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
-        newErrors.nombre = "El nombre solo puede contener letras.";
+    if (conPropietario || anonimo) {
+      if (!nombrePropietario) {
+        newErrors.nombrePropietario = "El nombre es obligatorio.";
+      } else if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombrePropietario)) {
+        newErrors.nombrePropietario = "El nombre solo puede contener letras.";
       }
     
       if (!apellido) {
@@ -156,22 +177,22 @@ const InformeRegistro = () => {
         newErrors.apellido = "El apellido solo puede contener letras.";
       }
     
-      if (!dni) {
-        newErrors.dni = "El DNI es obligatorio.";
-      } else if (!/^\d{8}[A-Z]$/.test(dni)) {
-        newErrors.dni = "El DNI debe tener un formato válido (8 números seguidos de una letra mayúscula).";
+      if (!dniPropietario) {
+        newErrors.dniPropietario = "El DNI es obligatorio.";
+      } else if (!/^\d{8}[A-Z]$/.test(dniPropietario)) {
+        newErrors.dniPropietario = "El DNI debe tener un formato válido (8 números seguidos de una letra mayúscula).";
       }
     
-      if (!telefono) {
-        newErrors.telefono = "El teléfono es obligatorio.";
-      } else if (!/^\d{9}$/.test(telefono)) {
-        newErrors.telefono = "El teléfono debe tener 9 dígitos.";
+      if (!telefonoPropietario) {
+        newErrors.telefonoPropietario = "El teléfono es obligatorio.";
+      } else if (!/^\d{9}$/.test(telefonoPropietario)) {
+        newErrors.telefonoPropietario = "El teléfono debe tener 9 dígitos.";
       }
     
-      if (!correo) {
-        newErrors.correo = "El correo es obligatorio.";
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
-        newErrors.correo = "El correo debe tener un formato válido (ej: ejemplo@dominio.com).";
+      if (!correoPropietario) {
+        newErrors.correoPropietario = "El correo es obligatorio.";
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correoPropietario)) {
+        newErrors.correoPropietario = "El correo debe tener un formato válido (ej: ejemplo@dominio.com).";
       }
     
       if (!lugar) {
@@ -208,10 +229,10 @@ const InformeRegistro = () => {
     }
 
     if (!observaciones) newErrors.observaciones = "Las observaciones son obligatorias";
-    if (!dniresponsable) {
-      newErrors.dniresponsable = "El DNI del responsable es obligatorio.";
-    } else if (!/^\d{8}[A-Z]$/.test(dniresponsable)) {
-      newErrors.dniresponsable = "El DNI del responsable debe tener un formato válido (8 números seguidos de una letra mayúscula).";
+    if (!idResponsable) {
+      newErrors.idResponsable = "El DNI del responsable es obligatorio.";
+    } else if (!/^\d{8}[A-Z]$/.test(idResponsable)) {
+      newErrors.idResponsable = "El DNI del responsable debe tener un formato válido (8 números seguidos de una letra mayúscula).";
     }
     
 
@@ -263,12 +284,42 @@ const InformeRegistro = () => {
       return updatedFormData;
     });
   };
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Formulario enviado:", formData);
+      
       alert("Formulario enviado correctamente.");
-      // Aquí puedes enviar los datos a una API o realizar otras acciones
+      let danyos = [{barro:formData.barro},{humedad:formData.humedad},{hongos:formData.hongos}]
+
+      const trueKeys = danyos
+  .filter(obj => Object.values(obj)[0]) // Filtra solo los objetos con valor true
+  .map(obj => Object.keys(obj)[0]); // Obtén las keys de esos objetos
+      let estado = [{bueno:formData.bueno},{aceptable:formData.aceptable},{malo:formData.malo}]
+      const trueKeys2 = estado
+      .filter(obj => Object.values(obj)[0]) // Filtra solo los objetos con valor true
+      .map(obj => Object.keys(obj)[0]); // Obtén las keys de esos objetos
+      
+      
+      const formularioFiltrado = {
+        nombrePropietario : formData.nombrePropietario + " " +formData.apellido,
+        conPropietario : formData.conPropietario,
+        otros: formData.otros,
+        lugar: formData.lugar,
+        observaciones: formData.observaciones,
+        telefonoPropietario: formData.telefonoPropietario,
+        // formularioEscaneado: 
+        dmg: trueKeys,
+        nRegistro:nRegistroInput,
+        estado: trueKeys2[0],
+        correoPropietario:formData.correoPropietario,
+        dniPropietario:formData.dniPropietario,
+        album:formData.album,
+        conjuntofotografico:formData.conjuntofotografico,
+        fotosenmarcadas:formData.fotosenmarcadas,
+        negativos:formData.negativos
+      }
+      console.log("Formulario enviado:", formularioFiltrado);
+      await axios.post('https://desafio-tripulaciones-429508457144.europe-west1.run.app'+"/crear_estrucutra_completa?nombre_principal="+formularioFiltrado.nRegistro+"&cantidad_albumes="+formularioFiltrado.album+"&cantidad_marcos="+formularioFiltrado.fotosenmarcadas+"&cantidad_negativos="+formularioFiltrado.negativos)
     } else {
       alert("Por favor, corrija los errores en el formulario.");
     }
@@ -306,10 +357,11 @@ const InformeRegistro = () => {
           <input
           className='input-nregistro'
             type="text"
-            name="numeroregistro"
-            value={numeroregistro}
-            placeholder="0456"
+            name="nRegistro"
+            value={nRegistroInput}
+            placeholder="XXXX"
             maxLength="4"
+            disabled={true}
             onChange={(e) => {
               const { value } = e.target;
               if (/^\d{0,4}$/.test(value)) {
@@ -339,12 +391,12 @@ const InformeRegistro = () => {
         <input
         className='radio-button'
             type="radio"
-            name="radiobtn1"
-            checked={conpropietario}
+            name="conPropietario"
+            checked={conPropietario}
             onChange={() =>
               setFormData({
                 ...formData,
-                conpropietario: true,
+                conPropietario: true,
                 anonimo: false,
               })}
           />
@@ -373,8 +425,8 @@ const InformeRegistro = () => {
           <input
           className='input-sector2'
             type="text"
-            name="nombre"
-            value={nombre}
+            name="nombrePropietario"
+            value={nombrePropietario}
             onChange={onChange}
             pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
             title="El nombre solo puede contener letras."
@@ -391,6 +443,7 @@ const InformeRegistro = () => {
             onChange={onChange}
             pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
             title="El apellido solo puede contener letras."
+            onBlur={nRegistroHandler}
           /> 
           {errors.apellido && <p className="error">{errors.apellido}</p>}
         </div>
@@ -400,9 +453,9 @@ const InformeRegistro = () => {
           <input
           className='input-dni-telefono'
             type="text"
-            name="dni"
+            name="dniPropietario"
             placeholder='00000000M'
-            value={dni}
+            value={dniPropietario}
             onChange={onChange}
             pattern="\d{8}[A-Z]"
             title="El DNI debe tener 8 números seguidos de una letra mayúscula."
@@ -415,9 +468,9 @@ const InformeRegistro = () => {
           <input
           className='input-dni-telefono'
             type="number"
-            name="telefono"
+            name="telefonoPropietario"
             placeholder='Ex: 000 000 000'
-            value={telefono}
+            value={telefonoPropietario}
             onChange={onChange}
             pattern="\d{9}"
             title="El teléfono debe tener 9 dígitos."
@@ -431,8 +484,8 @@ const InformeRegistro = () => {
           <input
           className='input-sector2'
             type="email"
-            name="correo"
-            value={correo}
+            name="correoPropietario"
+            value={correoPropietario}
             onChange={onChange}
             required
             title="Introduce un correo válido (ej: ejemplo@dominio.com)."
@@ -638,12 +691,12 @@ const InformeRegistro = () => {
           <input
           className='input-sector2'
             type="text"
-            name="dniresponsable"
+            name="idResponsable"
             placeholder='00000000M'
-            value={dniresponsable}
+            value={idResponsable}
             onChange={onChange}
           /> 
-          {errors.dniresponsable && <p className="error">{errors.dniresponsable}</p>}
+          {errors.idResponsable && <p className="error">{errors.idResponsable}</p>}
         </div>
       </div>
       <div className='btn-registrar'>
