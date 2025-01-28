@@ -3,6 +3,9 @@ import { Form, Select, Input, Button  } from 'antd';
 import './LoginM.scss'
 import { useNavigate } from 'react-router-dom';
 
+const LoginM = () => {
+  const [size, setSize] = useState('large');
+  const navigate = useNavigate();
 
 const onSubmit = (e) => {
    e.preventDefault(); 
@@ -11,13 +14,7 @@ const onSubmit = (e) => {
    navigate('/home'); 
 };
 
-
-    
-
-const LoginM = () => {
-    const [size, setSize] = useState('large');
-    const navigate = useNavigate();
-  return (
+return (
     <div className='container-formulario'> 
     <div className='raro'>
     <div className='tituloLoginM'>

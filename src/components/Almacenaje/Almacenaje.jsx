@@ -5,13 +5,14 @@ import IconoCarpetaM from'../../assets/iconos/IconoCarpetaM.png'
 import IconoFlechaM from'../../assets/iconos/IconoFlechaM.png'
 import IconoCarpetaA from'../../assets/iconos/IconoCarpetaA.png'
 import IconoFlechaA from'../../assets/iconos/IconoFlechaA.png'
+import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
 
 
 const Almacenaje = () => {
   return (
     <div className="home">
       <div className="logo">
-        <img className="vector" src={IconoAlmacenA} alt="Almacen Icon" />
+        <FlechaNavigate />
         <div className="frame-427319580">
           <div className="frame-427319553">
             <div className="icono">

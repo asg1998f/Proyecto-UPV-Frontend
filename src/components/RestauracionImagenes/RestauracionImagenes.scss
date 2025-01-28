@@ -379,3 +379,31 @@
   align-items: center;
   justify-content: center;
 }
+
+.popup {
+  position: fixed;
+  bottom:0 ;/* Espacio para los botones */
+  width: 100%;
+  background: var(--textos-negro-texto, #000022);
+  padding: 15px;
+  color: white;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  z-index: 10; /* Asegura que el pop-up aparezca por encima */
+ 
+}
+
+.delete-button {
+  background: var(--textos-negro-texto, #000022);
+  border-color: #000022;
+}
+
+.image-check-no-check.selected {
+  border: 2px solid #dff37c; /* Color del borde */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  transform: scale(1.05); /* Aumentar tamaño ligeramente */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Suavizar la animación */
+}
+
+
