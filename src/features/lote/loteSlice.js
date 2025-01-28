@@ -157,6 +157,7 @@ export const updateLote = createAsyncThunk("lotes/update", async (id, lote) => {
     console.error(error);
   }
 });
+
 export const createSubcarpeta = createAsyncThunk("subcarpetas/create", async (subcarpeta) => {
   try {
     return await loteService.createSubcarpeta(subcarpeta);
