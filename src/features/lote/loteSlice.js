@@ -151,13 +151,14 @@ export const getByNregistro = createAsyncThunk(
   }
 );
 
-export const createLote = createAsyncThunk("lotes/create", async (lote) => {
+export const updateLote = createAsyncThunk("lotes/update", async (id, lote) => {
   try {
-    return await loteService.createLote(lote);
+    return await loteService.updateLote(id, lote);
   } catch (error) {
     console.error(error);
   }
 });
+
 export const createSubcarpeta = createAsyncThunk("subcarpetas/create", async (subcarpeta) => {
   try {
     return await loteService.createSubcarpeta(subcarpeta);
@@ -258,7 +259,7 @@ export const loteSlice = createSlice({
     builder.addCase(getLast.fulfilled, (state, action) => {
         state.ultimoLote = action.payload.lote;
       });
-    builder.addCase(createLote.fulfilled, (state, action) => {
+    builder.addCase(updateLote.fulfilled, (state, action) => {
       state.message = action.payload.message;
       state.lotes = [...state.lotes, action.payload.lote];
     });

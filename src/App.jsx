@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import AnadirUbicacion from './components/AnadirUbicacion/AnadirUbicacion'
 import UbicacionAlmacen from './components/UbicacionAlmacen/UbicacionAlmacen'
 import InformeRegistro from './components/InformeRegistro/InformeRegistro'
 import LoginM from './components/LoginM/LoginM'
@@ -16,8 +17,6 @@ import Dashboard from './components/Dashboard/Dashboard'
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
 
-
-
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent
 )
@@ -30,7 +29,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
-        <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
+        <Route path="/ubicacionalmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
+        <Route path="/anadirUbicacion" element={<AnadirUbicacion/>}></Route>
         <Route path="/almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
         <Route path="/restauracion" element={<Restauracion/>}/>
         <Route path="/restauracion4" element={<Restauracion4/>}/>
