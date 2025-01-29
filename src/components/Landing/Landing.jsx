@@ -25,7 +25,7 @@ const Landing = () => {
           <div class="headline">
             <div class="top">
               <div class="facultad-de-bellas-artes">FACULTAD DE BELLAS ARTES UPV</div>
-              <div class="salvem-les-fotos">Salvem les fotos</div>
+              <div class="salvem-les-fotos-titulo">Salvem les fotos</div>
             </div>
             <div class="paragraph">
               Recuperamos tus fotografías familiares dañadas por la DANA de manera
@@ -49,7 +49,7 @@ const Landing = () => {
             <div class="paragraph2">Fotografías</div>
           </div>
           <div class="intervenciones">
-            <div class="_15-000">15.000</div>
+            <div class="_15-000">18.000</div>
             <div class="paragraph3">Intervenciones y digitalizaciones</div>
           </div>
           <div class="voluntarios">
@@ -120,7 +120,7 @@ const Landing = () => {
       {/* Mensaje destacado */}
       <div className="mensaje">
         <div className="parrafo">‘’No podíamos quedarnos de brazos cruzados’’</div>
-        <div className="firma">Ana López, responsable de Restauración</div>
+        <div className="firma">Ana Carreres, responsable de Restauración</div>
       </div>
 
       <section className="nuestra-historia">

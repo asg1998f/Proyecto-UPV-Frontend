@@ -13,7 +13,7 @@ import RestauracionImagenes from './components/RestauracionImagenes/Restauracion
 import Landing from './components/Landing/Landing'
 import LogoSalvar from './assets/iconos/LogoSalvar.png'
 import Dashboard from './components/Dashboard/Dashboard'
-import Lotesadmin from './components/Lotesadmin/Lotesadmin';
+import Lotesadmin from './components/Dashboard/Lotesadmin/Lotesadmin';
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
 
