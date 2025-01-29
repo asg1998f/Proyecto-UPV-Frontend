@@ -13,7 +13,6 @@ import Landing from './components/Landing/Landing'
 import LogoSalvar from './assets/iconos/LogoSalvar.png'
 import RestauracionImagenes from './components/RestauracionImagenes/RestauracionImagenes'
 import Dashboard from './components/Dashboard/Dashboard'
-import Lotesadmin from './components/Dashboard/Lotesadmin/Lotesadmin';
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
 import Entrega from './components/Entrega/Entrega'
@@ -56,7 +55,6 @@ function App() {
         <Route path="/" element={ <Landing/>} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/Lotesadmin" element={<Lotesadmin/>}/>
       </Routes>
       </BrowserRouter>)}
     </>
