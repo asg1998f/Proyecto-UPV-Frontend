@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import InicioAdmin from "./InicioAdmin/InicioAdmin";
+import LoteAdmin from "./Lotesadmin/Lotesadmin";
+// import EquipoAdmin from "./EquipoAdmin"; // Asegúrate de tener este componente
 import "./Dashboard.scss";
 import Logo from "../../assets/iconos/LogoN.png";
-import LogoUsuario from "../../assets/iconos/LogoUsuario.png";
 import Registro from "../../assets/iconos/IconoRegistrarR.png";
 import Master from "../../assets/iconos/IconoMasterA.png";
 import MasterFlecha from "../../assets/iconos/IconoFlechaM.png";
@@ -22,29 +24,28 @@ import CerrarSesion from "../../assets/iconos/IconoCerrarSesionN.png";
 
 const Dashboard = () => {
   const [activeButton, setActiveButton] = useState("Inicio");
-  const [icons, setIcons] = useState({
-    Inicio: "",
-    Lotes: "",
-    Equipo: "",
-  });
 
-  const handleButtonClick = (buttonName) => {
-    setActiveButton(buttonName);
-
-    // Actualiza los iconos según el botón clickeado (opcional)
-    setIcons((prevIcons) => ({
-      ...prevIcons,
-      [buttonName]: "", // Cambia el icono aquí si es necesario
-    }));
+  const renderComponent = () => {
+    switch (activeButton) {
+      case "Inicio":
+        return <InicioAdmin />;
+      case "Lotes":
+        return <LoteAdmin />;
+      // case "Equipo":
+      //   return <EquipoAdmin />;
+    }
   };
 
   return (
     <>
       <div className="fondo2">
         <aside className="sidebar">
+          {/* Header con logo y nombre */}
           <div className="sideLogo">
             <img src={Logo} alt="Logo Salvem Les Fotos" id="logo" />
           </div>
+
+          {/* Sección ADMINISTRADOR */}
           <section className="section">
             <nav className="menu admin-menu">
               <button
@@ -100,6 +101,70 @@ const Dashboard = () => {
               </button>
             </nav>
           </section>
+
+          {/* Sección TRABAJADOR */}
+          <section className="section">
+            <div class="divisor-menu">
+              <div class="line-1"></div>
+              <div class="administrador">TRABAJADOR</div>
+              <div class="line-2"></div>
+            </div>
+            <nav className="menu worker-menu">
+              <button className="menu-button centered">
+                <img src={Registro} alt="Registrar" />
+                <span>Registrar</span>
+                <img
+                  className="imagenTransparente"
+                  src={MasterFlecha}
+                  alt="Ir"
+                />
+              </button>
+              <button className="menu-button centered">
+                <img src={Master} alt="Master" />
+                <span>Master</span>
+                <img className="arrow" src={MasterFlecha} alt="Ir" />
+              </button>
+              <button className="menu-button centered">
+                <img src={Almacen} alt="Almacén" />
+                <span>Almacén</span>
+                <img
+                  className="imagenTransparente"
+                  src={MasterFlecha}
+                  alt="Ir"
+                />
+              </button>
+              <button className="menu-button centered">
+                <img src={Restaurar} alt="Restaurar" />
+                <span>Restaurar</span>
+                <img
+                  className="imagenTransparente"
+                  src={MasterFlecha}
+                  alt="Ir"
+                />
+              </button>
+              <button className="menu-button centered">
+                <img src={Digitalizar} alt="Digitalizar" />
+                <span>Digitalizar</span>
+                <img className="arrow" src={DigitalizarFlecha} alt="Ir" />
+              </button>
+              <button className="menu-button centered">
+                <img src={Entregar} alt="Entregar" />
+                <span>Entregar</span>
+                <img
+                  className="imagenTransparente"
+                  src={MasterFlecha}
+                  alt="Ir"
+                />
+              </button>
+            </nav>
+          </section>
+
+          {/* Botón de Cerrar sesión */}
+          <button className="logout">
+            <img src={CerrarSesion} alt="Cerrar sesión" />
+            <span>Cerrar Sesión</span>
+            <img className="imagenTransparente" src={MasterFlecha} alt="Ir" />
+          </button>
         </aside>
         <div className="container">{renderComponent()}</div>
       </div>
