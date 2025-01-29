@@ -11,15 +11,32 @@ import CheckDigitalizar from "../../../assets/iconos/IconoCheckD.png";
 import CheckMontaje from "../../../assets/iconos/IconoCheckMt.png";
 import CheckEntrega from "../../../assets/iconos/IconoCheckE.png";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllLotes } from "../../../features/lote/loteSlice";
+import { getAllLotes, getByNregistro } from "../../../features/lote/loteSlice";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
   const { lotes } = useSelector((state) => state.lotes);
+  const [lote, setLote] = useState("");
 
   useEffect(() => {
     dispatch(getAllLotes());
   }, []);
+  useEffect(() => {
+    if (lote.length == 0) {
+      dispatch(getAllLotes());
+    }
+  }, [lote]);
+
+  // Función para manejar la búsqueda en tiempo real
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setLote(value);
+  };
+
+  // Función para buscar cuando se presiona el botón
+  const handleSearchClick = () => {
+    dispatch(getByNregistro(lote));
+  };
 
   return (
     <>
@@ -49,8 +66,14 @@ const Dashboard = () => {
           </header>
 
           <div className="search-bar">
-            <input id="inputBuscar" type="text" placeholder="Ingresa el ID" />
-            <button>
+            <input
+              id="inputBuscar"
+              type="text"
+              placeholder="Ingresa el ID"
+              value={lote}
+              onChange={handleSearchChange}
+            />
+            <button onClick={() => dispatch(getByNregistro(lote))}>
               <img src={Buscar} alt="Search" />
             </button>
           </div>
