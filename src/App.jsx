@@ -16,15 +16,10 @@ import Dashboard from './components/Dashboard/Dashboard'
 import Lotesadmin from './components/Lotesadmin/Lotesadmin';
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
-<<<<<<< HEAD
 import AnadirUbicacion from './components/AnadirUbicacion/AnadirUbicacion'
-
-
-=======
 import Entrega from './components/Entrega/Entrega'
 import IconoEntregarE from './assets/iconos/IconoEntregarE.png'
 import RestauracionCuatro from './components/RestauracionCuatro/RestauracionCuatro'
->>>>>>> develop
 
 
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
