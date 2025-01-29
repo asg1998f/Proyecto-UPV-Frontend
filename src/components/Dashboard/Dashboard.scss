@@ -1,6 +1,5 @@
 .fondo2 {
   display: flex; /* Utiliza flexbox para alinear los elementos */
-  height: 100vh;
   flex-direction: row; /* Esto coloca los elementos en fila */
 }
 
@@ -267,6 +266,7 @@ h1 {
 .search-bar {
   margin: 20px 0;
   display: flex;
+    align-items: center;
   width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
 

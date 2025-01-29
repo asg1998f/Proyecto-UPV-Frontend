@@ -54,62 +54,65 @@ const Dashboard = () => {
               <img src={Buscar} alt="Search" />
             </button>
           </div>
-
-          <table>
-            <thead>
-              <tr>
-                <th>ID LOTE</th>
-                <th>Registrar</th>
-                <th>Máster</th>
-                <th>Almacén</th>
-                <th>Restaurar</th>
-                <th>Digitalizar</th>
-                <th>Montaje</th>
-                <th>Entregar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Repetir esta fila para cada lote */}
-              {lotes.map((lote) => {
-                return (
-                  <>
-                    <tr className="filaLote">
-                      <td>
-                        <div className="lot-info">
-                          <img src={Lote} alt="Folder" />
-                          <div className="nombreLote">
-                            <p className="parrafo-lote">{lote.nRegistro}</p>
-                            <p className="elementosLote">{lote.subCarpetas.length} elementos</p>
+          <div className="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID LOTE</th>
+                  <th>Registrar</th>
+                  <th>Máster</th>
+                  <th>Almacén</th>
+                  <th>Restaurar</th>
+                  <th>Digitalizar</th>
+                  <th>Montaje</th>
+                  <th>Entregar</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* Repetir esta fila para cada lote */}
+                {lotes.map((lote) => {
+                  return (
+                    <>
+                      <tr className="filaLote">
+                        <td>
+                          <div className="lot-info">
+                            <img src={Lote} alt="Folder" />
+                            <div className="nombreLote">
+                              <p className="parrafo-lote">{lote.nRegistro}</p>
+                              <p className="elementosLote">
+                                {lote.subCarpetas.length} elementos
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                      <td>
-                        <img src={CheckRegistrar} alt="Check Rojo" />
-                      </td>
-                      <td>
-                        <img src={CheckMaster} alt="Check Rojo" />
-                      </td>
-                      <td>
-                        <img src={CheckAlmacen} alt="Check Rojo" />
-                      </td>
-                      <td>
-                        <img src={CheckRestaurar} alt="Check Rojo" />
-                      </td>
-                      <td>
-                        <img src={CheckDigitalizar} alt="Check Rojo" />
-                      </td>
-                      <td>
-                        <img src={CheckMontaje} alt="Check Rojo" />
-                      </td>
-                      <td>
-                        <img src={CheckEntrega} alt="Check Rojo" />
-                      </td>
-                    </tr>
-                  </>
-                );
-              })}
-            </tbody>
-          </table>
+                        </td>
+                        <td>
+                          <img src={CheckRegistrar} alt="Check Rojo" />
+                        </td>
+                        <td>
+                          <img src={CheckMaster} alt="Check Rojo" />
+                        </td>
+                        <td>
+                          <img src={CheckAlmacen} alt="Check Rojo" />
+                        </td>
+                        <td>
+                          <img src={CheckRestaurar} alt="Check Rojo" />
+                        </td>
+                        <td>
+                          <img src={CheckDigitalizar} alt="Check Rojo" />
+                        </td>
+                        <td>
+                          <img src={CheckMontaje} alt="Check Rojo" />
+                        </td>
+                        <td>
+                          <img src={CheckEntrega} alt="Check Rojo" />
+                        </td>
+                      </tr>
+                    </>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </>
