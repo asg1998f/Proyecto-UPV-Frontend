@@ -1,22 +1,62 @@
 import React, { useState } from 'react';
 import './Entrega.scss';
 import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
-import IconoCarpetaE from '../../assets/iconos/IconoCarpetaE.png';
+import carpetanaranja from '../../assets/iconos/IconoCarpetaE.png';
 import IconoCheckSeleccionadoE from '../../assets/iconos/IconoCheckSeleccionadoE.png';
-import HeaderM from '../HeaderM/HeaderM';
+import Search from 'antd/es/input/Search';
+import { useNavigate } from 'react-router-dom';
+
 
 const Entrega = (props) => {
   const [showCard, setShowCard] = useState(true); // Estado para controlar la visibilidad de la tarjeta
+   const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate();
+  
+    // Datos simulados de lotes
+    const lotesPendientes = [
+      { id: "0000-AS", contenido: "3 albums" },
+      
+    ];
+  
+    const lotesAlmacenados = [
+      { id: "0002-CS", contenido: "2 cuadros" },
+    
+    ];
+  
+    // Filtrar lotes según el término de búsqueda
+    const filteredPendientes = lotesPendientes.filter((lote) =>
+      lote.id.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  
+    const filteredAlmacenados = lotesAlmacenados.filter((lote) =>
+      lote.id.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  
+    const handleCarpetaClick = (id) => {
+      navigate(`/añadir-ubicacion/${id}`);
+    };
 
   return (
     <div className="home">
-      <div className='flecha-navigate-left'>
-        <FlechaNavigate />
+          <div className='tramo-1'>
+        <div className='flecha-navigate'>
+          <FlechaNavigate />
+        </div>
+        <div className='almacen-1'>
+          <div className='titulo-almacen'>
+            <img className="carpeta-rosa" src={carpetanaranja} />
+            <p className="almacen-texto">Entrega</p>
+          </div>
+          <div className="navegador-almacen">
+            <Search
+              placeholder="Buscar por ID..."
+              className='buscador-almacen'
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+        </div>
       </div>
-      <HeaderM
-        title={props.title}
-        logo={props.logo}
-      />
+  
       <div className="frame-427319548">
         <div className="pendiente-de-entregar">Pendiente de entregar</div>
         <div className="cards">
@@ -32,7 +72,7 @@ const Entrega = (props) => {
                       <div className="icono3">
                         <img
                           className="folder-open-outlined"
-                          src={IconoCarpetaE}
+                          src={carpetanaranja}
                           alt="Folder Icon"
                         />
                       </div>
