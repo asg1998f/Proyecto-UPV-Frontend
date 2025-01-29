@@ -12,6 +12,12 @@ const getAllLotes = async () => {
   const res = await axios.get(API_LOTES + "/");
   return res.data;
 };
+const updateByNregistro = async (obj) => {
+  console.log(obj);
+  
+  const res = await axios.put(API_LOTES+"/nRegistro/"+obj.nRegistro,obj.body)
+  return res.data
+}
 const getAllSubcarpetas = async () => {
   const res = await axios.get(API_SUBCARPETAS + "/");
   return res.data;
@@ -72,10 +78,11 @@ const getByNregistro = async (nRegistro) => {
   return res.data;
 };
 
-const createLote = async (lote) => {
-  const res = await axios.post(API_LOTES + "/create", lote);
+const updateLote = async (id, lote) => {
+  const res = await axios.put(API_LOTES + "/id/" + id, lote);
   return res.data; //payload
 };
+
 const createSubcarpeta = async (subCarpeta) => {
   const res = await axios.post(API_SUBCARPETAS + "/create", subCarpeta);
   return res.data; //payload
@@ -117,13 +124,14 @@ const loteService = {
   getTipoById,
   getLast,
   getByNregistro,
-  createLote,
+  updateLote,
   createSubcarpeta,
   createSubcarpetaInterna,
   createFoto,
   createHistorial,
   createFase,
-  createTipo
+  createTipo,
+  updateByNregistro
 };
 
 export default loteService;

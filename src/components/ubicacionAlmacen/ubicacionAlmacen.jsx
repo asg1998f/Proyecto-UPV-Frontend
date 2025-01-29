@@ -1,16 +1,17 @@
 import React from "react";
 import "./UbicacionAlmacen.scss";
 import IconoAlmacenA from'../../assets/iconos/IconoAlmacenA.png'
+import Vector from '../../assets/iconos/Vector.png'
 
 const UbicacionAlmacen = () => {
   return (
-    <div class="home">
+    <div class="homeUbicacionAlmacen">
     <div class="logo">
-      <img class="vector" src="vector0.svg" />
+      <img class="vector" src={Vector} alt="Vector" />
       <div class="frame-427319580">
         <div class="frame-427319550">
           <div class="icono">
-            <img class="fi-sr-box" src="fi-sr-box0.svg" />
+            <img class="IconoAlmacenA" src={IconoAlmacenA} alt="IconoAlmacenA"/>
           </div>
           <div class="almac-n">Almacén</div>
         </div>
@@ -22,7 +23,7 @@ const UbicacionAlmacen = () => {
         </div>
       </div>
     </div>
-    <div class="frame-427319553">
+    <div class="frame-427319553Almacen">
       <div class="frame-427319592">
         <div class="frame-427319548">
           <div class="est-ubicado">Está ubicado</div>
@@ -33,7 +34,6 @@ const UbicacionAlmacen = () => {
                   <div class="wrapper">
                     <div class="text">
                       <div class="placeholder">Congelador 3</div>
-                      <img class="vector2" src="vector1.svg" />
                     </div>
                   </div>
                 </div>
@@ -71,11 +71,11 @@ const UbicacionAlmacen = () => {
                   </div>
                   <div class="text2">Negativos</div>
                 </div>
-                <div class="vertical-form-item-input">
+                <div class="vertical-form-item-inputAlmacen">
                   <div class="label">
                     <div class="title">Otros</div>
                   </div>
-                  <div class="field">
+                  <div class="fieldAlmacenaje">
                     <div class="queda-un-marco-fuera-del-congelador">
                       Queda un marco fuera del congelador
                     </div>

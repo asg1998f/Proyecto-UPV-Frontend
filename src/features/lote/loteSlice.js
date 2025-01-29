@@ -3,6 +3,7 @@ import loteService from "./loteService";
 
 const initialState = {
   lotes: [],
+  ultimoLote:{}
 };
 
 export const getAllLotes = createAsyncThunk("lotes/getAll", async () => {
@@ -150,13 +151,14 @@ export const getByNregistro = createAsyncThunk(
   }
 );
 
-export const createLote = createAsyncThunk("lotes/create", async (lote) => {
+export const updateLote = createAsyncThunk("lotes/update", async (id, lote) => {
   try {
-    return await loteService.createLote(lote);
+    return await loteService.updateLote(id, lote);
   } catch (error) {
     console.error(error);
   }
 });
+
 export const createSubcarpeta = createAsyncThunk("subcarpetas/create", async (subcarpeta) => {
   try {
     return await loteService.createSubcarpeta(subcarpeta);
@@ -195,6 +197,13 @@ export const createFase = createAsyncThunk("fases/create", async (fase) => {
 export const createTipo = createAsyncThunk("tipos/create", async (tipo) => {
   try {
     return await loteService.createTipo(tipo);
+  } catch (error) {
+    console.error(error);
+  }
+});
+export const updateByNregistro = createAsyncThunk("lotes/updateByNregistro", async (obj) => {
+  try {
+    return await loteService.updateByNregistro(obj);
   } catch (error) {
     console.error(error);
   }
@@ -248,9 +257,9 @@ export const loteSlice = createSlice({
       state.lotes = action.payload;
     });
     builder.addCase(getLast.fulfilled, (state, action) => {
-        state.ultimoLote = action.payload.lotes;
+        state.ultimoLote = action.payload.lote;
       });
-    builder.addCase(createLote.fulfilled, (state, action) => {
+    builder.addCase(updateLote.fulfilled, (state, action) => {
       state.message = action.payload.message;
       state.lotes = [...state.lotes, action.payload.lote];
     });

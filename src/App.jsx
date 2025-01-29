@@ -1,8 +1,9 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css'
-import UbicacionAlmacen from './components/UbicacionAlmacen/UbicacionAlmacen'
-import InformeRegistro from './components/InformeRegistro/InformeRegistro'
-import LoginM from './components/LoginM/LoginM'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import AnadirUbicacion from "./components/AnadirUbicacion/AnadirUbicacion";
+import UbicacionAlmacen from "./components/UbicacionAlmacen/UbicacionAlmacen";
+import InformeRegistro from "./components/InformeRegistro/InformeRegistro";
+import LoginM from "./components/LoginM/LoginM";
 /* import './styles/globalstyles.scss' */
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
@@ -10,15 +11,17 @@ import Restauracion from './components/Restauracion/Restauracion'
 
 import Restauracion4 from './components/RestauracionCuatro/RestauracionCuatro';
 import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
-import RestauracionImagenes from './components/RestauracionImagenes/RestauracionImagenes'
 import Landing from './components/Landing/Landing'
 import LogoSalvar from './assets/iconos/LogoSalvar.png'
+import RestauracionImagenes from './components/RestauracionImagenes/RestauracionImagenes'
 import Dashboard from './components/Dashboard/Dashboard'
+import Lotesadmin from './components/Lotesadmin/Lotesadmin';
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
+import Entrega from './components/Entrega/Entrega'
+import IconoEntregarE from './assets/iconos/IconoEntregarE.png'
 
-
-
+const entregar = "Entregar"
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent
 )
@@ -53,10 +56,11 @@ function App() {
         <Route path="/" element={ <Landing/>} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/Lotesadmin" element={<Lotesadmin/>}/>
       </Routes>
       </BrowserRouter>)}
     </>
-  )
+  );
 }
 
 export default App;

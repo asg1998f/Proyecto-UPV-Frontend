@@ -13,6 +13,7 @@ import reportWebVitals from './reportWebVitals';
 
 
 createRoot(document.getElementById('root')).render(
+  
 <Provider store={store}>
     <App />
 </Provider>
