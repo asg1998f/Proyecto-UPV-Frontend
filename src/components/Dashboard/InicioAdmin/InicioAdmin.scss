@@ -1,420 +1,136 @@
 .fondo2 {
-    display: flex; /* Utiliza flexbox para alinear los elementos */
-    height: 100vh;
-    flex-direction: row; /* Esto coloca los elementos en fila */
-  }
-  
-  /* General sidebar styles */
-  .sidebar {
-    width: 272px; /* Fija el ancho del sidebar */
-    background-color: #f7f8fa;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 0;
-    font-family: "Inter", sans-serif;
-  }
-  
-  /* El contenedor principal al lado del sidebar */
-  .container {
-    flex: 1; /* Esto hace que el contenedor ocupe el espacio restante */
-    max-width: 1200px;
-    margin: 0;
-    padding: 20px;
-    overflow-y: auto; /* Para que el contenido se desplace si es necesario */
-  }
-  
-  .header,
-  .header * {
-    box-sizing: border-box;
-  }
-  .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    margin-bottom: 10%;
-  }
-  
-  .auto-layout-horizontal {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end; /* Esto mueve el select hacia la derecha */
-    height: 48px;
-  }
-  
-  .dropdown {
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .auto-layout-horizontal2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-shrink: 0;
-    width: 226px;
-  }
-  
-  .auto-layout-horizontal3 {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .component-70 {
-    background: #ffffff;
-    border-radius: 50%;
-    border: 0.5px solid #000022;
-    width: 36px;
-    height: 36px;
-    position: relative;
-  }
-  
-  .frame-427319640 {
-    width: 42.69px;
-    height: 40.62px;
-    position: absolute;
-    left: -2.85px;
-    top: 7.38px;
-  }
-  
-  .oc-on-the-laptop {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    right: 5.05%;
-    left: -5.05%;
-    bottom: 0.94%;
-    top: -0.93%;
-    overflow: visible;
-  }
-  
-  .icono {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .fi-rr-exclamation {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    overflow: visible;
-  }
-  
-  .section {
-    padding: 0 20px;
-    margin-bottom: 50px;
-  }
-  
-  h3 {
-    font-size: 12px;
-    color: #555555;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 5px;
-  }
-  
-  .menu {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    background: var(--fondos-fondo, #f7f8fa);
-    color: #aaaaaa;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  .menu-button img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .menu-button .arrow {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .menu-button img.arrow {
-    transition: filter 0.3s;
-  }
-  
-  .menu-button.active {
-    background: white;
-    color: #000000;
-  }
-  
-  .logout {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
-    background: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #000022;
-    cursor: pointer;
-  }
-  
-  .logout img {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .sideLogo {
-    display: flex;
-    justify-content: center;
-    margin-top: 35px;
-    margin-bottom: 40px;
-  }
-  
-  #logo {
-    width: 125px;
-  }
-  
-  .worker-menu .menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    margin: 8px 0;
-    background-color: #f9f9f9;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 14px;
-    color: #333;
-    transition: background-color 0.3s ease;
-  }
-  
-  .worker-menu .menu-button.centered {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .imagenTransparente {
-    opacity: 0;
-  }
-  
-  .worker-menu .menu-button img {
-    height: 24px;
-    width: 24px;
-  }
-  
-  .worker-menu .menu-button:hover {
-    background-color: #e5e5e5;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    margin: 10px 0;
-    height: 10px;
-  }
-  
-  .progress {
-    height: 10px;
-    background-color: #4caf50;
-    border-radius: 5px;
-  }
-  
-  .progress-text {
-    font-size: 14px;
-    color: #666;
-    text-align: right;
-  }
-  
-  .search-bar {
-    margin: 20px 0;
-    display: flex;
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-  }
-  
-  .search-bar input,
-  .search-bar button {
-    height: 40px; /* Hacer que el input y el button tengan la misma altura */
-  }
-  
-  .search-bar input {
-    padding: 10px;
-    width: 300px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    font-size: 18px; /* Aumenta el tamaño del texto */
-  }
-  
-  .search-bar button {
-    padding: 0 15px; /* Asegura que el padding sea adecuado para que el button quede igual de alto que el input */
-    background-color: white;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centra el ícono dentro del botón */
-  }
-  
-  .search-bar button img {
-    width: 15px; /* Ajuste el tamaño de la imagen para que se vea bien dentro del botón */
-    height: 15px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  thead {
-    background-color: #000033;
-    color: white;
-  }
-  
-  thead th {
-    padding: 15px;
-    text-align: center;
-    font-size: 14px;
-  }
-  
-  tbody tr {
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  tbody td {
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .filaLote {
-    height: 100px;
-  }
-  
-  .lot-info {
-    display: flex;
-    gap: 10px;
-    margin-left: 50px;
-  }
-  
-  .nombreLote {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width:100%;
-    margin: 0; /* Elimina el margen que pueda estar causando separación */
-    padding: 0; /* Elimina cualquier relleno extra */
-  }
-  
-  .nombreLote span {
-    
-    padding: 0;
-    margin: 0; /* Asegura que no haya margen adicional entre la imagen y el texto */
-    display: inline-block; /* Asegura que el texto se mantenga alineado con la imagen */
-  }
-  
-  .lot-info img {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .status {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    margin: 0 auto;
-  }
-  
-  .divisor-menu,
-  .divisor-menu * {
-    box-sizing: border-box;
-  }
-  .divisor-menu {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 272px;
-    position: relative;
-    margin-bottom: 20px;
-  }
-  .line-1 {
-    margin-top: -1px;
-    border-style: solid;
-    border-color: var(--textos-texto-gris-oscuro, #555555);
-    border-width: 1px 0 0 0;
-    flex-shrink: 0;
-    width: 50px;
-    height: 0px;
-    position: relative;
-    transform-origin: 0 0;
-    transform: rotate(0deg) scale(1, 1);
-  }
-  .administrador {
-    color: var(--textos-texto-gris-oscuro, #555555);
-    text-align: left;
-    font-family: var(
-      --body-regular-body-regular-xs-font-family,
-      "Inter-Regular",
-      sans-serif
-    );
-    font-size: var(--body-regular-body-regular-xs-font-size, 12px);
-    line-height: var(--body-regular-body-regular-xs-line-height, 130%);
-    font-weight: var(--body-regular-body-regular-xs-font-weight, 400);
-    position: relative;
-  }
-  .line-2 {
-    margin-top: -1px;
-    border-style: solid;
-    border-color: var(--textos-texto-gris-oscuro, #555555);
-    border-width: 1px 0 0 0;
-    flex-shrink: 0;
-    width: 50px;
-    height: 0px;
-    position: relative;
-    transform-origin: 0 0;
-    transform: rotate(0deg) scale(1, 1);
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Evita que los elementos se salgan de la pantalla */
+  width: 100%;
+  max-width: 100vw;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 10px 0;
+  height: 10px;
+}
+
+.progress {
+  height: 10px;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: #666;
+  text-align: right;
+}
+
+.search-bar {
+  margin: 20px 0;
+  display: flex;
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.search-bar input,
+.search-bar button {
+  height: 40px; /* Hacer que el input y el button tengan la misma altura */
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 18px; /* Aumenta el tamaño del texto */
+}
+
+.search-bar button {
+  padding: 0 15px; /* Asegura que el padding sea adecuado para que el button quede igual de alto que el input */
+  background-color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el ícono dentro del botón */
+}
+
+.search-bar button img {
+  width: 15px; /* Ajuste el tamaño de la imagen para que se vea bien dentro del botón */
+  height: 15px;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed; /* Evita que se extienda */
+}
+
+thead {
+  background-color: #000033;
+  color: white;
+}
+
+thead th {
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+tbody tr {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+  padding: 10px;
+  text-align: center;
+}
+
+.filaLote {
+  height: 100px;
+}
+
+.lot-info {
+  display: flex;
+  gap: 10px;
+  margin-left: 50px;
+}
+
+.nombreLote {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0; /* Elimina el margen que pueda estar causando separación */
+  padding: 0; /* Elimina cualquier relleno extra */
+}
+
+.nombreLote span {
+  padding: 0;
+  margin: 0; /* Asegura que no haya margen adicional entre la imagen y el texto */
+  display: inline-block; /* Asegura que el texto se mantenga alineado con la imagen */
+}
+
+.lot-info img {
+  width: 40px;
+  height: 40px;
+}
+
+.status {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin: 0 auto;
+}

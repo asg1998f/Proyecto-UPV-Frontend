@@ -1,24 +1,6 @@
 import React, { useState } from "react";
 import "./InicioAdmin.scss";
-import Logo from "../../../assets/iconos/LogoN.png";
 import LogoUsuario from "../../../assets/iconos/LogoUsuario.png";
-import Registro from "../../../assets/iconos/IconoRegistrarR.png";
-import Master from "../../../assets/iconos/IconoMasterA.png";
-import MasterFlecha from "../../../assets/iconos/IconoFlechaM.png";
-import Almacen from "../../../assets/iconos/IconoAlmacenA.png";
-import Restaurar from "../../../assets/iconos/IconoRestaurarR.png";
-import Digitalizar from "../../../assets/iconos/IconoDigitalizarV.png";
-import DigitalizarFlecha from "../../../assets/iconos/IconoFlechaV.png";
-import Entregar from "../../../assets/iconos/IconoEntregarE.png";
-import InicioG from "../../../assets/iconos/IconoInicioG.png";
-import Inicio from "../../../assets/iconos/IconoInicioN.png";
-import Lotes from "../../../assets/iconos/IconoCarpetaN.png";
-import LotesG from "../../../assets/iconos/IconoCarpetaG.png";
-import Equipo from "../../../assets/iconos/IconoEquipoN.png";
-import EquipoG from "../../../assets/iconos/IconoEquipoG.png";
-import FlechaNegra from "../../../assets/iconos/IconoFlechaN.png";
-import FlechaGris from "../../../assets/iconos/IconoFlechaG.png";
-import CerrarSesion from "../../../assets/iconos/IconoCerrarSesionN.png";
 import Lote from "../../../assets/iconos/IconoCarpetaN.png";
 import Buscar from "../../../assets/iconos/IconoBuscarG.png";
 import CheckRegistrar from "../../../assets/iconos/IconoCheckR.png";
@@ -30,22 +12,7 @@ import CheckMontaje from "../../../assets/iconos/IconoCheckMt.png";
 import CheckEntrega from "../../../assets/iconos/IconoCheckE.png";
 
 const Dashboard = () => {
-  const [activeButton, setActiveButton] = useState("Inicio");
-  const [icons, setIcons] = useState({
-    Inicio: "",
-    Lotes: "",
-    Equipo: "",
-  });
-
-  const handleButtonClick = (buttonName) => {
-    setActiveButton(buttonName);
-
-    // Actualiza los iconos según el botón clickeado (opcional)
-    setIcons((prevIcons) => ({
-      ...prevIcons,
-      [buttonName]: "", // Cambia el icono aquí si es necesario
-    }));
-  };
+  
 
   return (
     <>
@@ -56,7 +23,9 @@ const Dashboard = () => {
               <div className="auto-layout-horizontal"></div>
               <div className="auto-layout-horizontal2">
                 <div className="auto-layout-horizontal3">
-                  <div className="component-70"></div>
+                  <div className="component-70">
+                    <img src={LogoUsuario} alt="" />
+                  </div>
                   <select className="dropdown">
                     <img src={LogoUsuario} alt="Laptop" />
                     <option value="opcion1">Dario Rodriguez</option>
