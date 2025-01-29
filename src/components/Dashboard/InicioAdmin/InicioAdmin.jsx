@@ -21,6 +21,7 @@ const Dashboard = () => {
   useEffect(() => {
     dispatch(getAllLotes());
   }, []);
+  
   useEffect(() => {
     if (lote.length == 0) {
       dispatch(getAllLotes());
@@ -31,11 +32,6 @@ const Dashboard = () => {
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setLote(value);
-  };
-
-  // Función para buscar cuando se presiona el botón
-  const handleSearchClick = () => {
-    dispatch(getByNregistro(lote));
   };
 
   return (
