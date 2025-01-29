@@ -44,7 +44,7 @@ const Almacenaje = () => {
   );
 
   const handleCarpetaClick = (id) => {
-    navigate(`/añadir-ubicacion/${id}`);
+    navigate(`/anadirUbicacion/${id}`);
   };
 
   return (
