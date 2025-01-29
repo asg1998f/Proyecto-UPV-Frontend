@@ -12,6 +12,7 @@ const Restauracion = () => {
     { id: 4, nombre: 'FOTOS' },
     { id: 5, nombre: 'MARCO' },
   ];
+console.log("eeee");
 
   const handleSeleccionarCarpeta = (nombreCarpeta) => {
     alert(`Accediendo a la cámara para: ${nombreCarpeta}`);

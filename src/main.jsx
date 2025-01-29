@@ -18,12 +18,12 @@ createRoot(document.getElementById('root')).render(
 </Provider>
   
 )
-ReactDOM.render(
-    <div className='App'>
-      <Camara></Camara>
-    </div>,
-    document.getElementById('root')
-  );
+// ReactDOM.render(
+//     <div className='App'>
+//       <Camara></Camara>
+//     </div>,
+//     document.getElementById('root')
+//   );
 
 
   reportWebVitals();

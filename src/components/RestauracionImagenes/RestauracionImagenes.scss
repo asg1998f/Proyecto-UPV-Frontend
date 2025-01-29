@@ -280,8 +280,8 @@
 .cardsRestauracion {
   display: flex;
   gap: 8px;
-  align-items: center;
-  justify-content: space-around;
+  align-content: flex-start;
+
   flex-wrap: wrap;
   flex-shrink: 0;
   width: 346px;
@@ -293,6 +293,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #000022;
 }
 .image-check-no-check {
   border-radius: 8px;
@@ -358,7 +359,6 @@
   width: 189px;
   height: 49px;
   position: absolute;
-  left: 175px;
   top: 769px;
   overflow: hidden;
 }
