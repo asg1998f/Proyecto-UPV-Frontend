@@ -355,6 +355,7 @@ setRegistroInput(updatedString)
     </div>
     </div>
     <form onSubmit={onSubmit}>
+      <div className='zone-gris'>
       <div className="sector-1">
         <div className="fecha-entrada">
           <label className="fecha">Fecha de entrada</label>
@@ -419,7 +420,7 @@ setRegistroInput(updatedString)
           />
           <label className='radio-propietario'>Con propietario</label>
         </div>
-        <div className='anonimo'>
+        <div className='conpropietario'>
         <input
         className='radio-button'
             type="radio"
@@ -600,7 +601,7 @@ setRegistroInput(updatedString)
         </div>
         <div className='bueno'>
         <input
-        className='radio-button-aceptable'
+        className='radio-button'
             type="radio"
             name="radio-button-2"
             value={aceptable}
@@ -717,11 +718,13 @@ setRegistroInput(updatedString)
           {errors.idResponsable && <p className="error">{errors.idResponsable}</p>}
         </div>
       </div>
+  
       <div className='btn-registrar'>
         
       <Button className='btn' type="primary" shape="round"  onClick={onSubmit} >
             <p className='login'>Registrar</p>
           </Button>
+      </div>
       </div>
     </form>
   </div>

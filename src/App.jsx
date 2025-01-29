@@ -39,9 +39,7 @@ function App() {
         <Route path="/restauracioncuatro" element={<RestauracionCuatro/>}/>
         <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
         <Route path="/anadirubicacion" element={ <AnadirUbicacion/>} />
-      </Routes>
-    <Routes>
-      <Route path="/" element={ <Landing/>} />
+        <Route path="/entrega" element={<Entrega title={"Entregar"} logo = {IconoEntregarE}/>} />
       <Route path="/informeregistro" element={<InformeRegistro/>}/>
       <Route path="/loginM" element={<LoginM/>}/>
       
