@@ -4,7 +4,6 @@ import AnadirUbicacion from "./components/AnadirUbicacion/AnadirUbicacion";
 import UbicacionAlmacen from "./components/UbicacionAlmacen/UbicacionAlmacen";
 import InformeRegistro from "./components/InformeRegistro/InformeRegistro";
 import LoginM from "./components/LoginM/LoginM";
-/* import './styles/globalstyles.scss' */
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
 import Restauracion from './components/Restauracion/Restauracion'
@@ -14,11 +13,12 @@ import Landing from './components/Landing/Landing'
 import LogoSalvar from './assets/iconos/LogoSalvar.png'
 import RestauracionImagenes from './components/RestauracionImagenes/RestauracionImagenes'
 import Dashboard from './components/Dashboard/Dashboard'
-import Lotesadmin from './components/Lotesadmin/Lotesadmin';
+import Lotesadmin from './components/Dashboard/Lotesadmin/Lotesadmin';
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
 import Entrega from './components/Entrega/Entrega'
 import IconoEntregarE from './assets/iconos/IconoEntregarE.png'
+import InicioAdmin from "./components/Dashboard/InicioAdmin/InicioAdmin";
 
 const entregar = "Entregar"
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -55,7 +55,8 @@ function App() {
         <Route path="/" element={ <Landing/>} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/Lotesadmin" element={<Lotesadmin/>}/>
+        <Route path="/lotesadmin" element={<Lotesadmin/>}/>
+        <Route path="/inicioadmin" element={<InicioAdminadmin/>}/>
       </Routes>
       </BrowserRouter>)}
     </>
