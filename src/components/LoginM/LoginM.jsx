@@ -1,70 +1,72 @@
 import React, { useState } from 'react'
-import { Form, Select, Input, Button  } from 'antd';
+import { Form, Select, Button } from 'antd';
 import './LoginM.scss'
 import { useNavigate } from 'react-router-dom';
 
 const LoginM = () => {
-  const [size, setSize] = useState('large');
+  const [size] = useState('large');
+  const [password, setPassword] = useState(''); // Estado para la contraseña
   const navigate = useNavigate();
 
-const onSubmit = (e) => {
-   e.preventDefault(); 
-// Aquí puedes añadir la lógica para validar al usuario
-   console.log("Formulario enviado");
-   navigate('/home'); 
-};
+  const onSubmit = (e) => {
+    e.preventDefault(); 
+    console.log("Formulario enviado", { password });
+    navigate('/home'); 
+  };
 
-return (
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value); // Actualiza el estado con el valor del input
+  };
+
+  return (
     <div className='container-formulario'> 
-    <div className='raro'>
-    <div className='tituloLoginM'>
-        <div className='texto'>
-        <span className='salvem'>SALVEM</span>
-        <span className='les-fotos'>LES FOTOS</span>
+      <div className='raro'>
+        <div className='tituloLoginM'>
+          <div className='texto'>
+            <span className='salvem'>SALVEM</span>
+            <span className='les-fotos'>LES FOTOS</span>
+          </div>
         </div>
-    </div>
-    <div className='formulario'>
-    <form onSubmit={onSubmit}>
+        <div className='formulario-loginM'>
+          <form onSubmit={onSubmit}>
             <div className='container-usuario'>
-                <label className='label-usuario'>Usuario
-                </label>
-                <Form.Item>
-        <Select className='input-usuario' placeholder="Usuario">
-          <Select.Option name="admin" value="admin">Administrador</Select.Option>
-          <Select.Option name="trabajador" value="trabajador">Trabajador</Select.Option>
-        </Select>
-      </Form.Item>
+              <label className='label-usuario'>Usuario</label>
+              <Form.Item>
+                <Select className='input-usuario' placeholder="Usuario">
+                  <Select.Option name="admin" value="admin">Admin</Select.Option>
+                  <Select.Option name="trabajador" value="trabajador">Trabajador</Select.Option>
+                </Select>
+              </Form.Item>
             </div>
             <div className='container-contraseña'>
-                <label className='label-contraseña'>Contraseña
-                </label>
-                <Form.Item
-      name="contraseña"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your contraseña!',
-        },
-      ]}
-    >
-      <Input.Password />
-      <a href="#" className="forgot-password">
-            ¿Has olvidado tu contraseña?
-          </a>
-    </Form.Item>
+              <label className='label-contraseña'>Contraseña</label>
+              <div className='container-password'>
+                <input
+                  type='password'
+                  placeholder='Ejemplo'
+                  name='contraseña'
+                  value={password} // Asigna el estado actual
+                  onChange={handlePasswordChange} // Maneja los cambios en el input
+                  className="input-contraseña" // Clase para estilizar
+                />
+                <a href="#" className="forgot-password">
+                  ¿Has olvidado tu contraseña?
+                </a>
+              </div>
             </div>
             <div className='container-btn'>
-            <Button className='btn' type="primary" shape="round"  size={size} htmlType="submit" >
-            <p className='login'>Iniciar sesión</p>
-          </Button>
+              <Button className='btn' type="primary" shape="round" size={size} htmlType="submit">
+                <p className='login'>Iniciar sesión</p>
+              </Button>
             </div>
-        </form>
+          </form>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-  )
+  );
 }
 
-export default LoginM
+export default LoginM;
+
 
 

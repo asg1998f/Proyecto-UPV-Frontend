@@ -347,10 +347,8 @@ line-height: 110%;
 }
 
 .bueno{
-  display: flex;
-width: 109px;
-padding: 4px 0px;
-align-items: center;
+display: flex;
+align-items: flex-end;
 gap: 8px;
 }
 
@@ -451,19 +449,19 @@ gap: 8px;
 
 .barro{
 display: flex;
-align-items: center;
+align-items: flex-end;
 gap: 8px;
 }
 
 .humedad{
   display: flex;
-align-items: center;
+align-items: flex-end;
 gap: 8px;
 }
 
 .hongos {
   display: flex;
-align-items: center;
+align-items: flex-end;
 gap: 8px;
 }
 

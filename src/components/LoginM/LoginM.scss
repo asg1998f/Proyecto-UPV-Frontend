@@ -37,20 +37,26 @@ line-height: 0%;
 .container-usuario {
     display: flex;
     flex-direction: column;
-    width: 342px;
-    justify-content: center;
-    gap: 12px;
-flex-shrink: 0;
+   
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 96px;
+    position: relative;
 }
 
 
 .input-usuario {
+    width: 302px !important;
+    height: 40px !important;
     display: flex;
-align-items: center;
-gap: 16px;
-align-self: stretch;
-margin-top: 5px;
-}
+    align-items: center; 
+  }
+  
+  .input-usuario .ant-select-selection-placeholder {
+    display: flex;
+    align-items: center; /* Centra verticalmente el placeholder */
+  }
+  
 .label-usuario {
     color: var(--Negro-texto, #002);
 font-family: Inter;
@@ -63,9 +69,11 @@ line-height: 130%;
 .container-contraseña {
     display: flex;
     flex-direction: column;
-    width: 342px;
-    justify-content: center;
-    gap: 12px;
+   
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 96px;
+    position: relative;
 }
 
 
@@ -92,7 +100,7 @@ font-style: normal;
 font-weight: 700;
 line-height: 110%;
 }
-.formulario {
+.formulario-loginM {
     display: flex;
     padding: 24px 0px;
     justify-content: center;
@@ -133,3 +141,27 @@ align-items: center;
 margin: auto;
 gap: 20px;
 }
+
+.container-password input {
+    width: 302px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 8px;
+  }
+  
+  .container-password a {
+    margin-top: 8px;
+    display: block;
+    font-size: 12px;
+    color: #1890ff;
+    text-align: right;
+  }
+  
+  
+
+  
+ 
+  
+  
+  

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Lotesadmin.scss";
+/* import "./Lotesadmin.scss"; */
 import Logo from "../../../assets/iconos/LogoN.png";
 import LogoUsuario from "../../../assets/iconos/LogoUsuario.png";
 import Registro from "../../../assets/iconos/IconoRegistrarR.png";

@@ -424,7 +424,7 @@ setRegistroInput(updatedString)
         <input
         className='radio-button'
             type="radio"
-            name="radiobtn1"
+            name="conPropietario"
             checked={anonimo}
             onChange={() =>
               setFormData({
