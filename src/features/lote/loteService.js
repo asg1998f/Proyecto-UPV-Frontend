@@ -8,6 +8,14 @@ const API_HISTORIAL = "http://localhost:8080/historiales";
 const API_FASES = "http://localhost:8080/fases";
 const API_TIPOS = "http://localhost:8080/tipos";
 
+const getLotesAlmacenados = async() => {
+  const res = await axios.get(API_FASES + "/getFaseAlmacenada");
+  return res.data;
+}
+const getLotesAlmacenajePendiente = async () => {
+  const res = await axios.get(API_FASES + "/getFasePendienteAlmacenar");
+  return res.data;
+} 
 const getAllLotes = async () => {
   const res = await axios.get(API_LOTES + "/");
   return res.data;
@@ -131,7 +139,9 @@ const loteService = {
   createHistorial,
   createFase,
   createTipo,
-  updateByNregistro
+  updateByNregistro,
+  getLotesAlmacenajePendiente,
+  getLotesAlmacenados
 };
 
 export default loteService;

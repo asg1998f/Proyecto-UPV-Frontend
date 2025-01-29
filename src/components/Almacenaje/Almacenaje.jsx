@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
 import Search from 'antd/es/input/Search';
@@ -7,10 +7,21 @@ import carpetaazul from "../../assets/iconos/IconoCarpetaM.png";
 import flecharosa from "../../assets/iconos/IconoFlechaA.png";
 import flechaazul from "../../assets/iconos/IconoFlechaM.png";
 import "./Almacenaje.scss";
+import { useDispatch, useSelector } from 'react-redux';
+import { getLotesAlmacenados, getLotesAlmacenajePendiente } from '../../features/lote/loteSlice';
 
 const Almacenaje = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const {almacenajeUbicado, almacenajePendiente} = useSelector((state)=> state.lotes)
+
+  useEffect(() => {
+    dispatch(getLotesAlmacenados())
+    dispatch(getLotesAlmacenajePendiente())
+      
+    }, []);
+
 
   // Datos simulados de lotes
   const lotesPendientes = [
@@ -59,40 +70,39 @@ const Almacenaje = () => {
 
       <div className='tramo-2'>
         <p className='titulo-pendiente'>Pendientes de almacenar</p>
-        {filteredPendientes.map((lote) => (
-          <div className='pendiente-almacenar' key={lote.id}>
-            <div
-              className='container-pendientes'
-              onClick={() => handleCarpetaClick(lote.id)}
-              style={{ cursor: "pointer" }}
-            >
-              <img className="carpeta-pendientes" src={carpetarosa}></img>
-              <div className='codigo-lote'>
-                <p className='font-lote'>{lote.id}</p>
-                <p className='font-contenido-lote'>{lote.contenido}</p>
-              </div>
-              <div className='flecha-pendientes'>
-                <img src={flecharosa} ></img>
-              </div>
-              
+        {almacenajePendiente.map((fase) => (
+          <div className='pendiente-almacenar' key={fase._id}>
+          <div
+            className='container-ubicado-almacen'
+            onClick={() => handleCarpetaClick(fase.loteId._id)}
+            style={{ cursor: "pointer" }}
+          >
+            <img className="carpeta-ubicados" src={carpetarosa}></img>
+            <div className='codigo-lote'>
+              <p className='font-lote'>{fase.loteId.nRegistro}</p>
+              {/* <p className='font-contenido-lote'>{lote.contenido}</p> */}
             </div>
+            <div></div>
+            <div></div>
+            <img src={flecharosa} className='flecha-ubicados'></img>
           </div>
+        </div>
         ))}
       </div>
 
       <div className='tramo-3'>
         <p className='titulo-ubicado-almacen'>Ubicados almacén</p>
-        {filteredAlmacenados.map((lote) => (
-          <div className='pendiente-almacenar' key={lote.id}>
+        {almacenajeUbicado.map((fase) => (
+          <div className='pendiente-almacenar' key={fase._id}>
             <div
               className='container-ubicado-almacen'
-              onClick={() => handleCarpetaClick(lote.id)}
+              onClick={() => handleCarpetaClick(fase.loteId._id)}
               style={{ cursor: "pointer" }}
             >
               <img className="carpeta-ubicados" src={carpetaazul}></img>
               <div className='codigo-lote'>
-                <p className='font-lote'>{lote.id}</p>
-                <p className='font-contenido-lote'>{lote.contenido}</p>
+                <p className='font-lote'>{fase.loteId.nRegistro}</p>
+                {/* <p className='font-contenido-lote'>{lote.contenido}</p> */}
               </div>
               <div></div>
               <div></div>
