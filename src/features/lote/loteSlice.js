@@ -3,8 +3,25 @@ import loteService from "./loteService";
 
 const initialState = {
   lotes: [],
-  ultimoLote:{}
+  ultimoLote:{},
+  almacenajePendiente:[],
+  almacenajeUbicado:[]
 };
+
+export const getLotesAlmacenados = createAsyncThunk("lotes/getLotesAlmacenados", async () => {
+  try {
+    return await loteService.getLotesAlmacenados();
+  } catch (error) {
+    console.error(error);
+  }
+});
+export const getLotesAlmacenajePendiente = createAsyncThunk("lotes/getLotesAlmacenajePendiente", async () => {
+  try {
+    return await loteService.getLotesAlmacenajePendiente();
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 export const getAllLotes = createAsyncThunk("lotes/getAll", async () => {
   try {
@@ -217,6 +234,12 @@ export const loteSlice = createSlice({
     builder.addCase(getAllLotes.fulfilled, (state, action) => {
       state.lotes = action.payload;
     });
+    builder.addCase(getLotesAlmacenados.fulfilled,(state,action)=> {
+      state.almacenajeUbicado = action.payload
+    })
+    builder.addCase(getLotesAlmacenajePendiente.fulfilled,(state,action)=> {
+      state.almacenajePendiente = action.payload
+    })
     builder.addCase(getAllSubcarpetas.fulfilled, (state, action) => {
       state.lotes = action.payload;
     });

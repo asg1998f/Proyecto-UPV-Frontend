@@ -2,83 +2,97 @@ import React, { useState, useEffect } from "react";
 import axios from "axios"; // Importar axios
 import "./RestauracionImagenes.scss";
 import IconoRestaurarR from "../../assets/iconos/IconoRestaurarR.png";
-import FlechaIzquierda from "../../assets/iconos/FlechaIzquierda.png";
-import IconoPapelera from "../../assets/iconos/IconoPapelera.png";
+import papelera from "../../assets/iconos/IconoPapelera.png";
+import FlechaNavigate from "../FlechaNavigate/FlechaNavigate";
+import { Button } from "antd";
+import Validacion from "../Validacion/Validacion";
+import "../Validacion/Validacion.scss"
+import { useDispatch } from "react-redux";
+import { validar } from "../../features/auth/authSlice";
+import fotoejemplo1 from '../../assets/imagenes/Foto-prueba-3.jpg'
+import fotoejemplo2 from '../../assets/imagenes/Foto-prueba-4.jpg'
+import fotoejemplo3 from '../../assets/imagenes/Foto-prueba-5.jpg'
+import fotoejemplo4 from '../../assets/imagenes/Foto-prueba-7.jpg'
+import fotoejemplo5 from '../../assets/imagenes/Foto-prueba-11.jpg'
+import fotoejemplo6 from '../../assets/imagenes/Foto-prueba-16.jpg'
+import fotoejemplo7 from '../../assets/imagenes/Foto-prueba-10.jpg'
+import fotoejemplo8 from '../../assets/imagenes/Foto-prueba-14.jpg'
+import fotoejemplo9 from '../../assets/imagenes/Foto-prueba-15.jpg'
+import fotoejemplo10 from '../../assets/imagenes/Foto-prueba-9.jpg'
+//import fotoejemplo11 from '../../assets/imagenes/Foto-prueba-6.jpg'
 
 const RestauracionImagenes = () => {
+  const [images, setImages] = useState([
+    { id: 1, src: fotoejemplo1 },
+    { id: 2, src: fotoejemplo2 },
+    { id: 3, src: fotoejemplo3 },
+    { id: 4, src: fotoejemplo4 },
+    { id: 5, src: fotoejemplo5 },
+    { id: 6, src: fotoejemplo6 },
+    { id: 7, src: fotoejemplo7 },
+    { id: 8, src: fotoejemplo8 },
+    { id: 9, src: fotoejemplo9 },
+    { id: 10, src: fotoejemplo10 },
+    
+   ])
+  
   const [selectedImages, setSelectedImages] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [documentSerial, setDocumentSerial] = useState("Cargando..."); // Estado para el número de serie
-  const [dni, setDni] = useState(""); // Estado para el DNI ingresado
-  const [validationMessage, setValidationMessage] = useState(""); // Mensaje de validación
+  const [isSelecting, setIsSelecting] = useState(false); // Nuevo estado para modo selección
+  const [documentSerial, setDocumentSerial] = useState("Cargando...");
+  
+  const dispatch = useDispatch()
 
-  const images = Array.from({ length: 16 }, (_, index) => ({
-    id: index + 1,
-    src: `rectangle-118${index + 1}.png`,
-  }));
+  const [modalAbierto, setModalAbierto] = useState(false)
+  const handleConfirm = async (dni) => { 
+          await dispatch( validar(dni))   
+        let esCorrecto = localStorage.getItem("dni")
+          if(esCorrecto == "true" ){  
+              alert("El DNI  es correcto.");
+          }
+        setModalAbierto(false);
+      }
 
+  // Fetch document serial
   useEffect(() => {
-    // Hacer la petición al backend
     const fetchDocumentSerial = async () => {
       try {
         const response = await axios.get("https://api.example.com/document-serial");
-        setDocumentSerial(response.data.serialNumber); // Asignar el número de serie recibido
+        setDocumentSerial(response.data.serialNumber);
       } catch (error) {
         console.error("Error al obtener el número de serie:", error);
-        setDocumentSerial("Error al cargar"); // Mostrar error si la petición falla
+        setDocumentSerial("Error al cargar");
       }
     };
 
     fetchDocumentSerial();
-  }, []); // Ejecutar solo al montar el componente
+  }, []);
 
   const handleSelectImage = (id) => {
-    if (selectedImages.includes(id)) {
-      setSelectedImages(selectedImages.filter((imageId) => imageId !== id));
-    } else {
-      setSelectedImages([...selectedImages, id]);
+    if (isSelecting) {
+      if (selectedImages.includes(id)) {
+        setSelectedImages(selectedImages.filter((imageId) => imageId !== id));
+      } else {
+        setSelectedImages([...selectedImages, id]);
+      }
     }
   };
 
   const handleDeleteSelected = () => {
-    const filteredImages = images.filter(
-      (image) => !selectedImages.includes(image.id)
-    );
+    setImages(images.filter((image) => !selectedImages.includes(image.id)));
     setSelectedImages([]);
   };
-  const handleValidateDni = async () => {
-    try {
-      const response = await axios.post("https://api.example.com/validate-dni", {
-        dni,
-      });
-      if (response.data.isValid) {
-        setValidationMessage("DNI válido. ¡Validación exitosa!");
-        setShowModal(false); // Cerrar el modal si el DNI es válido
-      } else {
-        setValidationMessage("El DNI no está registrado. Intenta nuevamente.");
-      }
-    } catch (error) {
-      console.error("Error al validar el DNI:", error);
-      setValidationMessage("Error al validar el DNI. Por favor, intenta más tarde.");
-    }
-  };
-  const handleAddMore = (event) => {
-    const files = event.target.files;
-    if (files) {
-      const newImages = Array.from(files).map((file, index) => ({
-        id: images.length + index + 1,
-        src: URL.createObjectURL(file),
-      }));
-      setSelectedImages([...selectedImages, ...newImages.map((img) => img.id)]);
-    }
+
+  const handleToggleSelectMode = () => {
+    setIsSelecting(!isSelecting); // Alternar el modo de selección
+    if (isSelecting) setSelectedImages([]); // Limpiar selección al salir del modo
   };
 
   return (
     <>
-      <div className="restauraci-n">
+      <div className={modalAbierto ? "blur-background" : "restauraci-n"}>
         <div className="home">
           <div className="logo">
-            <img src={FlechaIzquierda} alt="Flecha hacia la izquierda" />
+           <FlechaNavigate />
             <div className="frame-427319580">
               <div className="frame-427319550">
                 <div className="icono">
@@ -98,9 +112,14 @@ const RestauracionImagenes = () => {
               <div className="titulo-imgs">
                 <div className="im-genes">Imágenes</div>
               </div>
-              <div className="btton-select-all-default">
-                <div className="seleccionar">Seleccionar</div>
-              </div>
+              <Button
+                className={`btton-select-all-default ${isSelecting ? "active" : ""}`}
+                onClick={handleToggleSelectMode}
+              >
+                <div className="seleccionar">
+                  {isSelecting ? "Cancelar" : "Seleccionar"}
+                </div>
+              </Button>
             </div>
           </div>
 
@@ -123,6 +142,7 @@ const RestauracionImagenes = () => {
           </div>
         </div>
 
+        {/* Mostrar pop-up solo si hay imágenes seleccionadas */}
         {selectedImages.length > 0 && (
           <div className="popup">
             <div className="popup-content">
@@ -131,64 +151,35 @@ const RestauracionImagenes = () => {
                 {selectedImages.length > 1 ? "es" : ""} seleccionada
                 {selectedImages.length > 1 ? "s" : ""}
               </div>
-              <button className="delete-button" onClick={handleDeleteSelected}>
-                <IconoPapelera size={20} /> Eliminar
-              </button>
+              <Button className="delete-button" onClick={handleDeleteSelected}>
+                <img src={papelera} alt="Eliminar" className="papelera-icono" />
+              </Button>
             </div>
           </div>
         )}
+      </div>
 
-        {/* Botón Añadir más */}
-       <div className="padreBotones">
-        <div className="bot-n">
+      {/* Botones Inferiores */}
+      <div className="padreBotones">
+       {/*  <div className="bot-n">
           <label className="validar" htmlFor="addMore">
             Añadir más
           </label>
-          <input
-            id="addMore"
-            type="file"
-            accept="image/*"
-            capture="environment"
-            style={{ display: "none" }}
-            multiple
-            onChange={handleAddMore}
-            />
-        </div>
+        </div> */}
 
-        <div className="bot-n2" onClick={() => setShowModal(true)}>
-          <div className="validar2">Validar subida</div>
-        </div>
+      <div className="bot-n2">
+        <div className="validar2" onClick={() => setModalAbierto(true)}>Validar subida</div>
+        <Validacion 
+          isOpen={modalAbierto} 
+          onClose={() => setModalAbierto(false)} 
+          onConfirm={handleConfirm} 
+        />
       </div>
-            </div> 
+    </div>
 
-      {/* Modal */}
-      {showModal && (
-        <div className="modal-dni">
-          <div className="content">
-            <img className="icono" src="icono0.svg" alt="Icono" />
-            <div className="right">
-              <div className="title">Introduce DNI para validar</div>
-            </div>
-          </div>
-          <div className="field">
-            <input
-              type="text"
-              className="input"
-              value={dni}
-              onChange={(e) => setDni(e.target.value)}
-              placeholder="00000000M"
-            />
-          </div>
-          <div className="bot-n" onClick={handleValidateDni}>
-            <div className="validar">Validar</div>
-          </div>
-          {validationMessage && (
-            <div className="validation-message">{validationMessage}</div>
-          )}
-        </div>
-      )}
-    </>
+   </>
   );
 };
 
 export default RestauracionImagenes;
+

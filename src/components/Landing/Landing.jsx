@@ -4,6 +4,8 @@ import foto from '../../assets/imagenes/random2.png';
 import historia from '../../assets/imagenes/historia.jpg';
 import historia2 from '../../assets/imagenes/historia2.jpg';
 import imgpf from '../../assets/imagenes/imgpf.png';
+import fotoantes from '../../assets/imagenes/fotoantes.png';
+import fotodespues from '../../assets/imagenes/fotodespues.png';
 import { FaPhotoVideo, FaBroom, FaLaptop, FaHourglass, FaGift } from 'react-icons/fa';
 import { FaMapMarkerAlt, FaClock, FaPhoneAlt, FaEnvelope, FaInstagram } from "react-icons/fa";
 import React, { useState } from 'react';
@@ -23,7 +25,7 @@ const Landing = () => {
           <div class="headline">
             <div class="top">
               <div class="facultad-de-bellas-artes">FACULTAD DE BELLAS ARTES UPV</div>
-              <div class="salvem-les-fotos">Salvem les fotos</div>
+              <div class="salvem-les-fotos-titulo">Salvem les fotos</div>
             </div>
             <div class="paragraph">
               Recuperamos tus fotografías familiares dañadas por la DANA de manera
@@ -32,7 +34,7 @@ const Landing = () => {
             </div>
           </div>
           <div class="secondary-btn">
-            <div class="btn-text">Dónde encontrarnos</div>
+            <a href="#donde-encontrarnos" class="btn-text">Dónde encontrarnos</a>
           </div>
           <div className="image-container">
             <img src={foto} alt="Fotografía restaurada" />
@@ -47,7 +49,7 @@ const Landing = () => {
             <div class="paragraph2">Fotografías</div>
           </div>
           <div class="intervenciones">
-            <div class="_15-000">15.000</div>
+            <div class="_15-000">18.000</div>
             <div class="paragraph3">Intervenciones y digitalizaciones</div>
           </div>
           <div class="voluntarios">
@@ -98,22 +100,19 @@ const Landing = () => {
 
         {/* Imágenes Antes y Después */}
         <section className="seccion-imagenes-ayd">
-          <div className="imagen-con-descripcion">
-            <img
-              src="ruta-de-la-imagen-antes.jpg"
-              alt="Foto antes de la restauración"
-              className="captura-de-pantalla-2025-01-22-a-las-13-06-16-1"
-            />
-            <p className="foto-antes-de-la-restauraci-n">Foto antes de la restauración</p>
-          </div>
-          <div className="imagen-con-descripcion">
-            <img
-              src="ruta-de-la-imagen-despues.jpg"
-              alt="Foto después de la restauración"
-              className="captura-de-pantalla-2025-01-22-a-las-13-06-16-2"
-            />
-            <p className="foto-despu-s-de-la-restauraci-n">Foto después de la restauración</p>
-          </div>
+  <div className="imagen-con-descripcion">
+    <div className="image-container">
+      <img src={fotoantes} alt="Fotografía antes de la restauración" className="foto-antes" />
+    </div>
+    <p className="foto-antes-de-la-restauracion">Foto antes de la restauración</p>
+  </div>
+  
+  <div className="imagen-con-descripcion">
+    <div className="image-container">
+      <img src={fotodespues} alt="Fotografía después de la restauración" className="foto" />
+    </div>
+    <p className="foto-despues-de-la-restauracion">Foto después de la restauración</p>
+  </div>
         </section>
       </section>
 
@@ -121,7 +120,7 @@ const Landing = () => {
       {/* Mensaje destacado */}
       <div className="mensaje">
         <div className="parrafo">‘’No podíamos quedarnos de brazos cruzados’’</div>
-        <div className="firma">Ana López, responsable de Restauración</div>
+        <div className="firma">Ana Carreres, responsable de Restauración</div>
       </div>
 
       <section className="nuestra-historia">

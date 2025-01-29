@@ -12,6 +12,7 @@ import { getLast, updateByNregistro } from '../../features/lote/loteSlice';
 import axios from "axios";
 
 
+
 const InformeRegistro = () => {
   const [mostrarCamara, setMostrarCamara] = useState(false); // Estado para mostrar la cámara
   const [archivoPDF, setArchivoPDF] = useState(null); // Estado para guardar el PDF

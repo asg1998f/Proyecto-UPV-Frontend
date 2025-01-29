@@ -8,7 +8,6 @@ import LoginM from "./components/LoginM/LoginM";
 import Header from './components/Header/Header'
 import Login from './components/Login/Login'
 import Restauracion from './components/Restauracion/Restauracion'
-import Restauracion4 from './components/RestauracionCuatro/RestauracionCuatro';
 import HomeDistributiva from './components/HomeDistributiva/HomeDistributiva'
 import Landing from './components/Landing/Landing'
 import LogoSalvar from './assets/iconos/LogoSalvar.png'
@@ -21,6 +20,8 @@ import FolderSystem from './components/FolderSystem/FolderSystem'
 
 import Entrega from './components/Entrega/Entrega'
 import IconoEntregarE from './assets/iconos/IconoEntregarE.png'
+import RestauracionCuatro from './components/RestauracionCuatro/RestauracionCuatro'
+
 
 
 const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -30,47 +31,39 @@ const esMobil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
 function App() {
   return (
     <>
-
-      {esMobil ? (
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path="/home"
-              element={<HomeDistributiva logo={LogoSalvar} />}
-            ></Route>
-            <Route
-              path="/ubicacionalmacen"
-              element={<UbicacionAlmacen icono={IconoAlmacenH} />}
-            ></Route>
-            <Route
-              path="/anadirUbicacion"
-              element={<AnadirUbicacion />}
-            ></Route>
-            <Route path="/Almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
-            <Route path="/restauracion" element={<Restauracion />} />
-            <Route path="/restauracion4" element={<Restauracion4 />} />
-            <Route
-              path="/restauracionimagenes"
-              element={<RestauracionImagenes />}
-            />
-            <Route path="/" element={<Landing />} />
-            <Route path="/informeregistro" element={<InformeRegistro />} />
-            <Route path="/loginM" element={<LoginM />} />
-            <Route path="/entrega" element={<Entrega title={"Entregar"} logo = {IconoEntregarE}/>} />
-          </Routes>
-        </BrowserRouter>
-      ) : (
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/carpetas" element={<FolderSystem/>}/>
-          </Routes>
-        </BrowserRouter>
-      )}
-
+    {esMobil ?
+    (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<HomeDistributiva logo = {LogoSalvar}/>}></Route>
+        <Route path="/ubicacionAlmacen" element={<UbicacionAlmacen icono = {IconoAlmacenH} />}></Route>
+        <Route path="/almacenaje" element={<Almacenaje icono = {IconoAlmacenH}/>}></Route>
+        <Route path="/restauracion" element={<Restauracion/>}/>
+        <Route path="/restauracioncuatro" element={<RestauracionCuatro/>}/>
+        <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
+        <Route path="/anadirubicacion/:_id" element={ <AnadirUbicacion/>} />
+        <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
+        <Route path="/entrega" element={<Entrega title={"Entregar"} logo = {IconoEntregarE}/>} />
+      </Routes>
+    <Routes>
+      <Route path="/" element={ <Landing/>} />
+      <Route path="/informeregistro" element={<InformeRegistro/>}/>
+      <Route path="/loginM" element={<LoginM/>}/>
+      
+    </Routes>
+    </BrowserRouter>
+      )
+    :
+     (
+      <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" element={ <Landing/>} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/carpetas" element={<FolderSystem/>}/>
+      </Routes>
+      </BrowserRouter>)}
     </>
   );
 }
