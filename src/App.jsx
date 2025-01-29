@@ -15,6 +15,8 @@ import LogoSalvar from './assets/iconos/LogoSalvar.png'
 import Dashboard from './components/Dashboard/Dashboard'
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
+import AnadirUbicacion from './components/AnadirUbicacion/AnadirUbicacion'
+
 
 
 
@@ -35,6 +37,7 @@ function App() {
         <Route path="/restauracion" element={<Restauracion/>}/>
         <Route path="/restauracion4" element={<Restauracion4/>}/>
         <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
+        <Route path="/anadirubicacion" element={ <AnadirUbicacion/>} />
       </Routes>
     <Routes>
       <Route path="/" element={ <Landing/>} />
