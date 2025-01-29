@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./InicioAdmin.scss";
 import LogoUsuario from "../../../assets/iconos/LogoUsuario.png";
 import Lote from "../../../assets/iconos/IconoCarpetaN.png";
@@ -10,9 +10,16 @@ import CheckRestaurar from "../../../assets/iconos/IconoCheckRt.png";
 import CheckDigitalizar from "../../../assets/iconos/IconoCheckD.png";
 import CheckMontaje from "../../../assets/iconos/IconoCheckMt.png";
 import CheckEntrega from "../../../assets/iconos/IconoCheckE.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllLotes } from "../../../features/lote/loteSlice";
 
 const Dashboard = () => {
-  
+  const dispatch = useDispatch();
+  const { lotes } = useSelector((state) => state.lotes);
+
+  useEffect(() => {
+    dispatch(getAllLotes());
+  }, []);
 
   return (
     <>
@@ -63,38 +70,44 @@ const Dashboard = () => {
             </thead>
             <tbody>
               {/* Repetir esta fila para cada lote */}
-              <tr className="filaLote">
-                <td>
-                  <div className="lot-info">
-                    <img src={Lote} alt="Folder" />
-                    <div className="nombreLote">
-                      <p className="parrafo-lote">0012-FT</p>
-                      <p>2 álbumes, 1 negativo, 2 marcos</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <img src={CheckRegistrar} alt="Check Rojo" />
-                </td>
-                <td>
-                  <img src={CheckMaster} alt="Check Rojo" />
-                </td>
-                <td>
-                  <img src={CheckAlmacen} alt="Check Rojo" />
-                </td>
-                <td>
-                  <img src={CheckRestaurar} alt="Check Rojo" />
-                </td>
-                <td>
-                  <img src={CheckDigitalizar} alt="Check Rojo" />
-                </td>
-                <td>
-                  <img src={CheckMontaje} alt="Check Rojo" />
-                </td>
-                <td>
-                  <img src={CheckEntrega} alt="Check Rojo" />
-                </td>
-              </tr>
+              {lotes.map((lote) => {
+                return (
+                  <>
+                    <tr className="filaLote">
+                      <td>
+                        <div className="lot-info">
+                          <img src={Lote} alt="Folder" />
+                          <div className="nombreLote">
+                            <p className="parrafo-lote">{lote.nRegistro}</p>
+                            <p className="elementosLote">{lote.subCarpetas.length} elementos</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <img src={CheckRegistrar} alt="Check Rojo" />
+                      </td>
+                      <td>
+                        <img src={CheckMaster} alt="Check Rojo" />
+                      </td>
+                      <td>
+                        <img src={CheckAlmacen} alt="Check Rojo" />
+                      </td>
+                      <td>
+                        <img src={CheckRestaurar} alt="Check Rojo" />
+                      </td>
+                      <td>
+                        <img src={CheckDigitalizar} alt="Check Rojo" />
+                      </td>
+                      <td>
+                        <img src={CheckMontaje} alt="Check Rojo" />
+                      </td>
+                      <td>
+                        <img src={CheckEntrega} alt="Check Rojo" />
+                      </td>
+                    </tr>
+                  </>
+                );
+              })}
             </tbody>
           </table>
         </div>

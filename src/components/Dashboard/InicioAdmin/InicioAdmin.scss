@@ -81,9 +81,8 @@ thead {
 }
 
 thead th {
-  padding: 15px;
-  text-align: center;
   font-size: 14px;
+  
 }
 
 tbody tr {
@@ -102,8 +101,11 @@ tbody td {
 
 .lot-info {
   display: flex;
-  gap: 10px;
-  margin-left: 50px;
+  flex-direction: row;
+}
+
+.elementosLote {
+  font-size: 10px;
 }
 
 .nombreLote {
