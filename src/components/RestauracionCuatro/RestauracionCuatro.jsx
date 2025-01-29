@@ -1,7 +1,7 @@
 import "./RestauracionCuatro.scss";
 import { useState } from "react";
-import Broom from "../../assets/images/escobita.png";
-import Folder from "../../assets/iconos/IconoCarpetaRT.png";
+import escobaamarilla from "../../assets/iconos/escobita.png";
+import carpetaamarilla from "../../assets/iconos/IconoCarpetaRT.png";
 import FlechaNavigate from "../FlechaNavigate/FlechaNavigate";
 import Search from "antd/es/input/Search";
 
@@ -28,61 +28,53 @@ const RestauracionCuatro = () => {
   };
 
   return (
-    <div className="restauraci-n">
-      <div className="home">
-        <div className="logoRestauracion4">
-          <FlechaNavigate />
-          <div className="frame-427319580Restauracion4">
-            <div className="frame-427319553">
-              <div className="icono">
-                <img className="fi-sr-broom" src={Broom} alt="Broom" />
-              </div>
-              <div className="restauraci-n2">Restaurar</div>
+    <div className="container-rest-cuatro">
+      <div className="area-1">
+        <div className="flecha-navigate-rest">
+          <FlechaNavigate/>
+        </div>
+        <div className="rest-logo-cuatro">
+          <div className="titulo-rest-cuatro">
+            <img src={escobaamarilla} />
+            <p className="texto-rest-cuatro">Restaurar</p>
             </div>
+            <div className="barra-id-rest-cuatro">
             <Search
               placeholder="Buscar por ID..."
-              value={searchTerm}
-              onChange={(e) => handleSearch(e.target.value)}
+              className='buscador-almacen'
             />
-          </div>
+            </div>
         </div>
-        <div className="frame-427319548">
-          <div className="finalizar-restauraci-n">Finalizar restauración</div>
-          <div className="cards">
-            {filteredFolders.length > 0 ? (
-              filteredFolders.map((folder, index) => (
-                <div key={index} className="component-folder" style={{ marginBottom: "50px" }}>
-                  <div className="alarm-details">
-                    <div className="alarm-details2">
-                      <div className="alarm-details3">
-                        <div className="left">
-                          <div className="icono3">
-                            <img
-                              className="folder-open-outlined"
-                              src={Folder}
-                              alt="Folder"
-                            />
-                          </div>
-                          <div className="frame-39955">
-                            <div className="_0012-ft">{folder.id}</div>
-                            <div className="_2-lbumes">{folder.albums}</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="checkbox-container">
-                      <input type="checkbox" id={`item${index}`} name={`item${index}`} />
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="no-results">No se encontraron coincidencias</div>
-            )}
+      </div>
+      <div className="area-2">
+        <p className="titulo2-rest-cuatro">Finalizar restauración</p>
+        <div className="container-carpetas-rest">
+          <div className="container-carpeta-ind">
+          <div className="icono-rest">
+          <img src={carpetaamarilla}></img>
+          <div className="lote-rest-cuatro">
+            <p className="cod-lote-rest-cuatro">
+            0012-FT
+            </p>
+            <p className="cont-lote-rest-cuatro">
+              2 álbumes
+            </p>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
+          <div>
+            <input 
+            className="chbox-rest-cuatro"
+            type="checkbox"
+            name='restaurado'
+            /* value={restaurado} */
+            /* onChange={onChange} *//>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 
