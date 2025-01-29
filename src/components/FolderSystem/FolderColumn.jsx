@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import DoubbleArrowIcon from "../../assets/iconos/IconoFlechaN.png";
 import "./FolderColumn.scss";
 

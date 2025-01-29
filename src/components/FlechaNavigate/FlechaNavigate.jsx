@@ -1,4 +1,3 @@
-import React from 'react'
 import flechaatras from '../../assets/iconos/FlechaAtras.png'
 import { useNavigate } from 'react-router-dom';
 import './FlechaNavigate.scss'

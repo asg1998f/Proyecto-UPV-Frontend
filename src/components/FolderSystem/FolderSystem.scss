@@ -22,6 +22,8 @@
   justify-content: space-between;
   padding: 10px;
   padding-right: 30px;
+  min-height: 80px;
+  max-height: 120px;
 }
 
 .noneStyle {
@@ -31,21 +33,32 @@
 }
 
 .searchBarp {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  
   background-color: #ffffff;
   width: 50%;
   display: flex;
   justify-content: space-between;
   border-radius: 8px;
-  padding-left: 10px;
+  padding-left: 80px;
   padding-right: 10px;
+  min-height: 20px;
+  max-height: 80px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
 }
+
 
 .iconp {
   display: inline;
   width: 16px;
   height: 16px;
+  position: 
+  flex-shrink 0;
   overflow: hidden;
 }
 
@@ -104,4 +117,18 @@
 .sideBarp {
   width: 300px;
   height: 100vh;
+}
+
+.noneStyle {
+  background: var(--fondos-fondo-blanco, #ffffff);
+  border-radius: 8px;
+  padding: 8px 12px 8px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: 24px;
+  position: relative;
 }
