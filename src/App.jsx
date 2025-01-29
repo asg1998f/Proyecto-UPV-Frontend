@@ -38,6 +38,7 @@ function App() {
         <Route path="/restauracion" element={<Restauracion/>}/>
         <Route path="/restauracioncuatro" element={<RestauracionCuatro/>}/>
         <Route path="/restauracionimagenes" element={ <RestauracionImagenes/>} />
+        <Route path="/anadirubicacion" element={ <AnadirUbicacion/>} />
       </Routes>
     <Routes>
       <Route path="/" element={ <Landing/>} />
