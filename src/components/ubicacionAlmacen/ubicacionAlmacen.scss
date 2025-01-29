@@ -2,7 +2,7 @@
 .home * {
   box-sizing: border-box;
 }
-.home {
+.homeUbicacionAlmacen {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -120,7 +120,7 @@
   align-items: flex-end;
   justify-content: center;
 }
-.frame-427319553 {
+.frame-427319553Almacen {
   display: flex;
   flex-direction: column;
   gap: 144px;
@@ -345,7 +345,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.vertical-form-item-input {
+.vertical-form-item-inputAlmacen {
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -386,7 +386,7 @@
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
-.field {
+.fieldAlmacenaje {
   background: var(--fondos-fondo-blanco, #ffffff);
   border-radius: 8px;
   border-style: solid;
@@ -395,6 +395,7 @@
   align-self: stretch;
   flex-shrink: 0;
   height: 70px;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }

@@ -20,7 +20,7 @@ main {
 .informacion-primer-fold {
   width: 100%;
   object-fit: cover;
-  background-color: black;
+  background-color: #212122;
   display: flex;
   flex-direction: column;
   gap: 318px;
@@ -453,7 +453,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  background: white;
+  background-color: none;
 }
 
 .imagen-con-descripcion {
@@ -565,7 +565,6 @@ main {
 //NUESTRA HISTORIA 
 .nuestra-historia {
   margin-bottom: 100px;
-  background: white;
   padding: 120px 144px 96px 144px;
   display: flex;
   flex-direction: column;
@@ -661,6 +660,7 @@ main {
 }
 
 //PREGUNTAS FRECUENTES 
+
 .faqs-container {
   display: flex;
   justify-content: space-between;
@@ -671,8 +671,6 @@ main {
   padding: 20px;
   font-family: "Inter", sans-serif;
   color: #26292b;
-  background: white;
-
 }
 
 .faqs {
@@ -719,6 +717,7 @@ main {
   align-items: center;
   cursor: pointer;
   color: #26292b;
+  transition: color 0.3s;
 }
 
 .faq-toggle:hover {
@@ -729,6 +728,24 @@ main {
   font-size: 1.5rem;
   font-weight: bold;
   color: #26292b;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq-answer {
+  padding: 10px;
+  margin-top: 10px;
+  display: block; 
+}
+
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-icon {
+  content: "-"; 
+  transform: rotate(0deg); 
 }
 
 .faqs-image-container {
@@ -752,11 +769,11 @@ main {
   height: auto;
 }
 
+//UBICACION .encu-ntranos,
 .encu-ntranos,
 .encu-ntranos * {
   box-sizing: border-box;
 }
-
 .encu-ntranos {
   background: var(--new-folder-gris-oscuro, #26292b);
   padding: 80px 144px 80px 144px;
@@ -767,10 +784,9 @@ main {
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
-  height: 932px;
+  height: auto;
   position: relative;
 }
-
 .frame-80 {
   display: flex;
   flex-direction: column;
@@ -780,9 +796,11 @@ main {
   flex-shrink: 0;
   height: 614px;
   position: relative;
+  flex-grow: 1;
+  gap: 10px; 
+  margin-bottom: 150px;
 }
-
-.titulo {
+.tituloLanding {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -791,19 +809,18 @@ main {
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
+  margin-bottom: 50px
 }
-
 .headline {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
   align-items: flex-start;
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
 }
-
 .salvem-les-fotos {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
@@ -814,8 +831,7 @@ main {
   position: relative;
   align-self: stretch;
 }
-
-.puedes-venir-a-traernos-tus-fotograf-as-a-la-facultad-de-bellas-artes-de-la-upv {
+.parrafo-encuentranos {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
   font-family: var(--h3-font-family, "Inter-Medium", sans-serif);
@@ -823,8 +839,10 @@ main {
   font-weight: var(--h3-font-weight, 500);
   position: relative;
   align-self: stretch;
+  margin-bottom: 20px; /* Agregar un margen inferior si el texto está pegado a otros elementos */
+  z-index: 1; /* Asegúrate de que el contenido esté por encima de otros elementos */
+  visibility: visible;
 }
-
 .frame-78 {
   display: flex;
   flex-direction: row;
@@ -833,11 +851,11 @@ main {
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
+  gap: 30px;
 }
-
 .screenshot-2025-01-20-182312-1 {
   flex-shrink: 0;
-  width: 592px;
+  width: 100%;
   height: 460px;
   position: relative;
   object-fit: cover;
@@ -852,9 +870,8 @@ main {
   flex-shrink: 0;
   width: 513px;
   position: relative;
-  padding: 5%;
+  margin-left: auto;
 }
-
 .frame-68 {
   display: flex;
   flex-direction: row;
@@ -865,7 +882,14 @@ main {
   flex-shrink: 0;
   position: relative;
 }
-
+.icono {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+  fill:#e0e0e0;
+}
 .salvem-les-fotos2 {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
@@ -876,7 +900,6 @@ main {
   align-self: stretch;
   width: 457px;
 }
-
 .frame-69 {
   display: flex;
   flex-direction: row;
@@ -887,7 +910,14 @@ main {
   flex-shrink: 0;
   position: relative;
 }
-
+.icono2 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+  fill:#e0e0e0;
+}
 .salvem-les-fotos3 {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
@@ -897,7 +927,6 @@ main {
   position: relative;
   width: 513px;
 }
-
 .frame-70 {
   display: flex;
   flex-direction: row;
@@ -908,7 +937,14 @@ main {
   flex-shrink: 0;
   position: relative;
 }
-
+.icono3 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+  fill:#e0e0e0;
+}
 .frame-72 {
   display: flex;
   flex-direction: row;
@@ -919,17 +955,14 @@ main {
   flex-shrink: 0;
   position: relative;
 }
-
-.icono,
-.icono2,
-.icono3,
-.icono4,
-.vector {
-  font-size: 24px;
-  color: #f9f7f7;
-  margin-right: 10px;
+.icono4 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+  fill:#e0e0e0;
 }
-
 .frame-71 {
   display: flex;
   flex-direction: row;
@@ -940,7 +973,14 @@ main {
   flex-shrink: 0;
   position: relative;
 }
-
+.vector {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+  fill:#e0e0e0;
+}
 .salvem-les-fotos4 {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
@@ -951,7 +991,6 @@ main {
   align-self: stretch;
   width: 462px;
 }
-
 .frame-79 {
   display: flex;
   flex-direction: column;
@@ -962,7 +1001,6 @@ main {
   flex-shrink: 0;
   position: relative;
 }
-
 .vector-1 {
   flex-shrink: 0;
   width: 1150px;
@@ -970,7 +1008,6 @@ main {
   position: relative;
   overflow: visible;
 }
-
 .frame-77 {
   display: flex;
   flex-direction: row;
@@ -980,7 +1017,6 @@ main {
   flex-shrink: 0;
   position: relative;
 }
-
 .cookies {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
@@ -990,7 +1026,6 @@ main {
   font-weight: 700;
   position: relative;
 }
-
 .aviso-legal {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
@@ -1000,7 +1035,6 @@ main {
   font-weight: 700;
   position: relative;
 }
-
 .pol-tica-de-privacidad {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
@@ -1010,7 +1044,6 @@ main {
   font-weight: 700;
   position: relative;
 }
-
 .contacto {
   color: var(--new-folder-blanco-roto, #f5f5f5);
   text-align: left;
@@ -1020,3 +1053,4 @@ main {
   font-weight: 700;
   position: relative;
 }
+

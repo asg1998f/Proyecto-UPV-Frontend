@@ -1,10 +1,20 @@
 import React, { useState } from 'react'
 import { Form, Select, Input, Button  } from 'antd';
 import './LoginM.scss'
+import { useNavigate } from 'react-router-dom';
 
 const LoginM = () => {
-    const [size, setSize] = useState('large');
-  return (
+  const [size, setSize] = useState('large');
+  const navigate = useNavigate();
+
+const onSubmit = (e) => {
+   e.preventDefault(); 
+// Aquí puedes añadir la lógica para validar al usuario
+   console.log("Formulario enviado");
+   navigate('/home'); 
+};
+
+return (
     <div className='container-formulario'> 
     <div className='raro'>
     <div className='tituloLoginM'>
@@ -14,7 +24,7 @@ const LoginM = () => {
         </div>
     </div>
     <div className='formulario'>
-        <form>
+    <form onSubmit={onSubmit}>
             <div className='container-usuario'>
                 <label className='label-usuario'>Usuario
                 </label>
@@ -44,7 +54,7 @@ const LoginM = () => {
     </Form.Item>
             </div>
             <div className='container-btn'>
-            <Button className='btn' type="primary" shape="round"  size={size}>
+            <Button className='btn' type="primary" shape="round"  size={size} htmlType="submit" >
             <p className='login'>Iniciar sesión</p>
           </Button>
             </div>

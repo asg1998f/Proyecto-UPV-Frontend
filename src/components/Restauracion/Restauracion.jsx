@@ -3,8 +3,12 @@ import HeaderRestauracion from '../HeaderRestauracion/HederRestauracion';
 import Folder from "../../assets/iconos/IconoCarpetaRT.png"
 
 import './Restauracion.scss';
+import { useNavigate } from "react-router-dom";
 
 const Restauracion = () => {
+  const navigate = useNavigate()
+
+
   const carpetas = [
     { id: 1, nombre: 'ÁLBUM 1' },
     { id: 2, nombre: 'ÁLBUM 2' },
@@ -12,9 +16,10 @@ const Restauracion = () => {
     { id: 4, nombre: 'FOTOS' },
     { id: 5, nombre: 'MARCO' },
   ];
+console.log("eeee");
 
   const handleSeleccionarCarpeta = (nombreCarpeta) => {
-    alert(`Accediendo a la cámara para: ${nombreCarpeta}`);
+    navigate("/restauracionImagenes")
     // Aquí la lógica para abrir la cámara
   };
 

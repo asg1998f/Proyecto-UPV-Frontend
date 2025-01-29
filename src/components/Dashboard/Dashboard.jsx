@@ -227,7 +227,7 @@ const Dashboard = () => {
                                     <div className="lot-info">
                                         <img src={Lote} alt="Folder" />
                                         <div className="nombreLote">
-                                            <p>0012-FT</p>
+                                            <p className="parrafo-lote">0012-FT</p>
                                             <p>2 álbumes, 1 negativo, 2 marcos</p>
                                         </div>
                                     </div>
