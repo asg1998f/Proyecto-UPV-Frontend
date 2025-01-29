@@ -1,181 +1,81 @@
 import "./RestauracionCuatro.scss";
-import Vector from "../../assets/images/Vector.png"
-import Broom from "../../assets/images/escobita.png"
-import Folder from "../../assets/iconos/IconoCarpetaRT.png"
-import Search from "../../assets/iconos/IconoRestaurar4Rt.png"
+import { useState } from "react";
+import escobaamarilla from "../../assets/iconos/escobita.png";
+import carpetaamarilla from "../../assets/iconos/IconoCarpetaRT.png";
+import FlechaNavigate from "../FlechaNavigate/FlechaNavigate";
+import Search from "antd/es/input/Search";
 
+const foldersData = [
+  { id: "0012-FT", albums: "2 álbumes" },
+  { id: "0013-FT", albums: "3 álbumes" },
+  { id: "0014-FT", albums: "1 álbum" },
+  { id: "0015-FT", albums: "4 álbumes" },
+  { id: "0016-FT", albums: "5 álbumes" },
+  { id: "0017-FT", albums: "2 álbumes" },
+];
 
 const RestauracionCuatro = () => {
-  return (
-<div className="restauraci-n">
-  <div className="home">
-    <div className="logoRestauracion4">
-      <img src={Vector} alt="flecha izquierda" />
-      <div className="frame-427319580Restauracion4">
-        <div className="frame-427319553">
-          <div className="icono">
-            <img className="fi-sr-broom" src={Broom} />
-          </div>
-          <div className="restauraci-n2">Restaurar</div>
-        </div>
-        <div className="component-54">
-          <div className="wrapper">
-            <div className="text">
-              <div className="placeholder">Buscar por ID...</div>
-            </div>
-          </div>
-          <div className="input-addon-icon">
-            <img src={Search} alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="frame-427319548">
-      <div className="finalizar-restauraci-n">Finalizar restauración</div>
-      <div className="cards">
-        <div className="component-59">
-          <div className="alarm-details">
-            <div className="alarm-details2">
-              <div className="alarm-details3">
-                <div className="left">
-                  <div className="icono3">
-                    <img
-                      className="folder-open-outlined"
-                      src={Folder}
-                    />
-                  </div>
-                  <div className="frame-39955">
-                    <div className="_0012-ft">0012-FT</div>
-                    <div className="_2-lbumes">2 álbumes</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="checkbox-container">
-                <input type="checkbox" id="item1" name="item1" />
-            </div>
-          </div>
-        </div>
-        <div className="component-60">
-          <div className="alarm-details">
-            <div className="alarm-details2">
-              <div className="alarm-details3">
-                <div className="left">
-                  <div className="icono3">
-                    <img
-                      className="folder-open-outlined2"
-                      src={Folder}
-                    />
-                  </div>
-                  <div className="frame-39955">
-                    <div className="_0012-ft">0012-FT</div>
-                    <div className="_2-lbumes">2 álbumes</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="checkbox-container">
-                <input type="checkbox" id="item1" name="item1" />
-            </div>
-          </div>
-        </div>
-        <div className="component-57">
-          <div className="alarm-details">
-            <div className="alarm-details2">
-              <div className="alarm-details3">
-                <div className="left">
-                  <div className="icono3">
-                    <img
-                      className="folder-open-outlined3"
-                      src={Folder}
-                    />
-                  </div>
-                  <div className="frame-39955">
-                    <div className="_0012-ft">0012-FT</div>
-                    <div className="_2-lbumes">2 álbumes</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="checkbox-container">
-                <input type="checkbox" id="item1" name="item1" />
-            </div>
-          </div>
-        </div>
-        <div className="component-58">
-          <div className="alarm-details">
-            <div className="alarm-details2">
-              <div className="alarm-details3">
-                <div className="left">
-                  <div className="icono3">
-                    <img
-                      className="folder-open-outlined4"
-                      src={Folder}
-                    />
-                  </div>
-                  <div className="frame-39955">
-                    <div className="_0012-ft">0012-FT</div>
-                    <div className="_2-lbumes">2 álbumes</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="checkbox-container">
-                <input type="checkbox" id="item1" name="item1" />
-            </div>
-          </div>
-        </div>
-        <div className="component-55">
-          <div className="alarm-details">
-            <div className="alarm-details2">
-              <div className="alarm-details3">
-                <div className="left">
-                  <div className="icono3">
-                    <img
-                      className="folder-open-outlined5"
-                      src={Folder}
-                    />
-                  </div>
-                  <div className="frame-39955">
-                    <div className="_0012-ft">0012-FT</div>
-                    <div className="_2-lbumes">2 álbumes</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="checkbox-container">
-                <input type="checkbox" id="item1" name="item1" />
-            </div>
-          </div>
-        </div>
-        <div className="component-56">
-          <div className="alarm-details">
-            <div className="alarm-details2">
-              <div className="alarm-details3">
-                <div className="left">
-                  <div className="icono3">
-                    <img
-                      className="folder-open-outlined6"
-                      src={Folder}
-                    />
-                  </div>
-                  <div className="frame-39955">
-                    <div className="_0012-ft">0012-FT</div>
-                    <div className="_2-lbumes">2 álbumes</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="checkbox-container">
-                <input type="checkbox" id="item1" name="item1" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredFolders, setFilteredFolders] = useState(foldersData);
 
+  const handleSearch = (value) => {
+    setSearchTerm(value);
+    setFilteredFolders(
+      foldersData.filter((folder) =>
+        folder.id.toLowerCase().includes(value.toLowerCase())
+      )
+    );
+  };
+
+  return (
+    <div className="container-rest-cuatro">
+      <div className="area-1">
+        <div className="flecha-navigate-rest">
+          <FlechaNavigate/>
+        </div>
+        <div className="rest-logo-cuatro">
+          <div className="titulo-rest-cuatro">
+            <img src={escobaamarilla} />
+            <p className="texto-rest-cuatro">Restaurar</p>
+            </div>
+            <div className="barra-id-rest-cuatro">
+            <Search
+              placeholder="Buscar por ID..."
+              className='buscador-almacen'
+            />
+            </div>
+        </div>
+      </div>
+      <div className="area-2">
+        <p className="titulo2-rest-cuatro">Finalizar restauración</p>
+        <div className="container-carpetas-rest">
+          <div className="container-carpeta-ind">
+          <div className="icono-rest">
+          <img src={carpetaamarilla}></img>
+          <div className="lote-rest-cuatro">
+            <p className="cod-lote-rest-cuatro">
+            0012-FT
+            </p>
+            <p className="cont-lote-rest-cuatro">
+              2 álbumes
+            </p>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
+          <div>
+            <input 
+            className="chbox-rest-cuatro"
+            type="checkbox"
+            name='restaurado'
+            /* value={restaurado} */
+            /* onChange={onChange} *//>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
   );
 };
+
 export default RestauracionCuatro;

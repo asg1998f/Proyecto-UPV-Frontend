@@ -1,173 +1,115 @@
-import React from 'react'
-import './Almacenaje.scss';
-import IconoAlmacenA from'../../assets/iconos/IconoAlmacenA.png'
-import IconoCarpetaM from'../../assets/iconos/IconoCarpetaM.png'
-import IconoFlechaM from'../../assets/iconos/IconoFlechaM.png'
-import IconoCarpetaA from'../../assets/iconos/IconoCarpetaA.png'
-import IconoFlechaA from'../../assets/iconos/IconoFlechaA.png'
-
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import FlechaNavigate from '../FlechaNavigate/FlechaNavigate';
+import Search from 'antd/es/input/Search';
+import carpetarosa from "../../assets/iconos/IconoCarpetaA.png";
+import carpetaazul from "../../assets/iconos/IconoCarpetaM.png";
+import flecharosa from "../../assets/iconos/IconoFlechaA.png";
+import flechaazul from "../../assets/iconos/IconoFlechaM.png";
+import "./Almacenaje.scss";
+import { useDispatch, useSelector } from 'react-redux';
+import { getLotesAlmacenados, getLotesAlmacenajePendiente } from '../../features/lote/loteSlice';
 
 const Almacenaje = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const {almacenajeUbicado, almacenajePendiente} = useSelector((state)=> state.lotes)
+
+  useEffect(() => {
+    dispatch(getLotesAlmacenados())
+    dispatch(getLotesAlmacenajePendiente())
+      
+    }, []);
+
+
+  // Datos simulados de lotes
+  const lotesPendientes = [
+    { id: "0000-AS", contenido: "3 albums" },
+    
+  ];
+
+  const lotesAlmacenados = [
+    { id: "0002-CS", contenido: "2 cuadros" },
+  
+  ];
+
+  // Filtrar lotes según el término de búsqueda
+  const filteredPendientes = lotesPendientes.filter((lote) =>
+    lote.id.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredAlmacenados = lotesAlmacenados.filter((lote) =>
+    lote.id.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleCarpetaClick = (id) => {
+    navigate(`/anadirUbicacion/${id}`);
+  };
+
   return (
-    <div className="home">
-      <div className="logo">
-        <img className="vector" src={IconoAlmacenA} alt="Almacen Icon" />
-        <div className="frame-427319580">
-          <div className="frame-427319553">
-            <div className="icono">
-              <img className="fi-sr-box" src={IconoCarpetaA} alt="Carpeta M" />
-            </div>
-            <div className="restauraci-n">Almacén</div>
+    <div className='container-almacenaje'>
+      <div className='tramo-1'>
+        <div className='flecha-navigate'>
+          <FlechaNavigate />
+        </div>
+        <div className='almacen-1'>
+          <div className='titulo-almacen'>
+            <img className="carpeta-rosa" src={carpetarosa} />
+            <p className="almacen-texto">Almacén</p>
           </div>
-          <div className="component-54">
-            <div className="wrapper">
-              <div className="text">
-                <div className="placeholder">Buscar por ID...</div>
-              </div>
-            </div>
-            <div className="input-addon-icon">
-              <div className="icono2">
-                <img className="search-outlined" src={IconoFlechaM} alt="Search" />
-              </div>
-            </div>
+          <div className="navegador-almacen">
+            <Search
+              placeholder="Buscar por ID..."
+              className='buscador-almacen'
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
         </div>
       </div>
-      <div className="frame-427319548">
-        <div className="pendientes-de-almacenar">Pendientes de almacenar</div>
-        <div className="cards">
-          <div className="component-66">
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined" src={IconoCarpetaM} alt="Carpeta M" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img className="icono4" src={IconoFlechaM} alt="Flecha M" />
+
+      <div className='tramo-2'>
+        <p className='titulo-pendiente'>Pendientes de almacenar</p>
+        {almacenajePendiente.map((fase) => (
+          <div className='pendiente-almacenar' key={fase._id}>
+          <div
+            className='container-ubicado-almacen'
+            onClick={() => handleCarpetaClick(fase.loteId._id)}
+            style={{ cursor: "pointer" }}
+          >
+            <img className="carpeta-ubicados" src={carpetarosa}></img>
+            <div className='codigo-lote'>
+              <p className='font-lote'>{fase.loteId.nRegistro}</p>
+              {/* <p className='font-contenido-lote'>{lote.contenido}</p> */}
             </div>
-          </div>
-          <div className="component-69">
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined2" src={IconoCarpetaM} alt="Carpeta M" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img className="icono5" src={IconoFlechaM} alt="Flecha M" />
-            </div>
-          </div>
-          <div className="component-70">
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined3" src={IconoCarpetaM} alt="Carpeta M" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img className="icono6" src={IconoFlechaM} alt="Flecha M" />
-            </div>
+            <div></div>
+            <div></div>
+            <img src={flecharosa} className='flecha-ubicados'></img>
           </div>
         </div>
+        ))}
       </div>
-      <div className="frame-427319549">
-        <div className="ubicados-en-almac-n">Ubicados en almacén</div>
-        <div className="cards">
-          <div className="component-662">
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined4" src={IconoCarpetaA} alt="Carpeta A" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
+
+      <div className='tramo-3'>
+        <p className='titulo-ubicado-almacen'>Ubicados almacén</p>
+        {almacenajeUbicado.map((fase) => (
+          <div className='pendiente-almacenar' key={fase._id}>
+            <div
+              className='container-ubicado-almacen'
+              onClick={() => handleCarpetaClick(fase.loteId._id)}
+              style={{ cursor: "pointer" }}
+            >
+              <img className="carpeta-ubicados" src={carpetaazul}></img>
+              <div className='codigo-lote'>
+                <p className='font-lote'>{fase.loteId.nRegistro}</p>
+                {/* <p className='font-contenido-lote'>{lote.contenido}</p> */}
               </div>
-              <img className="icono7" src={IconoFlechaA} alt="Flecha A" />
+              <div></div>
+              <div></div>
+              <img src={flechaazul} className='flecha-ubicados'></img>
             </div>
           </div>
-          <div className="component-61">
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined5" src={IconoCarpetaA} alt="Carpeta A" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img className="icono8" src={IconoFlechaA} alt="Flecha A" />
-            </div>
-          </div>
-          <div className="component-64">
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined6" src={IconoCarpetaA} alt="Carpeta A" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img className="icono9" src={IconoFlechaA} alt="Flecha A" />
-            </div>
-          </div>
-          <div className="component-65">
-            <div className="alarm-details">
-              <div className="alarm-details2">
-                <div className="alarm-details3">
-                  <div className="left">
-                    <div className="icono3">
-                      <img className="folder-open-outlined7" src={IconoCarpetaA} alt="Carpeta A" />
-                    </div>
-                    <div className="frame-39955">
-                      <div className="_0012-ft">0012-FT</div>
-                      <div className="_2-lbumes">2 álbumes</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img className="icono10" src={IconoFlechaA} alt="Flecha A" />
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

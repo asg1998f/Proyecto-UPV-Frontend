@@ -1,0 +1,203 @@
+.container-almacen-anadir {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: flex-start;
+    height: 844px;
+    position: relative;
+}
+
+.zona-1 {
+    background: var(--fondos-fondo-blanco, #ffffff);
+    border-radius: 0px 0px 24px 24px;
+    padding: 40px 36px 40px 36px;
+    display: flex;
+    flex-direction: row;
+    row-gap: 36px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-shrink: 0;
+    height: 200px;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.zona-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.logo-anadir {
+    margin: 0 0 0 -23px;
+    padding: 32px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    position: relative;
+}
+
+.flecha-navigate {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: visible;
+}
+
+.titulo-anadir-almacen {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+
+.lote-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.titulo-almacen-estilo {
+    color: var(--textos-negro-texto, #000022);
+    text-align: left;
+    font-family: var(--medium-font-family, "Inter-Medium", sans-serif);
+    font-size: var(--medium-font-size, 22px);
+    line-height: var(--medium-line-height, 110%);
+    font-weight: var(--medium-font-weight, 500);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.lote-anadir {
+    color: var(--textos-negro-texto, #000022);
+    text-align: center;
+    font-family: var(--header-header-l-font-family, "Inter-Bold", sans-serif);
+    font-size: var(--header-header-l-font-size, 26px);
+    line-height: var(--header-header-l-line-height, 110%);
+    font-weight: var(--header-header-l-font-weight, 700);
+    position: relative;
+}
+
+.contenido-clase {
+    color: var(--textos-negro-texto, #000022);
+    text-align: center;
+    font-family: var(
+      --body-regular-body-regular-xs-font-family,
+      "Inter-Regular",
+      sans-serif
+    );
+    font-size: var(--body-regular-body-regular-xs-font-size, 12px);
+    line-height: var(--body-regular-body-regular-xs-line-height, 130%);
+    font-weight: var(--body-regular-body-regular-xs-font-weight, 400);
+    position: relative;
+    width: 228px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.zona-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+
+.titulo-anadir-ubicacion {
+    color: var(--textos-negro-texto, #000022);
+    text-align: left;
+    font-family: var(--header-header-s-font-family, "Inter-Medium", sans-serif);
+    font-size: var(--header-header-s-font-size, 18px);
+    line-height: var(--header-header-s-line-height, 110%);
+    font-weight: var(--header-header-s-font-weight, 500);
+    position: relative;
+}
+
+.congelador-inforegistro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.restauracion-checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+
+
+.input-congelador {
+    width: 302px !important;
+    height: 40px !important;
+}
+
+
+.texto-chbox-restauracion {
+    color: var(--textos-texto-gris-osc, #9d9d9d);
+    text-align: left;
+    font-family: var(
+      --body-regular-body-regular-s-font-family,
+      "Inter-Regular",
+      sans-serif
+    );
+    font-size: var(--body-regular-body-regular-s-font-size, 14px);
+    line-height: var(--body-regular-body-regular-s-line-height, 130%);
+    font-weight: var(--body-regular-body-regular-s-font-weight, 400);
+    position: relative;
+}
+
+.checkbox {
+    width: 24px;
+height: 24px;
+flex-shrink: 0;
+}
+
+.anadir-checkbox-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+
+.input-armario {
+    width: 302px !important;
+    height: 40px !important;
+}
+
+.sector-3-anadir {
+    display: flex;
+    flex-direction:column ;
+}

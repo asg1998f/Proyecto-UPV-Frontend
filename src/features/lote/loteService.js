@@ -8,6 +8,14 @@ const API_HISTORIAL = "http://localhost:8080/historiales";
 const API_FASES = "http://localhost:8080/fases";
 const API_TIPOS = "http://localhost:8080/tipos";
 
+const getLotesAlmacenados = async() => {
+  const res = await axios.get(API_FASES + "/getFaseAlmacenada");
+  return res.data;
+}
+const getLotesAlmacenajePendiente = async () => {
+  const res = await axios.get(API_FASES + "/getFasePendienteAlmacenar");
+  return res.data;
+} 
 const getAllLotes = async () => {
   const res = await axios.get(API_LOTES + "/");
   return res.data;
@@ -78,10 +86,11 @@ const getByNregistro = async (nRegistro) => {
   return res.data;
 };
 
-const createLote = async (lote) => {
-  const res = await axios.post(API_LOTES + "/create", lote);
+const updateLote = async (id, lote) => {
+  const res = await axios.put(API_LOTES + "/id/" + id, lote);
   return res.data; //payload
 };
+
 const createSubcarpeta = async (subCarpeta) => {
   const res = await axios.post(API_SUBCARPETAS + "/create", subCarpeta);
   return res.data; //payload
@@ -123,14 +132,16 @@ const loteService = {
   getTipoById,
   getLast,
   getByNregistro,
-  createLote,
+  updateLote,
   createSubcarpeta,
   createSubcarpetaInterna,
   createFoto,
   createHistorial,
   createFase,
   createTipo,
-  updateByNregistro
+  updateByNregistro,
+  getLotesAlmacenajePendiente,
+  getLotesAlmacenados
 };
 
 export default loteService;

@@ -3,8 +3,25 @@ import loteService from "./loteService";
 
 const initialState = {
   lotes: [],
-  ultimoLote:{}
+  ultimoLote:{},
+  almacenajePendiente:[],
+  almacenajeUbicado:[]
 };
+
+export const getLotesAlmacenados = createAsyncThunk("lotes/getLotesAlmacenados", async () => {
+  try {
+    return await loteService.getLotesAlmacenados();
+  } catch (error) {
+    console.error(error);
+  }
+});
+export const getLotesAlmacenajePendiente = createAsyncThunk("lotes/getLotesAlmacenajePendiente", async () => {
+  try {
+    return await loteService.getLotesAlmacenajePendiente();
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 export const getAllLotes = createAsyncThunk("lotes/getAll", async () => {
   try {
@@ -151,13 +168,14 @@ export const getByNregistro = createAsyncThunk(
   }
 );
 
-export const createLote = createAsyncThunk("lotes/create", async (lote) => {
+export const updateLote = createAsyncThunk("lotes/update", async (id, lote) => {
   try {
-    return await loteService.createLote(lote);
+    return await loteService.updateLote(id, lote);
   } catch (error) {
     console.error(error);
   }
 });
+
 export const createSubcarpeta = createAsyncThunk("subcarpetas/create", async (subcarpeta) => {
   try {
     return await loteService.createSubcarpeta(subcarpeta);
@@ -216,6 +234,12 @@ export const loteSlice = createSlice({
     builder.addCase(getAllLotes.fulfilled, (state, action) => {
       state.lotes = action.payload;
     });
+    builder.addCase(getLotesAlmacenados.fulfilled,(state,action)=> {
+      state.almacenajeUbicado = action.payload
+    })
+    builder.addCase(getLotesAlmacenajePendiente.fulfilled,(state,action)=> {
+      state.almacenajePendiente = action.payload
+    })
     builder.addCase(getAllSubcarpetas.fulfilled, (state, action) => {
       state.lotes = action.payload;
     });
@@ -258,7 +282,7 @@ export const loteSlice = createSlice({
     builder.addCase(getLast.fulfilled, (state, action) => {
         state.ultimoLote = action.payload.lote;
       });
-    builder.addCase(createLote.fulfilled, (state, action) => {
+    builder.addCase(updateLote.fulfilled, (state, action) => {
       state.message = action.payload.message;
       state.lotes = [...state.lotes, action.payload.lote];
     });
