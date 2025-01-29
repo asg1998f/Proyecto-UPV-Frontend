@@ -16,7 +16,6 @@ import Dashboard from './components/Dashboard/Dashboard'
 import Lotesadmin from './components/Lotesadmin/Lotesadmin';
 import Almacenaje from './components/Almacenaje/Almacenaje'
 import IconoAlmacenH from './assets/iconos/IconoAlmacenH.png'
-import AnadirUbicacion from './components/AnadirUbicacion/AnadirUbicacion'
 import Entrega from './components/Entrega/Entrega'
 import IconoEntregarE from './assets/iconos/IconoEntregarE.png'
 import RestauracionCuatro from './components/RestauracionCuatro/RestauracionCuatro'
