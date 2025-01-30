@@ -259,25 +259,25 @@ export const loteSlice = createSlice({
       state.lotes = action.payload;
     });
     builder.addCase(getLoteById.fulfilled, (state, action) => {
-      state.post = action.payload;
+      state.lotes = action.payload;
     });
     builder.addCase(getSubcarpetaById.fulfilled, (state, action) => {
-      state.post = action.payload;
+      state.lotes = action.payload;
     });
     builder.addCase(getSubcarpetaInternaById.fulfilled, (state, action) => {
-      state.post = action.payload;
+      state.lotes = action.payload;
     });
     builder.addCase(getFotoById.fulfilled, (state, action) => {
-      state.post = action.payload;
+      state.lotes = action.payload;
     });
     builder.addCase(getFaseById.fulfilled, (state, action) => {
-      state.post = action.payload;
+      state.lotes = action.payload;
     });
     builder.addCase(getTipoById.fulfilled, (state, action) => {
-      state.post = action.payload;
+      state.lotes = action.payload;
     });
     builder.addCase(getByNregistro.fulfilled, (state, action) => {
-      state.lotes = action.payload;
+      state.lotes = [action.payload.lote];
     });
     builder.addCase(getLast.fulfilled, (state, action) => {
         state.ultimoLote = action.payload.lote;

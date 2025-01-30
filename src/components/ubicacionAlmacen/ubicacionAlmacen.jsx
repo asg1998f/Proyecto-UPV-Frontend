@@ -1,7 +1,8 @@
 import React from "react";
 import "./UbicacionAlmacen.scss";
-import IconoAlmacenA from'../../assets/iconos/IconoAlmacenA.png'
-import Vector from '../../assets/iconos/Vector.png'
+import IconoAlmacenA from "../../assets/iconos/IconoAlmacenA.png";
+import { useNavigate } from "react-router-dom";
+import FlechaNavigate from "../FlechaNavigate/FlechaNavigate";
 
 const UbicacionAlmacen = () => {
   return (

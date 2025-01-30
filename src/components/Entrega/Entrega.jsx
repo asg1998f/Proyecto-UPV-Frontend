@@ -23,7 +23,6 @@ const Entrega = (props) => {
     
     ];
   
-    // Filtrar lotes según el término de búsqueda
     const filteredPendientes = lotesPendientes.filter((lote) =>
       lote.id.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -63,7 +62,7 @@ const Entrega = (props) => {
           {showCard && (
             <div
               className="component-59"
-              onClick={() => setShowCard(false)} // Al hacer clic, desaparece la tarjeta
+              onClick={() => setShowCard(false)} 
             >
               <div className="alarm-details">
                 <div className="alarm-details2">
