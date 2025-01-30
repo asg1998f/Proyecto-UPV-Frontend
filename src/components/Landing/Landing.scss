@@ -85,7 +85,6 @@ main {
   position: relative;
   width: 100%;
   position: relative;
-  margin-top: 170px;
 }
 
 .top {
@@ -654,6 +653,7 @@ flex-wrap: wrap;
   }
 
   .segundo-bloque {
+    margin-top: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -724,7 +724,7 @@ flex-wrap: wrap;
 }
 
 .faq-toggle {
-  width: 100%;
+  width: 98%;
   background: none;
   border: none;
   text-align: left;

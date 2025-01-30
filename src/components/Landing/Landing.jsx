@@ -6,7 +6,11 @@ import historia2 from '../../assets/imagenes/historia2.jpg';
 import imgpf from '../../assets/imagenes/imgpf.png';
 import fotoantes from '../../assets/imagenes/fotoantes.png';
 import fotodespues from '../../assets/imagenes/fotodespues.png';
-import { FaPhotoVideo, FaBroom, FaLaptop, FaHourglass, FaGift } from 'react-icons/fa';
+import FaPhotoVideo from "../../assets/iconos/PictureOutlined.png"
+import FaBroom from "../../assets/iconos/Restaurar.png"
+import FaLaptop from "../../assets/iconos/Digitalizar.png"
+import FaHourglass from "../../assets/iconos/tiempo.png"
+import FaGift from "../../assets/iconos/Icono.png"
 import { FaMapMarkerAlt, FaClock, FaPhoneAlt, FaEnvelope, FaInstagram } from "react-icons/fa";
 import React, { useState } from 'react';
 
@@ -93,7 +97,7 @@ const Landing = () => {
             { icon: FaGift, title: 'Te devolvemos tus recuerdos', text: 'Entregamos las imágenes recuperadas.' },
           ].map((item, index) => (
             <div className="frame" key={index}>
-              <item.icon className="icon" />
+              <img src={item.icon}></img>
               <h3 className="frame-title">{item.title}</h3>
               <p className="frame-text">{item.text}</p>
             </div>
@@ -156,7 +160,8 @@ const Landing = () => {
               src={historia2}
               alt="Recuperando memorias"
             />
-            <p className="parrafo-historia2">
+            <div className="parrafo-historia2">
+            <p >
               Desde la Facultad de Bellas Artes de la Universitat Politècnica de
               València, decidimos unir fuerzas para hacer frente a esta pérdida
               irreparable. Así nació nuestro laboratorio de recuperación, donde
@@ -173,6 +178,7 @@ const Landing = () => {
               historias sigan vivas, intactas y listas para ser compartidas con las
               generaciones futuras.
             </p>
+            </div>
           </div>
         </div>
       </section>
