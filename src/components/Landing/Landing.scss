@@ -20,7 +20,7 @@ main {
 .informacion-primer-fold {
   width: 100%;
   object-fit: cover;
-  background-color: #212122;
+  background-color:#26292b;
   display: flex;
   flex-direction: column;
   gap: 318px;
@@ -28,16 +28,18 @@ main {
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
-  height: 100%;
+  height: 50%;
   overflow: hidden;
   position: relative;
-  padding-left: 5%;
+  padding-left: 10%;
+
 
   .image-container {
-    max-width: 55%;
+    max-width: 85%;
     box-sizing: border-box;
     position: absolute;
-    left: 20%;
+    top: -10%;
+    left: 25%;
     display: flex;
     justify-content: flex-end;
 
@@ -50,10 +52,11 @@ main {
   }
 
   .foto {
+    position: relative;
     z-index: 2;
     z-index: 2;
-    height: 20%;
-    width: auto;
+    height: 30%;
+    width: 100%;
     object-fit: cover;
     object-position: top;
   }
@@ -66,7 +69,7 @@ main {
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
-  width: 2085px;
+  width: 2025px;
   position: relative;
 
 }
@@ -74,7 +77,7 @@ main {
 .headline {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
   align-items: flex-start;
   justify-content: flex-start;
   align-self: stretch;
@@ -82,13 +85,13 @@ main {
   position: relative;
   width: 100%;
   position: relative;
-  margin-top: 20px;
+  margin-top: 170px;
 }
 
 .top {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   align-items: center;
   justify-content: flex-start;
   align-self: stretch;
@@ -103,10 +106,12 @@ main {
   margin-top: 100px;
   font-family: var(--upper-subtitulo-font-family, "Inter-Bold", sans-serif);
   font-size: var(--upper-subtitulo-font-size, 20px);
-  line-height: var(--upper-subtitulo-line-height, 0%);
+  line-height: var(--upper-subtitulo-line-height, 110%);
   font-weight: var(--upper-subtitulo-font-weight, 700);
   position: relative;
   align-self: stretch;
+  font-family: Inter;
+  
 }
 
 .salvem-les-fotos-titulo {
@@ -129,7 +134,7 @@ main {
   position: relative;
   align-self: stretch;
   z-index: 9;
-  width: 31%;
+  width: 23%;
 }
 
 .secondary-btn {
@@ -159,9 +164,9 @@ main {
 .datos {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 80px;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: center;
   align-self: stretch;
   flex-shrink: 0;
   height: 124px;
@@ -183,10 +188,10 @@ main {
 ._1-800 {
   color: var(--new-folder-principal, #e94f37);
   text-align: center;
-  font-family: var(--display-1-font-family, "Inter-Bold", sans-serif);
+  font-family: var(--display-1-font-family, "Inter",);
   font-size: var(--display-1-font-size, 64px);
   line-height: var(--display-1-line-height, 110%);
-  letter-spacing: var(--display-1-letter-spacing, -0.06em);
+  letter-spacing: var(--display-1-letter-spacing, -0em);
   font-weight: var(--display-1-font-weight, 700);
   position: relative;
   width: 162px;
@@ -215,10 +220,10 @@ main {
 ._230-000 {
   color: var(--new-folder-principal, #e94f37);
   text-align: center;
-  font-family: var(--display-1-font-family, "Inter-Bold", sans-serif);
+  font-family: var(--display-1-font-family, "Inter");
   font-size: var(--display-1-font-size, 64px);
   line-height: var(--display-1-line-height, 110%);
-  letter-spacing: var(--display-1-letter-spacing, -0.06em);
+  letter-spacing: var(--display-1-letter-spacing, -0em);
   font-weight: var(--display-1-font-weight, 700);
   position: relative;
   width: 252px;
@@ -239,10 +244,10 @@ main {
 ._15-000 {
   color: var(--new-folder-principal, #e94f37);
   text-align: center;
-  font-family: var(--display-1-font-family, "Inter-Bold", sans-serif);
+  font-family: var(--display-1-font-family, "Inter");
   font-size: var(--display-1-font-size, 64px);
   line-height: var(--display-1-line-height, 110%);
-  letter-spacing: var(--display-1-letter-spacing, -0.06em);
+  letter-spacing: var(--display-1-letter-spacing, -0em);
   font-weight: var(--display-1-font-weight, 700);
   position: relative;
   width: 202px;
@@ -273,10 +278,10 @@ main {
 ._130 {
   color: var(--new-folder-principal, #e94f37);
   text-align: center;
-  font-family: var(--display-1-font-family, "Inter-Bold", sans-serif);
+  font-family: var(--display-1-font-family, "Inter");
   font-size: var(--display-1-font-size, 64px);
   line-height: var(--display-1-line-height, 110%);
-  letter-spacing: var(--display-1-letter-spacing, -0.06em);
+  letter-spacing: var(--display-1-letter-spacing, -0em);
   font-weight: var(--display-1-font-weight, 700);
   position: relative;
   width: 110px;
@@ -368,37 +373,47 @@ main {
 }
 
 .nuestro-proceso {
-  padding: 96px 24px;
   display: flex;
   flex-direction: column;
-  gap: 56px;
-  align-items: center;
-  justify-content: center;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+padding: 120px 144px 96px 144px;
+flex-direction: column;
+align-items: flex-start;
+align-self: stretch;
 }
 
 .titulo-nuestroproceso {
   color: var(--new-folder-gris-oscuro, #26292b);
   font-family: var(--h1-font-family, "Inter-Bold", sans-serif);
-  font-size: 2.5rem;
-  line-height: 1.2;
+  font-size: 60px;
+  line-height: 110%;
   font-weight: 700;
 }
 
 .parrafo-nuestroproceso {
   color: var(--new-folder-gris-oscuro, #26292b);
   font-family: var(--h3-font-family, "Inter-Medium", sans-serif);
-  font-size: 1.25rem;
-  line-height: 1.6;
-  font-weight: 500;
+  font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+    width: 73%;
 }
 
 .proceso {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  row-gap: 48px;
+  align-self: stretch;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
 }
 
 .frame {
@@ -449,11 +464,13 @@ main {
   display: flex;
   flex-direction: row;
   gap: 24px;
-  padding: 80px 16px;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  background-color: none;
+  padding: 80px 30px;
+justify-content: space-between;
+align-items: flex-start;
+align-content: flex-start;
+row-gap: 78px;
+align-self: stretch;
+flex-wrap: wrap;
 }
 
 .imagen-con-descripcion {
@@ -469,7 +486,6 @@ main {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .imagen-con-descripcion p {
@@ -544,7 +560,7 @@ main {
   text-align: center;
   font-family: var(--display-2-font-family, "Inter-Bold", sans-serif);
   font-size: 50px;
-  line-height: 110px;
+  line-height: 50px;
   font-weight: var(--display-2-font-weight, 700);
   position: relative;
   width: 100%;
@@ -554,7 +570,7 @@ main {
   color: var(--blanco-roto, #f5f5f5);
   text-align: center;
   font-family: var(--italic-16-font-family, "Inter-Italic", sans-serif);
-  font-size: var(--italic-20-font-size, 35px);
+  font-size: var(--italic-20-font-size, 20px);
   line-height: var(--italic-16-line-height, 30px);
   font-weight: var(--italic-16-font-weight, 300);
   font-style: var(--italic-16-font-style, italic);
@@ -615,12 +631,15 @@ main {
         font-size: 24px;
         font-weight: 500;
         max-width: 35rem;
+        line-height: normal;
+        text-transform: none;
+        
       }
 
       .parrafo-historia {
         color: #26292b;
         font-family: "Inter-Medium", sans-serif;
-        font-size: 22px;
+        font-size: 16px;
         font-weight: 500;
         max-width: 35rem;
       }
@@ -629,7 +648,7 @@ main {
     .imagen-historia {
       flex-shrink: 0;
       width: 521px;
-      height: 370px;
+      height: 347px;
       object-fit: cover;
     }
   }
@@ -645,14 +664,14 @@ main {
     .imagen-historia {
       flex-shrink: 0;
       width: 524px;
-      height: 450px;
+      height: 352.402px;
       object-fit: cover;
     }
 
     .parrafo-historia2 {
       color: #26292b;
       font-family: "Inter-Medium", sans-serif;
-      font-size: 22px;
+      font-size: 16px;
       font-weight: 500;
       max-width: 35rem;
     }
@@ -668,9 +687,9 @@ main {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
   font-family: "Inter", sans-serif;
   color: #26292b;
+  padding-bottom: 70px;
 }
 
 .faqs {
@@ -774,9 +793,9 @@ main {
 .encu-ntranos * {
   box-sizing: border-box;
 }
-.encu-ntranos {
+.encuentranos {
   background: var(--new-folder-gris-oscuro, #26292b);
-  padding: 80px 144px 80px 144px;
+  padding: 10px 144px 80px 144px;
   display: flex;
   flex-direction: column;
   gap: 93px;
@@ -1053,4 +1072,3 @@ main {
   font-weight: 700;
   position: relative;
 }
-

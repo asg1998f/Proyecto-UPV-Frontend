@@ -39,6 +39,7 @@ const Landing = () => {
           <div className="image-container">
             <img src={foto} alt="Fotografía restaurada" />
           </div></div>
+          <div className='porcentajes'>
         <div class="datos">
           <div class="lbumes">
             <div class="_1-800">1.800</div>
@@ -58,16 +59,17 @@ const Landing = () => {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Barra de navegación superior */}
       <nav className="navbar-top">
         <div className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n">
           <span>
             <span className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span">Recordar</span>
-            <span className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span2">del Latín</span>
-            <span className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span4">recordis</span>
+            <span className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span2"> del Latín</span>
+            <span className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span4"> recordis</span>
             <span className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span5">, volver a pasar por el</span>
-            <span className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span6">corazón.</span>
+            <span className="recordar-del-lat-n-recordis-volver-a-pasar-por-el-coraz-n-span6"> corazón.</span>
           </span>
         </div>
       </nav>
@@ -340,7 +342,7 @@ const Landing = () => {
       </div>
 
 
-      <div id="donde-encontrarnos"class="encu-ntranos">
+      <div id="donde-encontrarnos"class="encuentranos">
         <div class="frame-80">
           <div class="tituloLanding">
             <div class="headline">
