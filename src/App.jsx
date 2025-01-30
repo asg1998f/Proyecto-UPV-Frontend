@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AnadirUbicacion from "./components/AnadirUbicacion/AnadirUbicacion";
-import UbicacionAlmacen from "./components/UbicacionAlmacen/UbicacionAlmacen";
+import UbicacionAlmacen from "./components/ubicacionAlmacen/ubicacionAlmacen";
 import InformeRegistro from "./components/InformeRegistro/InformeRegistro";
 import LoginM from "./components/LoginM/LoginM";
 import Header from './components/Header/Header'
