@@ -1,5 +1,5 @@
 import React from "react";
-import "./UbicacionAlmacen.scss";
+import "./ubicacionAlmacen.scss";
 import IconoAlmacenA from "../../assets/iconos/IconoAlmacenA.png";
 import { useNavigate } from "react-router-dom";
 import FlechaNavigate from "../FlechaNavigate/FlechaNavigate";
