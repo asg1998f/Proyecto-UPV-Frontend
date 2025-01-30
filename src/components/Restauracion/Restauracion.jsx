@@ -1,6 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
 import HeaderRestauracion from '../HeaderRestauracion/HederRestauracion';
-import Folder from "../../assets/iconos/IconoCarpetaRT.png"
+import Folder from "../../assets/iconos/IconoCarpetaRt.png"
 
 import './Restauracion.scss';
 import { useNavigate } from "react-router-dom";
