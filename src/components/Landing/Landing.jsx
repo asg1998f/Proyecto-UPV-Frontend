@@ -400,7 +400,7 @@ const Landing = () => {
               </div>
               <div className="frame-71">
                 <FaInstagram className="vector" />
-                <div className="salvem-les-fotos4">salvemoslesfotos</div>
+                <div className="salvem-les-fotos4">salvemoslesfotosupv</div>
               </div>
             </div>
           </div>
