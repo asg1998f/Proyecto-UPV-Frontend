@@ -231,7 +231,6 @@ setRegistroInput(updatedString)
       newErrors.tipoDano = "Debe seleccionar al menos un tipo de daño";
     }
 
-    if (!observaciones) newErrors.observaciones = "Las observaciones son obligatorias";
     if (!idResponsable) {
       newErrors.idResponsable = "El DNI del responsable es obligatorio.";
     } else if (!/^\d{8}[A-Z]$/.test(idResponsable)) {
