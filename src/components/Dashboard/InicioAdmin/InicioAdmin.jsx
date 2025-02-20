@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./InicioAdmin.scss";
-import LogoUsuario from "../../../assets/iconos/LogoUsuario.png";
 import Lote from "../../../assets/iconos/IconoCarpetaN.png";
 import Buscar from "../../../assets/iconos/IconoBuscarG.png";
 
